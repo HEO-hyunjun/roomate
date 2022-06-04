@@ -49,6 +49,7 @@ id btn_filter
 id btn_login
 id confirm
 id containers
+id firstChipgroup
 id image1
 id image2
 id image3
@@ -70,13 +71,16 @@ id ratingBar8
 id recyclerView
 id recyclerView2
 id recyclerView3
+id testVal
 id textView1
 id textView2
+id yesBtn
 layout activity_domitory3to5
 layout activity_domitory8
 layout activity_domitory9
 layout activity_home
 layout activity_main
+layout filter_dialog
 layout fragment_bookmark_screen
 layout fragment_home_screen
 layout fragment_input_profile

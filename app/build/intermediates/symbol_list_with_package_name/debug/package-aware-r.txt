@@ -2746,6 +2746,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id firstChipgroup
 id fitCenter
 id fitEnd
 id fitStart
@@ -3005,6 +3006,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id testVal
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
@@ -3064,6 +3066,7 @@ id wrap_content
 id wrap_content_constrained
 id x_left
 id x_right
+id yesBtn
 id zero_corner_chip
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
@@ -3178,6 +3181,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout filter_dialog
 layout fragment_bookmark_screen
 layout fragment_home_screen
 layout fragment_input_profile

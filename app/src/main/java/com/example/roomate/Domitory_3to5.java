@@ -10,10 +10,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,12 +33,22 @@ public class Domitory_3to5 extends AppCompatActivity {
     public static final int REQUEST_CODE_MENU = 101;
     private RecyclerAdapter adapter; // RecyclerAdapter 선언
 
+    Dialog filterDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_domitory3to5);
-
+        //테스트 남깁니다.
+        //마지막입니다.
         ImageButton button_backHome = findViewById(R.id.btn_backtohome); // 뒤로가기 버튼 선언
+        ImageButton button_filter = findViewById(R.id.btn_filter);
+
+        TextView testText = findViewById(R.id.testVal);
+        filterDialog = new Dialog(Domitory_3to5.this);
+        filterDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        filterDialog.setContentView(R.layout.filter_dialog);
+
 
         init();//Recyclerview의 adapter 불러오기
         getData();//Data 입력
@@ -39,6 +59,24 @@ public class Domitory_3to5 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                 startActivityForResult(intent, REQUEST_CODE_MENU);
+            }
+        });
+
+        button_filter.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                filterDialog.show();
+                filterDialog.findViewById(R.id.yesBtn).setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view){
+                        ChipGroup chipGroup = findViewById(R.id.firstChipgroup);
+                        Chip selectedChip = findViewById(chipGroup.getCheckedChipId());
+                        if(selectedChip.getText().toString() == "1번선택")
+                            testText.setText("1000번이야임마!");
+                        testText.setText(selectedChip.getText().toString());
+                        filterDialog.dismiss();
+                    }
+                });
             }
         });
 
