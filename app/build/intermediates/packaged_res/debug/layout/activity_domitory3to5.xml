@@ -33,7 +33,6 @@
 
     </LinearLayout>
 
-
     <ImageButton
         android:id="@+id/btn_filter"
         android:layout_width="70dp"
@@ -52,5 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F0F0F0" />
+
+
 
 </LinearLayout>

@@ -1,178 +1,194 @@
 [
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_longin_backpicture.png.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/longin_backpicture.png"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_ic_back.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\ic_back.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/font_roboto_regular.ttf.flat",
+        "source": "com.example.roomate.app-main-28:/font/roboto_regular.ttf"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\xml\\backup_rules.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.roomate.app-main-28:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-pngs-21:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/layout_activity_domitory8.xml.flat",
+        "source": "com.example.roomate.app-main-28:/layout/activity_domitory8.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_jnu.webp.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/jnu.webp"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\font_notosanskr_bold.otf.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\font\\notosanskr_bold.otf"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable_ic_baseline_chat_24.xml.flat",
+        "source": "com.example.roomate.app-main-28:/drawable/ic_baseline_chat_24.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.roomate.app-merged_res-26:/menu_menu.xml.flat",
+        "source": "com.example.roomate.app-main-28:/menu/menu.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable_ic_baseline_event_available_24.xml.flat",
+        "source": "com.example.roomate.app-main-28:/drawable/ic_baseline_event_available_24.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_login_kakao.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\login_kakao.png"
+        "merged": "com.example.roomate.app-merged_res-26:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.roomate.app-main-28:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_login_icon.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\login_icon.png"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.roomate.app-main-28:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_a.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\a.png"
+        "merged": "com.example.roomate.app-merged_res-26:/font_notosanskr_regular.otf.flat",
+        "source": "com.example.roomate.app-main-28:/font/notosanskr_regular.otf"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\font_notosanskr_regular.otf.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\font\\notosanskr_regular.otf"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.roomate.app-pngs-21:/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_login_backgroun.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\login_backgroun.png"
+        "merged": "com.example.roomate.app-merged_res-26:/font_notosanskr_bold.otf.flat",
+        "source": "com.example.roomate.app-main-28:/font/notosanskr_bold.otf"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\font_roboto_bold.ttf.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\font\\roboto_bold.ttf"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable_ic_baseline_star_24.xml.flat",
+        "source": "com.example.roomate.app-main-28:/drawable/ic_baseline_star_24.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_btn_filter.png.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/btn_filter.png"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_login_icon.png.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/login_icon.png"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\layout_dm1.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\layout\\dm1.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/layout_activity_main.xml.flat",
+        "source": "com.example.roomate.app-main-28:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_btn_filter.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\btn_filter.png"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_c.png.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/c.png"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.roomate.app-merged_res-26:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.roomate.app-main-28:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\layout_dm3.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\layout\\dm3.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.roomate.app-main-28:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_domitory_9.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\domitory_9.png"
+        "merged": "com.example.roomate.app-merged_res-26:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.roomate.app-main-28:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_domitory_3to5.png.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/domitory_3to5.png"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\layout_item.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\layout\\item.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable_ic_baseline_settings_24.xml.flat",
+        "source": "com.example.roomate.app-main-28:/drawable/ic_baseline_settings_24.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\layout_activity_domitory3to5.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\layout\\activity_domitory3to5.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/font_roboto_bold.ttf.flat",
+        "source": "com.example.roomate.app-main-28:/font/roboto_bold.ttf"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\layout_activity_domitory8.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\layout\\activity_domitory8.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.roomate.app-main-28:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_longin_backpicture.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\longin_backpicture.png"
+        "merged": "com.example.roomate.app-merged_res-26:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.roomate.app-main-28:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_b.png.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/b.png"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_domitory_8.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\domitory_8.png"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable_ic_baseline_person_24.xml.flat",
+        "source": "com.example.roomate.app-main-28:/drawable/ic_baseline_person_24.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_b.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\b.png"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable_ic_baseline_check_24.xml.flat",
+        "source": "com.example.roomate.app-main-28:/drawable/ic_baseline_check_24.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\layout\\activity_main.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/layout_activity_domitory3to5.xml.flat",
+        "source": "com.example.roomate.app-main-28:/layout/activity_domitory3to5.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\layout_activity_home.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\layout\\activity_home.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.roomate.app-main-28:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_domitory_9.png.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/domitory_9.png"
+    },
+    {
+        "merged": "com.example.roomate.app-merged_res-26:/xml_backup_rules.xml.flat",
+        "source": "com.example.roomate.app-main-28:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_login_kakao.png.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/login_kakao.png"
+    },
+    {
+        "merged": "com.example.roomate.app-merged_res-26:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.roomate.app-main-28:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.roomate.app-merged_res-26:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.roomate.app-main-28:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.roomate.app-merged_res-26:/drawable_ic_baseline_home_24.xml.flat",
+        "source": "com.example.roomate.app-main-28:/drawable/ic_baseline_home_24.xml"
+    },
+    {
+        "merged": "com.example.roomate.app-merged_res-26:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.roomate.app-main-28:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_ic_x.xml.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/ic_x.xml"
+    },
+    {
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_ic_back.xml.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/ic_back.xml"
+    },
+    {
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_a.png.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/a.png"
     },
     {
         "merged": "com.example.roomate.app-merged_res-26:/layout_activity_domitory9.xml.flat",
         "source": "com.example.roomate.app-main-28:/layout/activity_domitory9.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_jnu.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\jnu.webp"
+        "merged": "com.example.roomate.app-merged_res-26:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.roomate.app-main-28:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\font_roboto_regular.ttf.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\font\\roboto_regular.ttf"
+        "merged": "com.example.roomate.app-merged_res-26:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.roomate.app-main-28:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\xml\\data_extraction_rules.xml"
+        "merged": "com.example.roomate.app-merged_res-26:/layout_activity_home.xml.flat",
+        "source": "com.example.roomate.app-main-28:/layout/activity_home.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_login_backgroun.png.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/login_backgroun.png"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_domitory_3to5.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\domitory_3to5.png"
+        "merged": "com.example.roomate.app-merged_res-26:/layout_item.xml.flat",
+        "source": "com.example.roomate.app-main-28:/layout/item.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_c.png.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\c.png"
-    },
-    {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\layout_activity_domitory9.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\layout\\activity_domitory9.xml"
-    },
-    {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\drawable-v24_ic_x.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable-v24\\ic_x.xml"
-    },
-    {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\mipmap-mdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\layout_dm2.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\layout\\dm2.xml"
-    },
-    {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\mipmap-xhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "com.example.roomate.app-merged_res-26:/drawable-v24_domitory_8.png.flat",
+        "source": "com.example.roomate.app-main-28:/drawable-v24/domitory_8.png"
     }
 ]

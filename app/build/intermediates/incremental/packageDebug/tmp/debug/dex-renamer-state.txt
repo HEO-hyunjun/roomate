@@ -1,4 +1,4 @@
-#Thu May 26 05:08:01 KST 2022
+#Tue May 31 07:54:44 KST 2022
 base.2=C\:\\Users\\user\\AndroidStudioProjects\\roomate2\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
 path.2=1/classes.dex
 base.1=C\:\\Users\\user\\AndroidStudioProjects\\roomate2\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

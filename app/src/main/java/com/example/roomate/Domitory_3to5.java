@@ -14,11 +14,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-
 import java.util.Arrays;
 import java.util.List;
 
 public class Domitory_3to5 extends AppCompatActivity {
+
 
     public static final int REQUEST_CODE_MENU = 101;
     private RecyclerAdapter adapter; // RecyclerAdapter 선언
@@ -42,7 +42,11 @@ public class Domitory_3to5 extends AppCompatActivity {
             }
         });
 
+
+
     }
+
+
 
     private void init() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
