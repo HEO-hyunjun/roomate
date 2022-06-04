@@ -7,49 +7,52 @@ package com.example.roomate;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+
 public class HomeActivity extends AppCompatActivity {
-
-    public static final int REQUEST_CODE_MENU = 101;
-
-
+    HomeScreen homeScreen;
+    ProfileScreen profileScreen;
+    BookmarkScreen bookmarkScreen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        ImageButton button_Domitory_3to5 = findViewById(R.id.btn_dm_3to5);
-        ImageButton button_Domitory_8 = findViewById(R.id.btn_dm_8);
-        ImageButton button_Domitory_9 = findViewById(R.id.btn_dm_9);
+        //Fragment 선언
+        homeScreen = new HomeScreen();
+        profileScreen = new ProfileScreen();
+        bookmarkScreen = new BookmarkScreen();
+        //홈스크린을 기본화면으로 설정
+        getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeScreen).commitAllowingStateLoss();
 
-        button_Domitory_3to5.setOnClickListener(new View.OnClickListener() {
+        BottomNavigationView navigationBar = findViewById(R.id.bottom_navigationview);
+        navigationBar.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener(){
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Domitory_3to5.class);
-                startActivityForResult(intent, REQUEST_CODE_MENU);
+            public boolean onNavigationItemSelected(@NonNull MenuItem item){
+                switch(item.getItemId()){
+                    case R.id.action_home:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeScreen).commit();
+                        return true;
+                    case R.id.action_setting:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.containers, profileScreen).commit();
+                        return true;
+                        // 관심목록, 채팅 아직 미구현
+                    case R.id.action_bookmark:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.containers, bookmarkScreen).commit();
+                        return true;
+                    case R.id.action_chat:
+                        return true;
+                }
+                return false;
             }
         });
-
-        button_Domitory_8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Domitory_8.class);
-                startActivityForResult(intent, REQUEST_CODE_MENU);
-            }
-        });
-
-        button_Domitory_9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Domitory_9.class);
-                startActivityForResult(intent, REQUEST_CODE_MENU);
-            }
-        });
-
-
     }
 }

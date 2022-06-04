@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:text="홈"
+            android:textStyle="bold"
+            android:layout_margin="15dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/jnu"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 전남대학교 광주캠퍼스 기숙사"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25sp"
+                android:textSize="12sp"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center"
+                android:text="프로필을 설정하고 원하는 기숙사를 터치해주세요"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btn_dm_3to5"
+                android:layout_width="320dp"
+                android:layout_height="120dp"
+                android:scaleType="fitCenter"
+                android:background="@color/white"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/domitory_3to5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="생활관 3~5동"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:textSize="20dp"/>
+
+
+            <ImageButton
+                android:id="@+id/btn_dm_8"
+                android:layout_width="320dp"
+                android:layout_height="120dp"
+                android:scaleType="fitCenter"
+                android:background="@color/white"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/domitory_8"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="생활관 8동"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:textSize="20dp"/>
+
+            <ImageButton
+                android:id="@+id/btn_dm_9"
+                android:layout_width="320dp"
+                android:layout_height="120dp"
+                android:scaleType="fitCenter"
+                android:background="@color/white"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/domitory_9"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="생활관 9동"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:textSize="20dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>
