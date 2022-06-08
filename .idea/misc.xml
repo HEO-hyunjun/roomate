@@ -31,6 +31,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24270833333333333" />
         <entry key="app/src/main/res/layout/filter_dialog.xml" value="0.1171875" />
         <entry key="app/src/main/res/layout/fragment_bookmark_screen.xml" value="0.10572916666666667" />
+        <entry key="app/src/main/res/layout/fragment_chatroom_screen.xml" value="0.10625" />
         <entry key="app/src/main/res/layout/fragment_home_screen.xml" value="0.22436531940371313" />
         <entry key="app/src/main/res/layout/fragment_input_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_profile_screen.xml" value="0.1" />

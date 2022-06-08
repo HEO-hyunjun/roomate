@@ -2639,6 +2639,8 @@ id beginOnFirstDraw
 id beginning
 id bestChoice
 id blocking
+id bookmarkRecycler
+id bookmark_RecyclerView
 id bottom
 id bottom_navigationview
 id bounce
@@ -3009,7 +3011,6 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
 id testRec
-id testVal
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint

@@ -5,17 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:orientation="horizontal">
+        android:layout_height="46dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:elevation="10dp">
 
         <ImageButton
             android:id="@+id/btn_backtohome"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="28dp"
             android:background="@color/white"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_back"/>
@@ -23,14 +25,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="left"
-            android:layout_marginLeft="100dp"
-            android:textSize="25sp"
-            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:textSize="24sp"
+            android:textColor="#191919"
             android:text="생활관 9동"
             android:textStyle="bold"/>
 
-    </LinearLayout>
+    </FrameLayout>
 
 
     <ImageButton

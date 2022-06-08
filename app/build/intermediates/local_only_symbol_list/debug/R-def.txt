@@ -41,6 +41,8 @@ id action_bookmark
 id action_chat
 id action_home
 id action_setting
+id bookmarkRecycler
+id bookmark_RecyclerView
 id bottom_navigationview
 id btn_backtohome
 id btn_dm_3to5
@@ -74,7 +76,6 @@ id recyclerView
 id recyclerView2
 id recyclerView3
 id testRec
-id testVal
 id textView1
 id textView2
 id yesBtn

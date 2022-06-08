@@ -44,7 +44,6 @@ public class Domitory_3to5 extends AppCompatActivity {
         ImageButton button_backHome = findViewById(R.id.btn_backtohome); // 뒤로가기 버튼 선언
         ImageButton button_filter = findViewById(R.id.btn_filter);
 
-        final TextView testText = findViewById(R.id.testVal);
 
         filterDialog = new Dialog(Domitory_3to5.this);
         filterDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -76,7 +75,7 @@ public class Domitory_3to5 extends AppCompatActivity {
                         Chip c = (Chip)filterDialog.findViewById(chgrp.getCheckedChipId());
 
                         String s = c.getText().toString();
-                        testText.setText(s);
+                        //testText.setText(s);
 
                         filterDialog.dismiss();
                     }

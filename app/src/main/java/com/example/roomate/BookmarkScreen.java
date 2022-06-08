@@ -27,7 +27,7 @@ public class BookmarkScreen extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_bookmark_screen, container, false);
 
-        recyclerView =(RecyclerView) rootView.findViewById(R.id.testRec );
+        recyclerView =(RecyclerView) rootView.findViewById(R.id.bookmark_RecyclerView );
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
