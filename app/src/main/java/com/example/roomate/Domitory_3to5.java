@@ -44,7 +44,8 @@ public class Domitory_3to5 extends AppCompatActivity {
         ImageButton button_backHome = findViewById(R.id.btn_backtohome); // 뒤로가기 버튼 선언
         ImageButton button_filter = findViewById(R.id.btn_filter);
 
-        TextView testText = findViewById(R.id.testVal);
+        final TextView testText = findViewById(R.id.testVal);
+
         filterDialog = new Dialog(Domitory_3to5.this);
         filterDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         filterDialog.setContentView(R.layout.filter_dialog);
@@ -69,18 +70,19 @@ public class Domitory_3to5 extends AppCompatActivity {
                 filterDialog.findViewById(R.id.yesBtn).setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View view){
-                        ChipGroup chipGroup = findViewById(R.id.firstChipgroup);
-                        Chip selectedChip = findViewById(chipGroup.getCheckedChipId());
-                        if(selectedChip.getText().toString() == "1번선택")
-                            testText.setText("1000번이야임마!");
-                        testText.setText(selectedChip.getText().toString());
+
+                        ChipGroup chgrp = (ChipGroup)filterDialog.findViewById((R.id.firstChipgroup));
+
+                        Chip c = (Chip)filterDialog.findViewById(chgrp.getCheckedChipId());
+
+                        String s = c.getText().toString();
+                        testText.setText(s);
+
                         filterDialog.dismiss();
                     }
                 });
             }
         });
-
-
 
     }
 
