@@ -5,28 +5,28 @@
     <item
         android:id="@+id/action_home"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_home_24"
+        android:icon="@drawable/menu_home"
         android:title="홈"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_bookmark"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_star_24"
+        android:icon="@drawable/menu_bookmark"
         android:title="관심목록"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_chat"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_chat_24"
+        android:icon="@drawable/menu_chat"
         android:title="채팅"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_setting"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_settings_24"
+        android:icon="@drawable/menu_profile"
         android:title="프로필"
         app:showAsAction="always"/>
 

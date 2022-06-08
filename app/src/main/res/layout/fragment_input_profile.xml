@@ -9,10 +9,10 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:background="#FFFFFF"
-        android:elevation="10dp">
+        android:elevation="2dp">
 
         <ImageButton
             android:id="@+id/btn_backtohome"
@@ -26,12 +26,12 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:gravity="center"
-            android:layout_gravity="center_vertical"
-            android:textSize="24sp"
+            android:letterSpacing="-0.02"
+            android:text="나의 성격유형"
             android:textColor="#191919"
-            android:text="성격유형"
+            android:textSize="25sp"
             android:textStyle="bold"/>
 
     </FrameLayout>

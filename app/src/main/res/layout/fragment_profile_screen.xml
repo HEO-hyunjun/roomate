@@ -4,7 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileScreen">
+    tools:context=".ProfileScreen"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:letterSpacing="-0.02"
+        android:layout_marginBottom="30dp"
+        android:text="나의 프로필"
+        android:textColor="#191919"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="#FFFFFF"
+        android:elevation="2dp"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,101 +28,161 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="55dp" />
+
             <ImageView
-                android:id="@+id/image1"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/profile_myprofile"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_launcher"/>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_background"></ImageView>
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="45dp" />
+                android:layout_gravity="center_vertical|center"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <ImageView
+                    android:id="@+id/profile_grade"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/pr_cap"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical"
+                   android:text="학년"
+                   android:textSize="15sp"/>
+
+                <ImageView
+                    android:id="@+id/profile_age"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/pr_cake"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="나이"
+                    android:textSize="15sp"/>
+
+                <ImageView
+                    android:id="@+id/profile_lang"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/pr_lang"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="학년"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
                 <ImageView
-                    android:id="@+id/image2"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/ic_launcher_background"></ImageView>
+                    android:id="@+id/profile_domitory"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/pr_home"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="25dp"
-                    android:text="언어:  "></TextView>
-                <TextView
-                    android:id="@+id/languageText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="25dp"
-                    android:text=""></TextView>
-                <ImageView
-                    android:id="@+id/image3"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/ic_launcher_background"></ImageView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="25dp"
-                    android:text="나이: "></TextView>
+                    android:layout_gravity="center_vertical"
+                    android:text="기숙사 동"
+                    android:textSize="15sp"/>
             </LinearLayout>
+
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
                 <ImageView
-                    android:id="@+id/image4"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/ic_launcher_background"></ImageView>
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="#999999"/>
+
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="17sp"
+                    android:text="자기소개" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:gravity="top"
+                    android:elevation="1dp"
+                    android:text="\n   자기소개를 작성해 주세요"
+                    android:textColor="#999999"
+                    android:textSize="10sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="#999999"/>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textSize="25dp"
-                    android:text="선호 기숙사동:  "></TextView>
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="17sp"
+                        android:text="나의 유형"/>
+                    <ImageView
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/pr_edit"/>
+
+                </LinearLayout>
+
             </LinearLayout>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:src="@color/black"></ImageView>
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="15dp" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="자기소개"
-                ></TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                ></TextView>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:src="@color/black"></ImageView>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="15dp" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_marginTop="150dp"
                 android:id="@+id/confirm"
-                android:layout_gravity="center"
-                ></Button>
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:text="저장하기"
+                android:layout_gravity="center|bottom"/>
 
         </LinearLayout>
 
     </ScrollView>
+
+
+
 </LinearLayout>
