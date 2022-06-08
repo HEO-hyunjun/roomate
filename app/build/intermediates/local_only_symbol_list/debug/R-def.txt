@@ -71,6 +71,7 @@ id ratingBar8
 id recyclerView
 id recyclerView2
 id recyclerView3
+id testRec
 id testVal
 id textView1
 id textView2
@@ -79,9 +80,11 @@ layout activity_domitory3to5
 layout activity_domitory8
 layout activity_domitory9
 layout activity_home
+layout activity_intro
 layout activity_main
 layout filter_dialog
 layout fragment_bookmark_screen
+layout fragment_chatroom_screen
 layout fragment_home_screen
 layout fragment_input_profile
 layout fragment_profile_screen

@@ -4,7 +4,7 @@
             "outputFile": "com.example.roomate.app-mergeDebugResources-24:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/Users/heohyeonjun/.gradle/caches/transforms-3/6dd341f1aaa781be49a8f752078a6907/transformed/material-1.6.0/res/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+                    "source": "C:\\Users\\Lee\\.gradle\\caches\\transforms-3\\6dd341f1aaa781be49a8f752078a6907\\transformed\\material-1.6.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

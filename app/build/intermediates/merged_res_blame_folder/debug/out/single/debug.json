@@ -40,6 +40,10 @@
         "source": "com.example.roomate.app-main-28:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
+        "merged": "com.example.roomate.app-merged_res-26:/layout_activity_intro.xml.flat",
+        "source": "com.example.roomate.app-main-28:/layout/activity_intro.xml"
+    },
+    {
         "merged": "com.example.roomate.app-merged_res-26:/drawable_ic_launcher_background.xml.flat",
         "source": "com.example.roomate.app-main-28:/drawable/ic_launcher_background.xml"
     },
@@ -110,6 +114,10 @@
     {
         "merged": "com.example.roomate.app-merged_res-26:/mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "com.example.roomate.app-main-28:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.roomate.app-merged_res-26:/layout_fragment_chatroom_screen.xml.flat",
+        "source": "com.example.roomate.app-main-28:/layout/fragment_chatroom_screen.xml"
     },
     {
         "merged": "com.example.roomate.app-merged_res-26:/layout_fragment_bookmark_screen.xml.flat",

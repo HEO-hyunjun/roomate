@@ -21,15 +21,18 @@ public class HomeActivity extends AppCompatActivity {
     HomeScreen homeScreen;
     ProfileScreen profileScreen;
     BookmarkScreen bookmarkScreen;
+    ChatroomScreen chatroomScreen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
         //Fragment 선언
         homeScreen = new HomeScreen();
         profileScreen = new ProfileScreen();
         bookmarkScreen = new BookmarkScreen();
+        chatroomScreen = new ChatroomScreen();
         //홈스크린을 기본화면으로 설정
         getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeScreen).commitAllowingStateLoss();
 
@@ -44,11 +47,12 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.action_setting:
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers, profileScreen).commit();
                         return true;
-                        // 관심목록, 채팅 아직 미구현
+                    // 관심목록, 채팅 아직 미구현
                     case R.id.action_bookmark:
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers, bookmarkScreen).commit();
                         return true;
                     case R.id.action_chat:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.containers, chatroomScreen).commit();
                         return true;
                 }
                 return false;

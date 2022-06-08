@@ -3006,6 +3006,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id testRec
 id testVal
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
@@ -3164,6 +3165,7 @@ layout activity_domitory3to5
 layout activity_domitory8
 layout activity_domitory9
 layout activity_home
+layout activity_intro
 layout activity_main
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -3183,6 +3185,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout filter_dialog
 layout fragment_bookmark_screen
+layout fragment_chatroom_screen
 layout fragment_home_screen
 layout fragment_input_profile
 layout fragment_profile_screen
