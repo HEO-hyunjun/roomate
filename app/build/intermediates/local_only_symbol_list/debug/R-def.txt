@@ -36,6 +36,7 @@ font notosanskr_bold
 font notosanskr_regular
 font roboto_bold
 font roboto_regular
+id FilterLine
 id action_bookmark
 id action_chat
 id action_home
@@ -50,6 +51,7 @@ id btn_login
 id confirm
 id containers
 id firstChipgroup
+id fragment_container
 id image1
 id image2
 id image3

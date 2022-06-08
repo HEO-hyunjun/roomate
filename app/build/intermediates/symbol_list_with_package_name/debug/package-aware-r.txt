@@ -2546,6 +2546,7 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
+id FilterLine
 id META
 id NO_DEBUG
 id SHIFT
@@ -2756,6 +2757,7 @@ id fixed
 id flip
 id floating
 id forever
+id fragment_container
 id fragment_container_view_tag
 id frost
 id fullscreen_header
