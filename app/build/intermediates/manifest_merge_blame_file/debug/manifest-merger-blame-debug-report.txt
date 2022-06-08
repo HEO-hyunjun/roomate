@@ -29,77 +29,78 @@
 19-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:12:9-54
 20        android:supportsRtl="true"
 20-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:13:9-35
-21        android:theme="@style/Theme.Roomate" >
-21-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:14:9-45
-22        <activity
-22-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:16:9-18:40
-23            android:name="com.example.roomate.Domitory_9"
-23-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:17:13-39
-24            android:exported="false" />
-24-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:18:13-37
-25        <activity
-25-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:19:9-21:40
-26            android:name="com.example.roomate.Domitory_8"
-26-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:20:13-39
-27            android:exported="false" />
-27-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:21:13-37
-28        <activity
-28-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:22:9-24:40
-29            android:name="com.example.roomate.Domitory_3to5"
-29-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:23:13-42
-30            android:exported="false" />
-30-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:24:13-37
-31        <activity
-31-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:25:9-27:40
-32            android:name="com.example.roomate.HomeActivity"
-32-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:26:13-41
-33            android:exported="false" />
-33-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:27:13-37
-34        <activity
-34-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:28:9-30:40
-35            android:name="com.example.roomate.MainActivity"
-35-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:29:13-41
-36            android:exported="false" />
-36-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:30:13-37
-37        <activity
-37-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:31:9-39:20
-38            android:name="com.example.roomate.IntroActivity"
-38-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:32:13-42
-39            android:exported="true" >
-39-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:33:13-36
-40            <intent-filter>
-40-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:34:13-38:29
-41                <action android:name="android.intent.action.MAIN" />
-41-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:35:17-69
-41-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:35:25-66
-42
-43                <category android:name="android.intent.category.LAUNCHER" />
-43-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:37:17-77
-43-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:37:27-74
-44            </intent-filter>
-45        </activity>
-46
-47        <provider
-47-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-48            android:name="androidx.startup.InitializationProvider"
-48-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
-49            android:authorities="com.example.roomate.androidx-startup"
-49-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
-50            android:exported="false" >
-50-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
-51            <meta-data
-51-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-52                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-52-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
-53                android:value="androidx.startup" />
-53-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
-54            <meta-data
-54-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\user\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-55                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-55-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\user\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-56                android:value="androidx.startup" />
-56-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\user\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-57        </provider>
-58    </application>
-59
-60</manifest>
+21        android:testOnly="true"
+22        android:theme="@style/Theme.Roomate" >
+22-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:14:9-45
+23        <activity
+23-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:16:9-18:40
+24            android:name="com.example.roomate.Domitory_9"
+24-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:17:13-39
+25            android:exported="false" />
+25-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:18:13-37
+26        <activity
+26-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:19:9-21:40
+27            android:name="com.example.roomate.Domitory_8"
+27-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:20:13-39
+28            android:exported="false" />
+28-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:21:13-37
+29        <activity
+29-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:22:9-24:40
+30            android:name="com.example.roomate.Domitory_3to5"
+30-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:23:13-42
+31            android:exported="false" />
+31-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:24:13-37
+32        <activity
+32-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:25:9-27:40
+33            android:name="com.example.roomate.HomeActivity"
+33-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:26:13-41
+34            android:exported="false" />
+34-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:27:13-37
+35        <activity
+35-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:28:9-30:40
+36            android:name="com.example.roomate.MainActivity"
+36-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:29:13-41
+37            android:exported="false" />
+37-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:30:13-37
+38        <activity
+38-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:31:9-39:20
+39            android:name="com.example.roomate.IntroActivity"
+39-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:32:13-42
+40            android:exported="true" >
+40-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:33:13-36
+41            <intent-filter>
+41-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:34:13-38:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:35:17-69
+42-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:35:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:37:17-77
+44-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:37:27-74
+45            </intent-filter>
+46        </activity>
+47
+48        <provider
+48-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+49            android:name="androidx.startup.InitializationProvider"
+49-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+50            android:authorities="com.example.roomate.androidx-startup"
+50-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+51            android:exported="false" >
+51-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
+52            <meta-data
+52-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+53                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+53-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
+54                android:value="androidx.startup" />
+54-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+55            <meta-data
+55-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\user\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+56                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+56-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\user\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+57                android:value="androidx.startup" />
+57-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\user\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+58        </provider>
+59    </application>
+60
+61</manifest>

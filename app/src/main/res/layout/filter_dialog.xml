@@ -263,6 +263,8 @@
                         app:checkedIconVisible="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipStartPadding="1dp"
+                        app:chipEndPadding="1dp"
                         android:textSize="10sp"
                         android:textColor="#191919"
                         android:text="매우 외향적"/>
@@ -276,6 +278,8 @@
                         app:checkedIconVisible="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipStartPadding="1dp"
+                        app:chipEndPadding="1dp"
                         android:textSize="10sp"
                         android:textColor="#191919"
                         android:text="조금 외향적"/>
@@ -302,6 +306,8 @@
                         app:checkedIconVisible="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipStartPadding="1dp"
+                        app:chipEndPadding="1dp"
                         android:textSize="10sp"
                         android:textColor="#191919"
                         android:text="조금 내향적"/>
@@ -315,6 +321,8 @@
                         app:checkedIconVisible="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipStartPadding="1dp"
+                        app:chipEndPadding="1dp"
                         android:textSize="10sp"
                         android:textColor="#191919"
                         android:text="매우 내향적"/>
