@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import java.util.List;
 
-public class BookmarkScreen extends Fragment {
+public class ChatroomScreen extends Fragment {
 
     private RecyclerView recyclerView;
     RecyclerAdapter adapter;
@@ -25,7 +25,7 @@ public class BookmarkScreen extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_bookmark_screen, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_chatroom_screen, container, false);
 
         recyclerView =(RecyclerView) rootView.findViewById(R.id.testRec );
 

@@ -11,7 +11,7 @@
         android:layout_height="46dp"
         android:gravity="center"
         android:letterSpacing="-0.02"
-        android:text="관심목록"
+        android:text="대화목록"
         android:textColor="#191919"
         android:textSize="24sp"
         android:textStyle="bold"

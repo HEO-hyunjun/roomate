@@ -34,6 +34,9 @@
             android:exported="false" />
         <activity
             android:name="com.example.roomate.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.roomate.IntroActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
