@@ -1,64 +1,103 @@
 package com.example.roomate;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BookmarkScreen#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.Arrays;
+import java.util.List;
+
 public class BookmarkScreen extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public BookmarkScreen() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment BookmarkScreen.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static BookmarkScreen newInstance(String param1, String param2) {
-        BookmarkScreen fragment = new BookmarkScreen();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private RecyclerView recyclerView;
+    RecyclerAdapter adapter;
+    Context context;
+    Dialog filterDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bookmark_screen, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_bookmark_screen, container, false);
+
+        recyclerView =(RecyclerView) rootView.findViewById(R.id.testRec );
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        adapter = new RecyclerAdapter();
+        recyclerView.setAdapter(adapter);
+        // init();//Recyclerview의 adapter 불러오기
+        getData();//Data 입력
+
+        return rootView;
     }
+
+    // 임의의 데이터 -> 최종적으로 DB에서 받을 수 있게 수정해야 함
+    private void getData() {
+
+        //이름
+        List<String> listTitle = Arrays.asList(
+                "홍길동",
+                "컴공 20학번",
+                "고학번 취준생",
+                "홍길동",
+                "컴공 20학번",
+                "고학번 취준생",
+                "컴공 20학번",
+                "고학번 취준생",
+                "홍길동",
+                "홍길동",
+                "컴공 20학번",
+                "고학번 취준생");
+
+        //자기소개
+        List<String> listContent = Arrays.asList(
+                "함께 놀면서 친해질 룸메를 원합니다",
+                "코골이 안하는 비흡연자 룸메 구합니다.",
+                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
+                "함께 놀면서 친해질 룸메를 원합니다",
+                "코골이 안하는 비흡연자 룸메 구합니다.",
+                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
+                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
+                "함께 놀면서 친해질 룸메를 원합니다",
+                "코골이 안하는 비흡연자 룸메 구합니다.",
+                "코골이 안하는 비흡연자 룸메 구합니다.",
+                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
+                "함께 놀면서 친해질 룸메를 원합니다");
+
+        //프로필 사진
+        List<Integer> listResId = Arrays.asList(
+                R.drawable.a,
+                R.drawable.b,
+                R.drawable.c,
+                R.drawable.a,
+                R.drawable.b,
+                R.drawable.c,
+                R.drawable.a,
+                R.drawable.b,
+                R.drawable.c,
+                R.drawable.a,
+                R.drawable.b,
+                R.drawable.c);
+
+        //리스트 목록만큼 출력합니다
+        for (int i = 0; i < listTitle.size(); i++) {
+            Data data = new Data();
+            data.setTitle(listTitle.get(i));
+            data.setContent(listContent.get(i));
+            data.setResId(listResId.get(i));
+            adapter.addItem(data);
+        }
+
+        adapter.notifyDataSetChanged();
+    }
+
 }
