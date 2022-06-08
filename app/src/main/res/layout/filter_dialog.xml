@@ -5,515 +5,673 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_vertical|center_horizontal"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/fragment_container">
+    android:id="@+id/fragment_container"
+    android:background="#FFFFFF">
 
     <LinearLayout
-
         android:id="@+id/FilterLine"
         android:layout_gravity="center_horizontal|center_vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:background="#FFFFFF"
-            android:elevation="2dp">
-
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.02"
+                android:text="필터"
+                android:textColor="#191919"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" />
             <ImageButton
                 android:id="@+id/btn_filerback"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_gravity="right|center_vertical"
-                android:layout_marginRight="28dp"
+                android:layout_gravity="center_vertical"
                 android:background="@color/white"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_x"/>
+        </LinearLayout>
 
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:src="#191919"/>
+
+        <LinearLayout
+            android:layout_gravity="top|center_horizontal"
+            android:layout_width="360dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            //기상시간
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:gravity="center"
-                android:letterSpacing="-0.02"
-                android:layout_marginBottom="30dp"
-                android:text="생활관 3-5동"
-                android:textColor="#191919"
-                android:textSize="25sp"
-                android:textStyle="bold"/>
-
-        </FrameLayout>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:text="기상시간"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                android:layout_gravity="center"
-                android:layout_width="360dp"
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/firstChipgroup"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="7시 이전"/>
+
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="7~8시"/>
+
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="8~9시"/>
+
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="9~10시"/>
+
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="10시 이후"/>
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </LinearLayout>
+
+            //취침시간
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:textSize="16sp"
+                android:text="취침시간"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
-                //기상시간
-                <TextView
-                    android:layout_marginTop="20dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.ChipGroup
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="기상시간"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.chip.ChipGroup
-                        android:id="@+id/firstChipgroup"
-                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:singleSelection="true">
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="22시 이전"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="7시 이전"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="22~23시"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="7~8시"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="23~0시"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="8~9시"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="0~1시"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="9~10시"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="1시 이후"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="10시 이후"/>
+                </com.google.android.material.chip.ChipGroup>
 
-                    </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
 
-                </LinearLayout>
+            //성격
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="성격"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
-                //취침시간
-                <TextView
-                    android:layout_marginTop="20dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.ChipGroup
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="취침시간"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.chip.ChipGroup
-                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:singleSelection="true"
-                        app:selectionRequired="true">
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="매우 외향적"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="22시 이전"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="조금 외향적"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="22~23시"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text=" 보통 "/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="23~0시"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="조금 내향적"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="0~1시"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="매우 내향적"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="1시 이후"/>
+                </com.google.android.material.chip.ChipGroup>
 
-                    </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
 
-                </LinearLayout>
+            //청결
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="청결"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
-                //성격
-                <TextView
-                    android:layout_marginTop="20dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.ChipGroup
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="성격"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.chip.ChipGroup
-                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:singleSelection="true"
-                        app:selectionRequired="true">
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="매우 예민"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="매우 외향적"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="조금 예민"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="조금 외향적"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="보통"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text=" 보통 "/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="9~10시"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="조금 내향적"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="10시 이후"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="매우 내향적"/>
+                </com.google.android.material.chip.ChipGroup>
 
-                    </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
 
-                </LinearLayout>
+            //소음민감도
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="소음 민감도"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
-                //청결
-                <TextView
-                    android:layout_marginTop="20dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.ChipGroup
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="청결"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.chip.ChipGroup
-                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:singleSelection="true"
-                        app:selectionRequired="true">
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="매우 예민"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="매우 예민"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="조금 예민"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="조금 예민"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="보통"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="보통"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="9~10시"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="9~10시"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text="10시 이후"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="10시 이후"/>
+                </com.google.android.material.chip.ChipGroup>
 
-                    </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
 
-                </LinearLayout>
+            //코골이
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="코골이"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
-                //소음민감도
-                <TextView
-                    android:layout_marginTop="20dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.ChipGroup
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="소음 민감도"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.chip.ChipGroup
-                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:singleSelection="true"
-                        app:selectionRequired="true">
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text=" 있다 "/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="매우 예민"/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text=" 없다 "/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="조금 예민"/>
+                </com.google.android.material.chip.ChipGroup>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="보통"/>
+            </LinearLayout>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="9~10시"/>
+            //흡연
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="흡연 여부"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text="10시 이후"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                    </com.google.android.material.chip.ChipGroup>
-
-                </LinearLayout>
-
-                //코골이
-                <TextView
-                    android:layout_marginTop="20dp"
+                <com.google.android.material.chip.ChipGroup
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="코골이"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.chip.ChipGroup
-                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:singleSelection="true"
-                        app:selectionRequired="true">
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text=" 흡연자 "/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text=" 있다 "/>
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text=" 비흡연자 "/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text=" 없다 "/>
+                </com.google.android.material.chip.ChipGroup>
 
-                    </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
 
-                </LinearLayout>
+            //언어
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="언어"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
-                //흡연
-                <TextView
-                    android:layout_marginTop="20dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.ChipGroup
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="흡연 여부"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.chip.ChipGroup
-                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:singleSelection="true"
-                        app:selectionRequired="true">
+                        android:textSize="10sp"
+                        android:textColor="#191919"
+                        android:text=" 한국어 "/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text=" 흡연자 "/>
-
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text=" 비흡연자 "/>
-
-                    </com.google.android.material.chip.ChipGroup>
-
-                </LinearLayout>
-
-                //언어
-                <TextView
-                    android:layout_marginTop="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="언어"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.chip.ChipGroup
-                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                    <com.google.android.material.chip.Chip
+                        app:chipStrokeWidth="1dp"
+                        app:chipBackgroundColor="@color/chip_color"
+                        app:chipStrokeColor="#191919"
+                        app:chipMinHeight="20dp"
+                        android:checkable="true"
+                        app:checkedIconVisible="false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:singleSelection="true"
-                        app:selectionRequired="true">
+                        android:textSize="12sp"
+                        android:textColor="#191919"
+                        android:text=" 외국어 "/>
 
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text=" 한국어 "/>
-
-                        <com.google.android.material.chip.Chip
-                            android:checkable="true"
-                            app:checkedIconVisible="false"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:textSize="8sp"
-                            android:text=" 외국어 "/>
-
-                    </com.google.android.material.chip.ChipGroup>
-
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/yesBtn"
-                    android:layout_marginTop="20dp"
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:text="저장하기"/>
-
+                </com.google.android.material.chip.ChipGroup>
 
             </LinearLayout>
 
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/yesBtn"
+                android:layout_marginBottom="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="저장하기"/>
+
+        </LinearLayout>
 
     </LinearLayout>
-
 
 </FrameLayout>

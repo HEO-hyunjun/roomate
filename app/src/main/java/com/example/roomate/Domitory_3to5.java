@@ -45,7 +45,7 @@ public class Domitory_3to5 extends AppCompatActivity {
         ImageButton button_filter = findViewById(R.id.btn_filter);
 
 
-        filterDialog = new Dialog(Domitory_3to5.this);
+        filterDialog = new Dialog(Domitory_3to5.this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
         filterDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         filterDialog.setContentView(R.layout.filter_dialog);
 
@@ -73,6 +73,7 @@ public class Domitory_3to5 extends AppCompatActivity {
                         ChipGroup chgrp = (ChipGroup)filterDialog.findViewById((R.id.firstChipgroup));
 
                         Chip c = (Chip)filterDialog.findViewById(chgrp.getCheckedChipId());
+
 
                         String s = c.getText().toString();
                         //testText.setText(s);
