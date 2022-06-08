@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.205" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/back_title.xml" value="0.23" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/charactertest.xml" value="0.205" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/charactertest_roundractangle.xml" value="0.205" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/ic__to5.xml" value="0.2285" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/ic__totototo.xml" value="0.2285" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/ic_baseline_chat_24.xml" value="0.205" />
@@ -15,7 +17,11 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.205" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.205" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/login_kakao.xml" value="0.2155" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/activity_domitory3to5.xml" value="0.2441214194100043" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/menu_profile.xml" value="0.205" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/pr_cap.xml" value="0.205" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/radiobutton_radiobutton01.xml" value="0.205" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/radoi2.xml" value="0.205" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/activity_domitory3to5.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/activity_domitory8.xml" value="0.2441214194100043" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/activity_domitory9.xml" value="0.2441214194100043" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/activity_home.xml" value="0.25" />
@@ -29,13 +35,13 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/dm_8.xml" value="0.1875" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/dm_9.xml" value="0.1875" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/domitory_3to5.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/filter_dialog.xml" value="0.22" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/filter_dialog.xml" value="0.5" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/fragment_bookmark_screen.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/fragment_chatroom_screen.xml" value="0.21633176571184268" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/fragment_filter.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/fragment_home_screen.xml" value="0.2441214194100043" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/fragment_input_profile.xml" value="0.2441214194100043" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/fragment_profile_screen.xml" value="0.2441214194100043" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/fragment_input_profile.xml" value="0.27817644575770367" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/fragment_profile_screen.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/item.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/menu/menu.xml" value="0.29674968341072183" />
         <entry key="app/src/main/res/drawable-v24/ic_back.xml" value="0.1" />

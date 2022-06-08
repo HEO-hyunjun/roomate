@@ -7,6 +7,11 @@
     tools:context=".ProfileScreen"
     android:orientation="vertical">
 
+    <!--이름과 자기소개는 editview로 저장시키고, 학년 나이 등은 spinner를 사용하면 될 듯
+        나의 유형은 input_profile에서 받은 값을 chip으로 출력하면 좋겠는데 아직은 어려움
+        또 나의 유형에 연필 버튼(아직 버튼아님)을 누르면 input_profile을 재설정할 수 있게 만들면 좋겠음
+        일단 이름 ~ 자기소개까지를 입력받아 저장받는 것까지 해야할 듯-->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -37,6 +42,18 @@
                 android:layout_height="64dp"
                 android:layout_gravity="center"
                 android:src="@mipmap/ic_launcher"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="18dp"
+                android:textColor="#191919"
+                android:textColorHint="#999999"
+                android:hint="이름/닉네임"
+                android:background="@color/white"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"/>
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -161,9 +178,9 @@
                         android:textSize="17sp"
                         android:text="나의 유형"/>
                     <ImageView
-                        android:layout_marginLeft="5dp"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/pr_edit"/>
 

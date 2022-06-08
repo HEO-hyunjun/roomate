@@ -26,7 +26,7 @@ public class InputProfile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_input_profile, container, false);
-        ratingbar = (RatingBar) v.findViewById(R.id.ratingBar1);
+
 
         //Integer a = (int) ratingbar.getRating();
         //popup("ggg",Integer.toString(a));

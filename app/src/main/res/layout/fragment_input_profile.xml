@@ -7,12 +7,14 @@
     android:orientation="vertical"
     tools:context=".InputProfile">
 
+    <!--기존에 ratingbar를 radiobutton으로 바꿔봄 적용이 힘들 것 같으면 바로 바꾸겠음-->
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
         android:background="#FFFFFF"
-        android:elevation="2dp">
+        android:elevation="2dp"
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/btn_backtohome"
@@ -22,7 +24,7 @@
             android:layout_marginLeft="28dp"
             android:background="@color/white"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_back"/>
+            android:src="@drawable/ic_back" />
 
         <TextView
             android:layout_width="match_parent"
@@ -32,34 +34,9 @@
             android:text="나의 성격유형"
             android:textColor="#191919"
             android:textSize="25sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </FrameLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:textStyle="bold"
-        android:textSize="26sp"
-        android:textColor="#191919"
-        android:letterSpacing="-0.03"
-        android:gravity="center_horizontal"
-        tools:text="평소 성격과 습관을 알려주세요"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="42dp"
-        android:textStyle="normal"
-        android:textSize="12sp"
-        android:textColor="#767676"
-        android:letterSpacing="-0.02"
-        android:gravity="center_horizontal"
-        tools:text="다른 룸메이트가 이 선택을 보고 결정합니다"/>
-
-
 
 
     <ScrollView
@@ -70,134 +47,292 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <Space
+
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="22dp" />
-            <ImageView
-                android:id="@+id/image1"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_background"></ImageView>
+                android:layout_marginTop="42dp"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.03"
+                android:textColor="#191919"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:text="평소 성격과 습관을 알려주세요" />
 
-            <Space
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="8dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:textColor="#767676"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                tools:text="다른 룸메이트가 이 선택을 보고 결정합니다" />
 
-            <RatingBar
-                android:id="@+id/ratingBar1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:rating="0"
-                android:layout_gravity="center"
-                android:stepSize="1"
-                ></RatingBar>
-            <ImageView
-                android:id="@+id/image2"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_background"></ImageView>
-            <RatingBar
-                android:id="@+id/ratingBar2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:rating="0"
-                android:layout_gravity="center"
-                android:stepSize="1"
-                ></RatingBar>
+                android:background="@drawable/input_profile_rectangle"
+                android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/image3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_background"></ImageView>
-            <RatingBar
-                android:id="@+id/ratingBar3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:rating="0"
-                android:layout_gravity="center"
-                android:stepSize="1"
-                ></RatingBar>
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/input_profile_smile" />
 
-            <ImageView
-                android:id="@+id/image4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_background"></ImageView>
-            <RatingBar
-                android:id="@+id/ratingBar4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:rating="0"
-                android:layout_gravity="center"
-                android:stepSize="1"
-                ></RatingBar>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:text="성격?"
+                    android:textColor="#191919"
+                    android:textSize="20sp" />
 
-            <ImageView
-                android:id="@+id/image5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_background"></ImageView>
-            <RatingBar
-                android:id="@+id/ratingBar5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:rating="0"
-                android:layout_gravity="center"
-                android:stepSize="1"
-                ></RatingBar>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/image6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_background"></ImageView>
-            <RatingBar
-                android:id="@+id/ratingBar6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:rating="0"
-                android:layout_gravity="center"
-                android:stepSize="1"
-                ></RatingBar>
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#3EF75D"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5" />
 
-            <ImageView
-                android:id="@+id/image7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_background"></ImageView>
-            <RatingBar
-                android:id="@+id/ratingBar7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:rating="0"
-                android:layout_gravity="center"
-                android:stepSize="1"
-                ></RatingBar>
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#3EF75D"
+                        android:scaleX="1.4"
+                        android:scaleY="1.4" />
 
-            <ImageView
-                android:id="@+id/image8"
-                android:layout_width="wrap_content"
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#999999"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#FF3120"
+                        android:scaleX="1.4"
+                        android:scaleY="1.4" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#FF3120"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginBottom="10dp"
+                    android:text="               매우 외향적        조금 외향적           보통            조금 내향적       매우 외향적"
+                    android:textColor="#191919"
+                    android:textSize="9sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_background"></ImageView>
-            <RatingBar
-                android:id="@+id/ratingBar8"
-                android:layout_width="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/input_profile_rectangle"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/input_profile_sunny" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:text="기상시간?"
+                    android:textColor="#191919"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#3EF75D"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#3EF75D"
+                        android:scaleX="1.4"
+                        android:scaleY="1.4" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#999999"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#FF3120"
+                        android:scaleX="1.4"
+                        android:scaleY="1.4" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#FF3120"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginBottom="10dp"
+                    android:text="                   7시 이전           7시~8시            8시~9시          9시~10시         10시 이후"
+                    android:textColor="#191919"
+                    android:textSize="9sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:rating="0"
                 android:layout_gravity="center"
-                android:stepSize="1"
-                ></RatingBar>
+                android:layout_marginTop="20dp"
+                android:background="@drawable/input_profile_rectangle"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/input_profile_sleeping" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:text="취침시간"
+                    android:textColor="#191919"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#3EF75D"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#3EF75D"
+                        android:scaleX="1.4"
+                        android:scaleY="1.4" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#999999"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#FF3120"
+                        android:scaleX="1.4"
+                        android:scaleY="1.4" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:buttonTint="#FF3120"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginBottom="10dp"
+                    android:text="                 22시 이전         22시~23시        23시~0시          0시~1시          1시 이후"
+                    android:textColor="#191919"
+                    android:textSize="9sp" />
+            </LinearLayout>
+
+
+            <Button
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:text="저장하기" />
 
         </LinearLayout>
 
     </ScrollView>
+
 </LinearLayout>
