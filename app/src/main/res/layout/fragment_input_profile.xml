@@ -4,7 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".InputProfile">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:elevation="10dp">
+
+        <ImageButton
+            android:id="@+id/btn_backtohome"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="28dp"
+            android:background="@color/white"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:textSize="24sp"
+            android:textColor="#191919"
+            android:text="성격유형"
+            android:textStyle="bold"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:textColor="#191919"
+        android:letterSpacing="-0.03"
+        android:gravity="center_horizontal"
+        tools:text="평소 성격과 습관을 알려주세요"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="42dp"
+        android:textStyle="normal"
+        android:textSize="12sp"
+        android:textColor="#767676"
+        android:letterSpacing="-0.02"
+        android:gravity="center_horizontal"
+        tools:text="다른 룸메이트가 이 선택을 보고 결정합니다"/>
+
+
+
 
     <ScrollView
         android:layout_width="match_parent"

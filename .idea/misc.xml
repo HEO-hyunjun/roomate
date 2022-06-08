@@ -3,9 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Lee/Desktop/roomate-master (1)/rm/roomate/app/src/main/res/layout/activity_intro.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Lee/Desktop/roomate-master (1)/rm/roomate/app/src/main/res/layout/fragment_bookmark_screen.xml" value="0.184375" />
-        <entry key="..\:/Users/Lee/Desktop/roomate-master (1)/rm/roomate/app/src/main/res/layout/fragment_chat_room.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/drawable/login_kakao.xml" value="0.2155" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/activity_domitory3to5.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/roomate2/app/src/main/res/layout/activity_domitory8.xml" value="0.28020833333333334" />
@@ -26,12 +24,14 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_background_2.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_domitory3to5.xml" value="0.10572916666666667" />
+        <entry key="app/src/main/res/layout/activity_domitory8.xml" value="0.10572916666666667" />
         <entry key="app/src/main/res/layout/activity_domitory9.xml" value="0.11803444782168186" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.10572916666666667" />
+        <entry key="app/src/main/res/layout/activity_intro.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24270833333333333" />
         <entry key="app/src/main/res/layout/filter_dialog.xml" value="0.1171875" />
         <entry key="app/src/main/res/layout/fragment_bookmark_screen.xml" value="0.10572916666666667" />
-        <entry key="app/src/main/res/layout/fragment_home_screen.xml" value="0.11803444782168186" />
+        <entry key="app/src/main/res/layout/fragment_home_screen.xml" value="0.22436531940371313" />
         <entry key="app/src/main/res/layout/fragment_input_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_profile_screen.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item.xml" value="0.1" />
