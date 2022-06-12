@@ -16,7 +16,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:background="#FFFFFF"
-        android:elevation="10dp"/>
+        android:elevation="2dp"/>
 
 
     <androidx.recyclerview.widget.RecyclerView

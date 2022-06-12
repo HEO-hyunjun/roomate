@@ -17,7 +17,6 @@
         android:layout_height="50dp"
         android:gravity="center"
         android:letterSpacing="-0.02"
-        android:layout_marginBottom="30dp"
         android:text="나의 프로필"
         android:textColor="#191919"
         android:textSize="25sp"
@@ -27,7 +26,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,7 +35,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/profile_myprofile"
                 android:layout_width="64dp"
@@ -47,10 +47,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textSize="18dp"
-                android:textColor="#191919"
-                android:textColorHint="#999999"
+                android:textColor="#767676"
+                android:textColorHint="#767676"
                 android:hint="이름/닉네임"
-                android:background="@color/white"
+                android:background="#FFFFFF"
                 android:layout_marginBottom="5dp"
                 android:layout_gravity="center"/>
 
@@ -74,6 +74,7 @@
                    android:layout_height="wrap_content"
                    android:layout_gravity="center_vertical"
                    android:text="학년"
+                   android:textColor="#767676"
                    android:textSize="15sp"/>
 
                 <ImageView
@@ -88,6 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:textColor="#767676"
                     android:text="나이"
                     android:textSize="15sp"/>
 
@@ -103,6 +105,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:textColor="#767676"
                     android:text="학년"
                     android:textSize="15sp"/>
 
@@ -127,6 +130,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:textColor="#767676"
                     android:text="기숙사 동"
                     android:textSize="15sp"/>
             </LinearLayout>
@@ -140,7 +144,7 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="1px"
                     android:layout_marginBottom="20dp"
                     android:src="#999999"/>
 
@@ -154,14 +158,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:gravity="top"
-                    android:elevation="1dp"
+                    android:background="@color/white"
                     android:text="\n   자기소개를 작성해 주세요"
-                    android:textColor="#999999"
+                    android:textColor="#767676"
                     android:textSize="10sp" />
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="1px"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     android:src="#999999"/>

@@ -27,10 +27,14 @@ drawable ic_launcher_foreground
 drawable ic_x
 drawable input_profile_clean
 drawable input_profile_hear
+drawable input_profile_night
 drawable input_profile_rectangle
 drawable input_profile_sleeping
 drawable input_profile_smile
+drawable input_profile_smoking
 drawable input_profile_sunny
+drawable intro_icon
+drawable intro_text
 drawable login_backscreen
 drawable login_kakao
 drawable login_rmicon
