@@ -19,7 +19,7 @@ public class IntroActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },1000); //화면 노출 시간
+        },2000); //화면 노출 시간
     }
 
     @Override
