@@ -204,6 +204,10 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\drawable\\pr_cake.xml"
     },
     {
+        "merged": "com.example.roomate.app-merged_res-26:/layout_fragment_input_profile.xml.flat",
+        "source": "com.example.roomate.app-main-28:/layout/fragment_input_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-merged_res-26:\\layout_activity_domitory8.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\7.3.3\\com.example.roomate.app-main-28:\\layout\\activity_domitory8.xml"
     },

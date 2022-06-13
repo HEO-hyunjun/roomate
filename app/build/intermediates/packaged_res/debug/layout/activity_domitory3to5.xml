@@ -22,14 +22,14 @@
             android:src="@drawable/ic_back"/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="50dp"
             android:gravity="center"
             android:letterSpacing="-0.02"
-            android:layout_marginBottom="30dp"
             android:text="생활관 3-5동"
             android:textColor="#191919"
             android:textSize="25sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:elevation="2dp"/>
     </FrameLayout>
 
         <ImageButton

@@ -58,9 +58,10 @@ id btn_backtohome
 id btn_dm_3to5
 id btn_dm_8
 id btn_dm_9
-id btn_filerback
+id btn_filerClose
 id btn_filter
 id btn_login
+id btn_my_input_profile
 id confirm
 id containers
 id firstChipgroup

@@ -8,12 +8,12 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="50dp"
         android:gravity="center"
         android:letterSpacing="-0.02"
         android:text="관심목록"
         android:textColor="#191919"
-        android:textSize="24sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:background="#FFFFFF"
         android:elevation="2dp"/>
