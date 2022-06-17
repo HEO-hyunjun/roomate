@@ -1212,6 +1212,10 @@ int color bright_foreground_inverse_material_dark 0x7f050024
 int color bright_foreground_inverse_material_light 0x7f050025
 int color bright_foreground_material_dark 0x7f050026
 int color bright_foreground_material_light 0x7f050027
+int color browser_actions_bg_grey 0x7f05025b
+int color browser_actions_divider_color 0x7f05025c
+int color browser_actions_text_color 0x7f05025d
+int color browser_actions_title_color 0x7f05025e
 int color button_material_dark 0x7f050028
 int color button_material_light 0x7f050029
 int color cardview_dark_background 0x7f05002a
@@ -1858,6 +1862,8 @@ int dimen abc_text_size_title_material 0x7f06004f
 int dimen abc_text_size_title_material_toolbar 0x7f060050
 int dimen action_bar_size 0x7f060051
 int dimen appcompat_dialog_background_inset 0x7f060052
+int dimen browser_actions_context_menu_max_width 0x7f06024e
+int dimen browser_actions_context_menu_min_padding 0x7f06024f
 int dimen cardview_compat_inset_shadow 0x7f060053
 int dimen cardview_default_elevation 0x7f060054
 int dimen cardview_default_radius 0x7f060055
@@ -2656,6 +2662,11 @@ int id bounce 0x7f080065
 int id bounceBoth 0x7f080066
 int id bounceEnd 0x7f080067
 int id bounceStart 0x7f080068
+int id browser_actions_header_text 0x7f080208
+int id browser_actions_menu_item_icon 0x7f080209
+int id browser_actions_menu_item_text 0x7f08020a
+int id browser_actions_menu_items 0x7f08020b
+int id browser_actions_menu_view 0x7f08020c
 int id btn_backtohome 0x7f080069
 int id btn_dm_3to5 0x7f08006a
 int id btn_dm_8 0x7f08006b
@@ -3061,6 +3072,7 @@ int id view_tree_saved_state_registry_owner 0x7f0801fa
 int id view_tree_view_model_store_owner 0x7f0801fb
 int id visible 0x7f0801fc
 int id visible_removing_fragment_view_tag 0x7f0801fd
+int id webview 0x7f08020d
 int id west 0x7f0801fe
 int id withText 0x7f0801ff
 int id withinBounds 0x7f080200
@@ -3168,7 +3180,11 @@ int layout activity_domitory8 0x7f0b001d
 int layout activity_domitory9 0x7f0b001e
 int layout activity_home 0x7f0b001f
 int layout activity_intro 0x7f0b0020
+int layout activity_kakao_auth 0x7f0b0083
 int layout activity_main 0x7f0b0021
+int layout activity_talk_auth_code 0x7f0b0084
+int layout browser_actions_context_menu_page 0x7f0b0085
+int layout browser_actions_context_menu_row 0x7f0b0086
 int layout custom_dialog 0x7f0b0022
 int layout design_bottom_navigation_item 0x7f0b0023
 int layout design_bottom_sheet_dialog 0x7f0b0024
@@ -3311,6 +3327,7 @@ int string character_counter_overflowed_content_description 0x7f0f0023
 int string character_counter_pattern 0x7f0f0024
 int string chip_text 0x7f0f0025
 int string clear_text_end_icon_content_description 0x7f0f0026
+int string com_kakao_talk_chooser_text 0x7f0f0084
 int string error_icon_content_description 0x7f0f0027
 int string exposed_dropdown_menu_content_description 0x7f0f0028
 int string fab_transformation_scrim_behavior 0x7f0f0029
@@ -4110,6 +4127,7 @@ int style ThemeOverlay_MaterialComponents_Toolbar_Popup_Primary 0x7f1002be
 int style ThemeOverlay_MaterialComponents_Toolbar_Primary 0x7f1002bf
 int style ThemeOverlay_MaterialComponents_Toolbar_Surface 0x7f1002c0
 int style ThemeOverlayColorAccentRed 0x7f1002c1
+int style TransparentCompat 0x7f10041e
 int style Widget_AppCompat_ActionBar 0x7f1002c2
 int style Widget_AppCompat_ActionBar_Solid 0x7f1002c3
 int style Widget_AppCompat_ActionBar_TabBar 0x7f1002c4

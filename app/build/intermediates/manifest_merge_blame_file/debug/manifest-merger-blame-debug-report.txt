@@ -6,101 +6,174 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml
+8-->D:\roomate-master\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="32" />
-9-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml
+9-->D:\roomate-master\app\src\main\AndroidManifest.xml
 10
-11    <application
-11-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:6:5-40:19
-12        android:allowBackup="true"
-12-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:7:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.7.0] C:\Users\user\.gradle\caches\transforms-3\0c734a8f9451ded3159b05d46fc9a23a\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
-14        android:dataExtractionRules="@xml/data_extraction_rules"
-14-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:8:9-65
-15        android:debuggable="true"
-16        android:fullBackupContent="@xml/backup_rules"
-16-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:9:9-54
-17        android:icon="@mipmap/ic_launcher"
-17-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:10:9-43
-18        android:label="@string/app_name"
-18-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:11:9-41
-19        android:roundIcon="@mipmap/ic_launcher_round"
-19-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:12:9-54
-20        android:supportsRtl="true"
-20-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:13:9-35
-21        android:testOnly="true"
-22        android:theme="@style/Theme.Roomate" >
-22-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:14:9-45
-23        <activity
-23-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:16:9-18:40
-24            android:name="com.example.roomate.Domitory_9"
-24-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:17:13-39
-25            android:exported="false" />
-25-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:18:13-37
-26        <activity
-26-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:19:9-21:40
-27            android:name="com.example.roomate.Domitory_8"
-27-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:20:13-39
-28            android:exported="false" />
-28-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:21:13-37
-29        <activity
-29-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:22:9-24:40
-30            android:name="com.example.roomate.Domitory_3to5"
-30-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:23:13-42
-31            android:exported="false" />
-31-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:24:13-37
-32        <activity
-32-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:25:9-27:40
-33            android:name="com.example.roomate.HomeActivity"
-33-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:26:13-41
-34            android:exported="false" />
-34-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:27:13-37
-35        <activity
-35-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:28:9-30:40
-36            android:name="com.example.roomate.MainActivity"
-36-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:29:13-41
-37            android:exported="false" />
-37-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:30:13-37
-38        <activity
-38-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:31:9-39:20
-39            android:name="com.example.roomate.IntroActivity"
-39-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:32:13-42
-40            android:exported="true" >
-40-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:33:13-36
-41            <intent-filter>
-41-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:34:13-38:29
-42                <action android:name="android.intent.action.MAIN" />
-42-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:35:17-69
-42-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:35:25-66
-43
-44                <category android:name="android.intent.category.LAUNCHER" />
-44-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:37:17-77
-44-->C:\Users\user\AndroidStudioProjects\roomate2\app\src\main\AndroidManifest.xml:37:27-74
-45            </intent-filter>
-46        </activity>
-47
-48        <provider
-48-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-49            android:name="androidx.startup.InitializationProvider"
-49-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
-50            android:authorities="com.example.roomate.androidx-startup"
-50-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
-51            android:exported="false" >
-51-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
-52            <meta-data
-52-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-53                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-53-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
-54                android:value="androidx.startup" />
-54-->[androidx.emoji2:emoji2:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
-55            <meta-data
-55-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\user\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-56                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-56-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\user\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-57                android:value="androidx.startup" />
-57-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\user\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-58        </provider>
-59    </application>
-60
-61</manifest>
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\roomate-master\app\src\main\AndroidManifest.xml:6:5-67
+11-->D:\roomate-master\app\src\main\AndroidManifest.xml:6:22-64
+12
+13    <queries>
+13-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:11:5-19:15
+14        <package android:name="com.kakao.talk" />
+14-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:12:9-50
+14-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:12:18-47
+15        <package android:name="com.kakao.talk.alpha" />
+15-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:13:9-56
+15-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:13:18-53
+16        <package android:name="com.kakao.talk.sandbox" />
+16-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:14:9-58
+16-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:14:18-55
+17        <package android:name="com.kakao.onetalk" />
+17-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:15:9-53
+17-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:15:18-50
+18        <package android:name="com.android.chrome" />
+18-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:16:9-54
+18-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:16:18-51
+19        <package android:name="com.chrome.beta" />
+19-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:17:9-51
+19-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:17:18-48
+20        <package android:name="com.chrome.dev" />
+20-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:18:9-50
+20-->[com.kakao.sdk:v2-common:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\59da5da52e8d0eb01e792874f438117e\transformed\v2-common-2.8.3\AndroidManifest.xml:18:18-47
+21    </queries>
+22
+23    <application
+23-->D:\roomate-master\app\src\main\AndroidManifest.xml:8:5-59:19
+24        android:name="com.example.roomate.GlobalApplication"
+24-->D:\roomate-master\app\src\main\AndroidManifest.xml:9:9-42
+25        android:allowBackup="true"
+25-->D:\roomate-master\app\src\main\AndroidManifest.xml:10:9-35
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.7.0] C:\Users\Kooky\.gradle\caches\transforms-3\0c734a8f9451ded3159b05d46fc9a23a\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+27        android:dataExtractionRules="@xml/data_extraction_rules"
+27-->D:\roomate-master\app\src\main\AndroidManifest.xml:11:9-65
+28        android:debuggable="true"
+29        android:fullBackupContent="@xml/backup_rules"
+29-->D:\roomate-master\app\src\main\AndroidManifest.xml:12:9-54
+30        android:icon="@mipmap/ic_launcher"
+30-->D:\roomate-master\app\src\main\AndroidManifest.xml:13:9-43
+31        android:label="@string/app_name"
+31-->D:\roomate-master\app\src\main\AndroidManifest.xml:14:9-41
+32        android:roundIcon="@mipmap/ic_launcher_round"
+32-->D:\roomate-master\app\src\main\AndroidManifest.xml:15:9-54
+33        android:supportsRtl="true"
+33-->D:\roomate-master\app\src\main\AndroidManifest.xml:16:9-35
+34        android:testOnly="true"
+35        android:theme="@style/Theme.Roomate" >
+35-->D:\roomate-master\app\src\main\AndroidManifest.xml:17:9-45
+36        <activity
+36-->D:\roomate-master\app\src\main\AndroidManifest.xml:19:9-21:40
+37            android:name="com.example.roomate.Domitory_9"
+37-->D:\roomate-master\app\src\main\AndroidManifest.xml:20:13-39
+38            android:exported="false" />
+38-->D:\roomate-master\app\src\main\AndroidManifest.xml:21:13-37
+39        <activity
+39-->D:\roomate-master\app\src\main\AndroidManifest.xml:22:9-24:40
+40            android:name="com.example.roomate.Domitory_8"
+40-->D:\roomate-master\app\src\main\AndroidManifest.xml:23:13-39
+41            android:exported="false" />
+41-->D:\roomate-master\app\src\main\AndroidManifest.xml:24:13-37
+42        <activity
+42-->D:\roomate-master\app\src\main\AndroidManifest.xml:25:9-27:40
+43            android:name="com.example.roomate.Domitory_3to5"
+43-->D:\roomate-master\app\src\main\AndroidManifest.xml:26:13-42
+44            android:exported="false" />
+44-->D:\roomate-master\app\src\main\AndroidManifest.xml:27:13-37
+45        <activity
+45-->D:\roomate-master\app\src\main\AndroidManifest.xml:28:9-30:40
+46            android:name="com.example.roomate.HomeActivity"
+46-->D:\roomate-master\app\src\main\AndroidManifest.xml:29:13-41
+47            android:exported="false" />
+47-->D:\roomate-master\app\src\main\AndroidManifest.xml:30:13-37
+48        <activity
+48-->D:\roomate-master\app\src\main\AndroidManifest.xml:31:9-33:38
+49            android:name="com.example.roomate.MainActivity"
+49-->D:\roomate-master\app\src\main\AndroidManifest.xml:32:13-41
+50            android:exported="true" />
+50-->D:\roomate-master\app\src\main\AndroidManifest.xml:33:13-36
+51        <activity
+51-->D:\roomate-master\app\src\main\AndroidManifest.xml:35:9-43:20
+52            android:name="com.example.roomate.IntroActivity"
+52-->D:\roomate-master\app\src\main\AndroidManifest.xml:36:13-42
+53            android:exported="true" >
+53-->D:\roomate-master\app\src\main\AndroidManifest.xml:37:13-36
+54            <intent-filter>
+54-->D:\roomate-master\app\src\main\AndroidManifest.xml:38:13-42:29
+55                <action android:name="android.intent.action.MAIN" />
+55-->D:\roomate-master\app\src\main\AndroidManifest.xml:39:17-69
+55-->D:\roomate-master\app\src\main\AndroidManifest.xml:39:25-66
+56
+57                <category android:name="android.intent.category.LAUNCHER" />
+57-->D:\roomate-master\app\src\main\AndroidManifest.xml:41:17-77
+57-->D:\roomate-master\app\src\main\AndroidManifest.xml:41:27-74
+58            </intent-filter>
+59        </activity>
+60        <activity
+60-->D:\roomate-master\app\src\main\AndroidManifest.xml:45:9-57:20
+61            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+61-->D:\roomate-master\app\src\main\AndroidManifest.xml:46:13-70
+62            android:exported="true"
+62-->D:\roomate-master\app\src\main\AndroidManifest.xml:47:13-36
+63            android:launchMode="singleTask"
+63-->[com.kakao.sdk:v2-auth:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\2c924154f35b32f96797ef51ef213630\transformed\v2-auth-2.8.3\AndroidManifest.xml:19:13-44
+64            android:theme="@style/TransparentCompat" >
+64-->[com.kakao.sdk:v2-auth:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\2c924154f35b32f96797ef51ef213630\transformed\v2-auth-2.8.3\AndroidManifest.xml:20:13-53
+65            <intent-filter>
+65-->D:\roomate-master\app\src\main\AndroidManifest.xml:48:13-56:29
+66                <action android:name="android.intent.action.VIEW" />
+66-->D:\roomate-master\app\src\main\AndroidManifest.xml:49:17-69
+66-->D:\roomate-master\app\src\main\AndroidManifest.xml:49:25-66
+67
+68                <category android:name="android.intent.category.DEFAULT" />
+68-->D:\roomate-master\app\src\main\AndroidManifest.xml:50:17-76
+68-->D:\roomate-master\app\src\main\AndroidManifest.xml:50:27-73
+69                <category android:name="android.intent.category.BROWSABLE" />
+69-->D:\roomate-master\app\src\main\AndroidManifest.xml:51:17-78
+69-->D:\roomate-master\app\src\main\AndroidManifest.xml:51:27-75
+70
+71                <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth" -->
+72                <data
+72-->D:\roomate-master\app\src\main\AndroidManifest.xml:54:17-55:78
+73                    android:host="oauth"
+73-->D:\roomate-master\app\src\main\AndroidManifest.xml:54:23-43
+74                    android:scheme="kakao6eabc0a0e63f2f66fd7dbfce1a493809" />
+74-->D:\roomate-master\app\src\main\AndroidManifest.xml:55:21-75
+75            </intent-filter>
+76        </activity>
+77        <activity
+77-->[com.kakao.sdk:v2-auth:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\2c924154f35b32f96797ef51ef213630\transformed\v2-auth-2.8.3\AndroidManifest.xml:12:9-16:56
+78            android:name="com.kakao.sdk.auth.TalkAuthCodeActivity"
+78-->[com.kakao.sdk:v2-auth:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\2c924154f35b32f96797ef51ef213630\transformed\v2-auth-2.8.3\AndroidManifest.xml:13:13-67
+79            android:exported="false"
+79-->[com.kakao.sdk:v2-auth:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\2c924154f35b32f96797ef51ef213630\transformed\v2-auth-2.8.3\AndroidManifest.xml:14:13-37
+80            android:launchMode="singleTask"
+80-->[com.kakao.sdk:v2-auth:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\2c924154f35b32f96797ef51ef213630\transformed\v2-auth-2.8.3\AndroidManifest.xml:15:13-44
+81            android:theme="@style/TransparentCompat" />
+81-->[com.kakao.sdk:v2-auth:2.8.3] C:\Users\Kooky\.gradle\caches\transforms-3\2c924154f35b32f96797ef51ef213630\transformed\v2-auth-2.8.3\AndroidManifest.xml:16:13-53
+82
+83        <provider
+83-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Kooky\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+84            android:name="androidx.startup.InitializationProvider"
+84-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Kooky\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+85            android:authorities="com.example.roomate.androidx-startup"
+85-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Kooky\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+86            android:exported="false" >
+86-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Kooky\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
+87            <meta-data
+87-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Kooky\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+88                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+88-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Kooky\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
+89                android:value="androidx.startup" />
+89-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Kooky\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+90            <meta-data
+90-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Kooky\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+91                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+91-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Kooky\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+92                android:value="androidx.startup" />
+92-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Kooky\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+93        </provider>
+94    </application>
+95
+96</manifest>

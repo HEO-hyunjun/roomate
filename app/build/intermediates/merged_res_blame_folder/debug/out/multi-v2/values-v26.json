@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.roomate.app-mergeDebugResources-24:/values-v26/values-v26.xml",
+            "outputFile": "com.example.roomate.app-mergeDebugResources-27:/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-3\\69592bd19cec1de513dd3643bec51fc2\\transformed\\appcompat-1.4.1\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\Kooky\\.gradle\\caches\\transforms-3\\69592bd19cec1de513dd3643bec51fc2\\transformed\\appcompat-1.4.1\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
