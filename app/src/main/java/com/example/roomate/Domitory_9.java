@@ -96,7 +96,7 @@ public class Domitory_9 extends AppCompatActivity {
         //리스트 목록만큼 출력합니다
         for (int i = 0; i < listTitle.size(); i++) {
             Data data = new Data();
-            data.setTitle(listTitle.get(i));
+            data.setName(listTitle.get(i));
             data.setContent(listContent.get(i));
             data.setResId(listResId.get(i));
             adapter.addItem(data);

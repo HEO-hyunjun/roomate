@@ -41,16 +41,19 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item){
                 switch(item.getItemId()){
+                    // 홈 페이지로 이동
                     case R.id.action_home:
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeScreen).commit();
                         return true;
+                    // 본인 프로필 페이지로 이동
                     case R.id.action_setting:
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers, profileScreen).commit();
                         return true;
-                    // 관심목록, 채팅 아직 미구현
+                    // 관심목록 페이지로 이동
                     case R.id.action_bookmark:
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers, bookmarkScreen).commit();
                         return true;
+                    // 채팅 페이지로 이동
                     case R.id.action_chat:
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers, chatroomScreen).commit();
                         return true;

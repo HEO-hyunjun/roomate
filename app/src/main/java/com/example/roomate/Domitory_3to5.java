@@ -39,8 +39,6 @@ public class Domitory_3to5 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_domitory3to5);
-        //테스트 남깁니다.
-        //마지막입니다.
         ImageButton button_backHome = findViewById(R.id.btn_backtohome); // 뒤로가기 버튼 선언
         ImageButton button_filter = findViewById(R.id.btn_filter);
 
@@ -140,7 +138,7 @@ public class Domitory_3to5 extends AppCompatActivity {
         //리스트 목록만큼 출력합니다
         for (int i = 0; i < listTitle.size(); i++) {
             Data data = new Data();
-            data.setTitle(listTitle.get(i));
+            data.setName(listTitle.get(i));
             data.setContent(listContent.get(i));
             data.setResId(listResId.get(i));
             adapter.addItem(data);
