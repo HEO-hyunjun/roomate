@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Log.i(TAG, "사용자 정보 요청 성공" +
                             "\n회원번호: "+user.getId() +
-                            "\n이메일: "+user.getKakaoAccount().getEmail());
+                            "\n닉네임  : "+user.getKakaoAccount().getProfile().getNickname());
                 }
                 Account user1 = user.getKakaoAccount();
                 System.out.println("사용자 계정" + user1);
