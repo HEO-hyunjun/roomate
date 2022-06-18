@@ -4,10 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageButton;
+
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,16 +22,27 @@ public class Domitory_9 extends AppCompatActivity {
     public static final int REQUEST_CODE_MENU = 101;
     private RecyclerAdapter adapter;
 
+    Dialog filterDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_domitory9);
+        //테스트 남깁니다.
+        //마지막입니다.
+        ImageButton button_backHome = findViewById(R.id.btn_backtohome); // 뒤로가기 버튼 선언
+        ImageButton button_filter = findViewById(R.id.btn_filter);
 
-        ImageButton button_backHome = findViewById(R.id.btn_backtohome);
+
+        filterDialog = new Dialog(Domitory_9.this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+        filterDialog.requestWindowFeature( Window.FEATURE_NO_TITLE);
+        filterDialog.setContentView(R.layout.filter_dialog);
+
 
         init();//Recyclerview의 adapter 불러오기
         getData();//Data 입력
 
+        //뒤로가기
         button_backHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,6 +50,29 @@ public class Domitory_9 extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_CODE_MENU);
             }
         });
+
+        button_filter.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                filterDialog.show();
+                filterDialog.findViewById(R.id.yesBtn).setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view){
+
+                        ChipGroup chgrp = (ChipGroup)filterDialog.findViewById((R.id.firstChipgroup));
+
+                        Chip c = (Chip)filterDialog.findViewById(chgrp.getCheckedChipId());
+
+
+                        String s = c.getText().toString();
+                        //testText.setText(s);
+
+                        filterDialog.dismiss();
+                    }
+                });
+            }
+        });
+
     }
     private void init() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView3);
@@ -96,7 +135,7 @@ public class Domitory_9 extends AppCompatActivity {
         //리스트 목록만큼 출력합니다
         for (int i = 0; i < listTitle.size(); i++) {
             Data data = new Data();
-            data.setName(listTitle.get(i));
+            data.setTitle(listTitle.get(i));
             data.setContent(listContent.get(i));
             data.setResId(listResId.get(i));
             adapter.addItem(data);

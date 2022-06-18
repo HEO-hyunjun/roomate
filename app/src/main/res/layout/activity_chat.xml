@@ -28,12 +28,11 @@
         />
 
     <ListView
+        android:id="@+id/messageList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/messageList"
-        android:dividerHeight="0dp"
-        android:divider="@null"
         android:layout_above="@id/messageBox"
-        />
+        android:divider="@null"
+        android:dividerHeight="0dp" />
 
 </RelativeLayout>
