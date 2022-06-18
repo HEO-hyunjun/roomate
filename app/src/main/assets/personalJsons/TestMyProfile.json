@@ -5,6 +5,7 @@
   "sex" : "남",
   "name" : "컴공 20학번",
   "profile" : "지금이거는 불러들인 자료입니다.",
+  "isLogined" : "true",
   "tags" : {
     "Personality" : "0",
     "Noise" : "0",
