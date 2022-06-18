@@ -31,6 +31,9 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"/>
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />가
 
         <activity
             android:name=".IntroActivity"
