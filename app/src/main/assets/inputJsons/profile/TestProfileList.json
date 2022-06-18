@@ -33,14 +33,15 @@
       "Name" : "홍길동",
       "Grade" : "4",
       "Introduce" : "안녕하세요 홍길동입니다.",
-      "Personality" : "0",
-      "WakeupTime" : "2",
-      "SleepTime" : "1",
-      "Snoring" : "2",
-      "Noise" : "3",
-      "Hygiene" : "1",
-      "Smoking" : "1",
-      "Language" : "0"
+
+      "Personality" : 0,
+      "WakeupTime" : 2,
+      "SleepTime" : 1,
+      "Snoring" : 2,
+      "Noise" : 3,
+      "Hygiene" : 1,
+      "Smoking" : 1,
+      "Language" : 0
     }
   ]
 }

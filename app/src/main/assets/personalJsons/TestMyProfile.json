@@ -1,14 +1,17 @@
 {
-  "kakaoId" : "0101010101",
-  "pid" : "002",
-  "isLogin" : "0",
-  "sex" : "남",
-  "name" : "컴공 20학번",
-  "profile" : "지금이거는 불러들인 자료입니다.",
-  "isLogined" : "true",
-  "tags" : {
-    "Personality" : "0",
-    "Noise" : "0",
-    ""
-  }
+  "KakaoID" : "001",
+  "Name" : "홍길동",
+  "Grade" : "4",
+  "Introduce" : "안녕하세요 홍길동입니다.",
+  "Logined" : true,
+  "Sex" : "M",
+
+  "Personality" : 0,
+  "WakeupTime" : 2,
+  "SleepTime" : 1,
+  "Snoring" : 2,
+  "Noise" : 3,
+  "Hygiene" : 1,
+  "Smoking" : 1,
+  "Language" : 0
 }

@@ -1,9 +1,11 @@
 package com.example.roomate;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
 
@@ -17,17 +19,26 @@ import androidx.fragment.app.Fragment;
  */
 public class ProfileScreen extends Fragment {
 
+    ProfileScreen(){
 
-    public ProfileScreen() {
-        // Required empty public constructor
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_screen, container, false);
+        View v = inflater.inflate(R.layout.fragment_profile_screen, container, false);
+        ImageButton btnInputMyProfile = (ImageButton) v.findViewById(R.id.btn_my_input_profile);
+
+        btnInputMyProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), InputProfileActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+
+        return v;
     }
 
 }

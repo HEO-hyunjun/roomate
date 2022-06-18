@@ -10,12 +10,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import okhttp3.WebSocket;
 
 public class Domitory_8 extends AppCompatActivity {
 
@@ -24,12 +31,24 @@ public class Domitory_8 extends AppCompatActivity {
 
     Dialog filterDialog;
 
+    ArrayList<Integer> tags = new ArrayList<>();
+    private WebSocket webSocket;
+    private ChatActivity.MessageAdapter messageAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //activity간 자료공유코드
+
+        Intent secondIntent = getIntent();
+        String test = secondIntent.getStringExtra("test");
         setContentView(R.layout.activity_domitory8);
-        //테스트 남깁니다.
-        //마지막입니다.
+
+        TextView testView = findViewById(R.id.forTesttext);
+
+
+
         ImageButton button_backHome = findViewById(R.id.btn_backtohome); // 뒤로가기 버튼 선언
         ImageButton button_filter = findViewById(R.id.btn_filter);
 
@@ -59,14 +78,41 @@ public class Domitory_8 extends AppCompatActivity {
                     @Override
                     public void onClick(View view){
 
-                        ChipGroup chgrp = (ChipGroup)filterDialog.findViewById((R.id.firstChipgroup));
+                        Data forChipToTag = new Data();
 
-                        Chip c = (Chip)filterDialog.findViewById(chgrp.getCheckedChipId());
+                        ChipGroup personalityChgrp = (ChipGroup)filterDialog.findViewById((R.id.personalityChipGroup));
+                        Chip personalityCh = (Chip)filterDialog.findViewById(personalityChgrp.getCheckedChipId());
+                        ChipGroup wakeuptimeChgrp = (ChipGroup)filterDialog.findViewById((R.id.wakeuptimeChipGroup));
+                        Chip wakeuptimeCh = (Chip)filterDialog.findViewById(wakeuptimeChgrp.getCheckedChipId());
+                        ChipGroup sleeptimeChgrp = (ChipGroup)filterDialog.findViewById((R.id.sleeptimeChipGroup));
+                        Chip sleeptimeCh = (Chip)filterDialog.findViewById(sleeptimeChgrp.getCheckedChipId());
+                        ChipGroup snoringChgrp = (ChipGroup)filterDialog.findViewById((R.id.snoringChipGroup));
+                        Chip snoringCh = (Chip)filterDialog.findViewById(snoringChgrp.getCheckedChipId());
+                        ChipGroup noiseChgrp = (ChipGroup)filterDialog.findViewById((R.id.noiseChipGroup));
+                        Chip noiseCh = (Chip)filterDialog.findViewById(noiseChgrp.getCheckedChipId());
+                        ChipGroup hygieneChgrp = (ChipGroup)filterDialog.findViewById((R.id.hygieneChipGroup));
+                        Chip hygieneCh = (Chip)filterDialog.findViewById(hygieneChgrp.getCheckedChipId());
+                        ChipGroup smokingChgrp = (ChipGroup)filterDialog.findViewById((R.id.smokingChipGroup));
+                        Chip smokingCh = (Chip)filterDialog.findViewById(smokingChgrp.getCheckedChipId());
 
 
-                        String s = c.getText().toString();
-                        //testText.setText(s);
-
+                        tags.add(forChipToTag.parseTagToInt(personalityCh.getText().toString(), 0));
+                        tags.add(forChipToTag.parseTagToInt(wakeuptimeCh.getText().toString(), 3));
+                        tags.add(forChipToTag.parseTagToInt(sleeptimeCh.getText().toString(), 4));
+                        tags.add(forChipToTag.parseTagToInt(snoringCh.getText().toString(), 5));
+                        tags.add(forChipToTag.parseTagToInt(noiseCh.getText().toString(), 2));
+                        tags.add(forChipToTag.parseTagToInt(hygieneCh.getText().toString(), 1));
+                        tags.add(forChipToTag.parseTagToInt(smokingCh.getText().toString(), 6));
+                        testView.setText(tags.toString());
+                        //post tags
+                        //String message = tags.toString();
+                        tags.clear();
+                        filterDialog.dismiss();
+                    }
+                });
+                filterDialog.findViewById(R.id.btn_filerClose).setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view) {
                         filterDialog.dismiss();
                     }
                 });
@@ -118,7 +164,7 @@ public class Domitory_8 extends AppCompatActivity {
         //리스트 목록만큼 출력합니다
         for (int i = 0; i < listTitle.size(); i++) {
             Data data = new Data();
-            data.setTitle(listTitle.get(i));
+            data.setName(listTitle.get(i));
             data.setContent(listContent.get(i));
             data.setResId(listResId.get(i));
             adapter.addItem(data);

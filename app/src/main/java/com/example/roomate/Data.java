@@ -36,8 +36,8 @@ public class Data extends AppCompatActivity {
     //InputStream inputStream = null;
     //AssetManager assetManager =getResources().getAssets();
 
-
     /*
+
     public String getJsonString(String path, String parameter){
         String ret = "Error!!!";
         try{
@@ -70,12 +70,47 @@ public class Data extends AppCompatActivity {
         return ret;
     }
 
-    public String parseTag(int[] tagInput, int index) {
+    public int[] getTag(String path, int index){
+        ArrayList<Integer> tags = new ArrayList<>();
+        try{
+            inputStream = assetManager.open(path, AssetManager.ACCESS_BUFFER);
+            InputStreamReader isr = new InputStreamReader(inputStream);
+            BufferedReader reader = new BufferedReader(isr);
+
+            StringBuffer buffer = new StringBuffer();
+            String line = reader.readLine();
+            while(line != null){
+                buffer.append(line+"\n");
+                line = reader.readLine();
+            }
+            //json 파일 불러들여 string jsonData에 넣음
+            String jsonData = buffer.toString();
+
+            JSONObject jsonObject = null;
+
+            //object 하나만 불러올때
+            try {
+                //json파일 분석후
+                jsonObject = new JSONObject(jsonData);
+                tags.add(jsonObject.getInt("Personality"));
+                tags.add(jsonObject.getInt("Hygiene"));
+                tags.add(jsonObject.getInt("Noise"));
+                tags.add(jsonObject.getInt("WakeupTime"));
+                tags.add(jsonObject.getInt("SleepTime"));
+                tags.add(jsonObject.getInt("Snoring"));
+                tags.add(jsonObject.getInt("Smoking"));
+            } catch (JSONException e) {e.printStackTrace();}
+
+        } catch(IOException e){e.printStackTrace();}
+        return tag;
+    }
+    */
+
+    public String parseTagToString(ArrayList<Integer> tagInput, int index) {
         // tagInput 태그 배열 그대로 들어옴
         // index 몇번째 태그정보인지
-
         String ret = "Error!!!";
-        int tagInputData = tagInput[index];
+        int tagInputData = tagInput.get(index);
 
         switch(index)
         {
@@ -90,7 +125,7 @@ public class Data extends AppCompatActivity {
                         ret = "조금 외향적";
                         break;
                     case 2:
-                        ret = "중간";
+                        ret = " 중간 ";
                         break;
                     case 3:
                         ret = "조금 내향적";
@@ -182,22 +217,10 @@ public class Data extends AppCompatActivity {
                 switch(tagInputData)
                 {
                     case 0:
-                        ret = "흡연자";
+                        ret = " 흡연자 ";
                         break;
                     case 1:
-                        ret = "비흡연자";
-                        break;
-                }
-                break;
-            case 7:
-                //언어
-                switch(tagInputData)
-                {
-                    case 0:
-                        ret = "한국어";
-                        break;
-                    case 1:
-                        ret = "외국어";
+                        ret = " 비흡연자 ";
                         break;
                 }
                 break;
@@ -205,43 +228,121 @@ public class Data extends AppCompatActivity {
         return ret;
     }
 
-    public int[] getTag(String path, int index){
-        ArrayList<Integer> tags = new ArrayList<>();
-        try{
-            inputStream = assetManager.open(path, AssetManager.ACCESS_BUFFER);
-            InputStreamReader isr = new InputStreamReader(inputStream);
-            BufferedReader reader = new BufferedReader(isr);
+    public int parseTagToInt(String tagInput, int index) {
+        //tag의 정보를 string -> int로 바꿔줌
+        int ret = -1;
+        if (tagInput=="default")
+            return ret;
+        switch(index)
+        {
+            case 0:
+                //성격유형
+                switch (tagInput) {
+                    case "매우 외향적":
+                        ret = 0;
+                        break;
+                    case "조금 외향적":
+                        ret = 1;
+                        break;
+                    case " 중간 ":
+                        ret = 2;
+                        break;
+                    case "조금 내향적":
+                        ret = 3;
+                        break;
+                    case "매우 내향적":
+                        ret = 4;
+                        break;
+                }
+                break;
+            case 1:
+                //청결
+            case 2:
+                //소음 민감도
+                switch (tagInput) {
+                    case "매우 예민함":
+                        ret = 0;
+                        break;
+                    case "조금 예민함":
+                        ret = 1;
+                        break;
+                    case "평범함":
+                        ret = 2;
+                        break;
+                    case "조금 둔감함":
+                        ret = 3;
+                        break;
+                    case "매우 둔감함":
+                        ret = 4;
+                        break;
+                }
+                break;
+            case 3:
+                //기상 시간
+                switch (tagInput) {
+                    case "7시 이전":
+                        ret = 0;
+                        break;
+                    case "7~8시":
+                        ret = 1;
+                        break;
+                    case "8~9시":
+                        ret = 2;
+                        break;
+                    case "9~10시":
+                        ret = 3;
+                        break;
+                    case "10시 이후":
+                        ret = 4;
+                        break;
+                }
+                break;
+            case 4:
+                //취침 시간
+                switch (tagInput) {
+                    case "22시 이전":
+                        ret = 0;
+                        break;
+                    case "22~23시":
+                        ret = 1;
+                        break;
+                    case "23~0시":
+                        ret = 2;
+                        break;
+                    case "0~1시":
+                        ret = 3;
+                        break;
+                    case "1시 이후":
+                        ret = 4;
+                        break;
+                }
+                break;
+            case 5:
+                //코골이
+                switch (tagInput) {
+                    case " 있다 ":
+                        ret = 0;
+                        break;
+                    case " 없다 ":
+                        ret = 1;
+                        break;
+                }
+                break;
+            case 6:
+                //흡연여부
+                switch (tagInput) {
+                    case " 흡연자 ":
+                        ret = 0;
+                        break;
 
-            StringBuffer buffer = new StringBuffer();
-            String line = reader.readLine();
-            while(line != null){
-                buffer.append(line+"\n");
-                line = reader.readLine();
+                    case " 비흡연자 ":
+                        ret = 1;
+                        break;
+                }
+                break;
             }
-            //json 파일 불러들여 string jsonData에 넣음
-            String jsonData = buffer.toString();
-
-            JSONObject jsonObject = null;
-
-            //object 하나만 불러올때
-            try {
-                //json파일 분석후
-                jsonObject = new JSONObject(jsonData);
-                tags.add(jsonObject.getInt("Personality"));
-                tags.add(jsonObject.getInt("Hygiene"));
-                tags.add(jsonObject.getInt("Noise"));
-                tags.add(jsonObject.getInt("WakeupTime"));
-                tags.add(jsonObject.getInt("SleepTime"));
-                tags.add(jsonObject.getInt("Snoring"));
-                tags.add(jsonObject.getInt("Smoking"));
-                tags.add(jsonObject.getInt("Language"));
-            } catch (JSONException e) {e.printStackTrace();}
-
-        } catch(IOException e){e.printStackTrace();}
-        return tag;
+        return ret;
     }
-
-     */
 
     public String getID(){
         return ID;

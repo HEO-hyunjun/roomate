@@ -16,6 +16,12 @@ public class IntroActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class); // 넘겨줄 액티비티
+                /*
+                if (isLogin == true)
+                    intent = new Intent(getApplicationContext(), HomeActivity.class);
+                else
+                    intent = new Intent(getApplicationContext(), MainActivity.class);
+                 */
                 startActivity(intent);
                 finish();
             }
