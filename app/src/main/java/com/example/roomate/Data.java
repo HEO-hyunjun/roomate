@@ -22,22 +22,26 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Data extends AppCompatActivity {
 
+    private String ID;
     private String name; //이름
     private String introduce; //자기소개
     private int resId; //프로필 사진
     private int[] tag = new int[8];
-    InputStream inputStream = null;
-    AssetManager assetManager =getResources().getAssets();
+    //InputStream inputStream = null;
+    //AssetManager assetManager =getResources().getAssets();
 
+
+    /*
     public String getJsonString(String path, String parameter){
         String ret = "Error!!!";
         try{
-            inputStream = assetManager.open("personalJsons/TestMyProfile.json", AssetManager.ACCESS_BUFFER);
+            inputStream = assetManager.open(path, AssetManager.ACCESS_BUFFER);
             InputStreamReader isr = new InputStreamReader(inputStream);
             BufferedReader reader = new BufferedReader(isr);
 
@@ -51,6 +55,7 @@ public class Data extends AppCompatActivity {
             String jsonData = buffer.toString();
 
             JSONObject jsonObject = null;
+
             //array에서 불러올때
             try {
                 jsonObject = new JSONObject(jsonData);
@@ -60,21 +65,12 @@ public class Data extends AppCompatActivity {
                 ret = jo.getString(parameter);
             } catch (JSONException e) {e.printStackTrace();}
 
-            /*
-            //object 하나만 불러올때
-            try {
-                //json파일 분석후 ret에 원하는 파라메터 입력
-                jsonObject = new JSONObject(jsonData);
-                ret = jsonObject.getString(parameter);
-            } catch (JSONException e) {e.printStackTrace();}
-            */
         } catch(IOException e){e.printStackTrace();}
 
         return ret;
     }
 
-    public String parseTag(int[] tagInput, int index)
-    {
+    public String parseTag(int[] tagInput, int index) {
         // tagInput 태그 배열 그대로 들어옴
         // index 몇번째 태그정보인지
 
@@ -209,11 +205,49 @@ public class Data extends AppCompatActivity {
         return ret;
     }
 
-    public int[] getTag(){
+    public int[] getTag(String path, int index){
+        ArrayList<Integer> tags = new ArrayList<>();
+        try{
+            inputStream = assetManager.open(path, AssetManager.ACCESS_BUFFER);
+            InputStreamReader isr = new InputStreamReader(inputStream);
+            BufferedReader reader = new BufferedReader(isr);
+
+            StringBuffer buffer = new StringBuffer();
+            String line = reader.readLine();
+            while(line != null){
+                buffer.append(line+"\n");
+                line = reader.readLine();
+            }
+            //json 파일 불러들여 string jsonData에 넣음
+            String jsonData = buffer.toString();
+
+            JSONObject jsonObject = null;
+
+            //object 하나만 불러올때
+            try {
+                //json파일 분석후
+                jsonObject = new JSONObject(jsonData);
+                tags.add(jsonObject.getInt("Personality"));
+                tags.add(jsonObject.getInt("Hygiene"));
+                tags.add(jsonObject.getInt("Noise"));
+                tags.add(jsonObject.getInt("WakeupTime"));
+                tags.add(jsonObject.getInt("SleepTime"));
+                tags.add(jsonObject.getInt("Snoring"));
+                tags.add(jsonObject.getInt("Smoking"));
+                tags.add(jsonObject.getInt("Language"));
+            } catch (JSONException e) {e.printStackTrace();}
+
+        } catch(IOException e){e.printStackTrace();}
         return tag;
     }
 
+     */
+
+    public String getID(){
+        return ID;
+    }
     public String getName() {
+        //String ret = getJsonString(path, "name");
         return name;
     }
 

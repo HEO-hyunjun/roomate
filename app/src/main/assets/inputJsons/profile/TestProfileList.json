@@ -1,22 +1,46 @@
 {
   "items": [
     {
-      "pid" : "001",
-      "name" : "홍길동",
-      "profile" : "함께 놀면서 친해질 룸메를 원합니다.",
-      "tags" : [0,1,1,2,3,1,1,0]
+      "KakaoID" : "001",
+      "Name" : "홍길동",
+      "Grade" : "3",
+      "Introduce" : "안녕하세요 홍길동입니다.",
+      "Personality" : "0",
+      "WakeupTime" : "1",
+      "SleepTime" : "1",
+      "Snoring" : "1",
+      "Noise" : "4",
+      "Hygiene" : "1",
+      "Smoking" : "1",
+      "Language" : "0"
     },
     {
-      "pid" : "002",
-      "name" : "컴공 20학번",
-      "profile" : "지금이거는 불러들인 자료입니다.",
-      "tags" : [0,0,0,0,0,0,0,0]
+      "KakaoID" : "001",
+      "Name" : "고길동",
+      "Grade" : "4",
+      "Introduce" : "안녕하세요 홍길동입니다.",
+      "Personality" : "0",
+      "WakeupTime" : "1",
+      "SleepTime" : "1",
+      "Snoring" : "1",
+      "Noise" : "4",
+      "Hygiene" : "1",
+      "Smoking" : "1",
+      "Language" : "0"
     },
     {
-      "pid" : "003",
-      "name" : "고학번 취준생",
-      "profile" : "이것도 불러들인 자료입니다.",
-      "tags" : [1,2,3,1,6,0,1,0]
+      "KakaoID" : "001",
+      "Name" : "홍길동",
+      "Grade" : "4",
+      "Introduce" : "안녕하세요 홍길동입니다.",
+      "Personality" : "0",
+      "WakeupTime" : "2",
+      "SleepTime" : "1",
+      "Snoring" : "2",
+      "Noise" : "3",
+      "Hygiene" : "1",
+      "Smoking" : "1",
+      "Language" : "0"
     }
   ]
 }

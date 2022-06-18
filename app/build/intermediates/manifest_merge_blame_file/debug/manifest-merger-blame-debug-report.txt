@@ -60,119 +60,120 @@
 32-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:15:9-54
 33        android:supportsRtl="true"
 33-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:16:9-35
-34        android:theme="@style/Theme.Roomate" >
-34-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:17:9-45
-35        <activity
-35-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:19:9-21:40
-36            android:name="com.example.roomate.Domitory_9"
-36-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:20:13-39
-37            android:exported="false" />
-37-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:21:13-37
-38        <activity
-38-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:22:9-24:40
-39            android:name="com.example.roomate.Domitory_8"
-39-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:23:13-39
-40            android:exported="false" />
-40-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:24:13-37
-41        <activity
-41-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:25:9-27:40
-42            android:name="com.example.roomate.Domitory_3to5"
-42-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:26:13-42
-43            android:exported="false" />
-43-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:27:13-37
-44        <activity
-44-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:28:9-30:40
-45            android:name="com.example.roomate.HomeActivity"
-45-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:29:13-41
-46            android:exported="false" />
-46-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:30:13-37
-47        <activity
-47-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:31:9-33:38
-48            android:name="com.example.roomate.MainActivity"
-48-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:32:13-41
-49            android:exported="true" />
-49-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:33:13-36
-50        <activity
-50-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:35:9-43:20
-51            android:name="com.example.roomate.IntroActivity"
-51-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:36:13-42
-52            android:exported="true" >
-52-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:37:13-36
-53            <intent-filter>
-53-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:38:13-42:29
-54                <action android:name="android.intent.action.MAIN" />
-54-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:39:17-69
-54-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:39:25-66
-55
-56                <category android:name="android.intent.category.LAUNCHER" />
-56-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:41:17-77
-56-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:41:27-74
-57            </intent-filter>
-58        </activity>
-59        <activity
-59-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:45:9-57:20
-60            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
-60-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:46:13-70
-61            android:exported="true"
-61-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:47:13-36
-62            android:launchMode="singleTask"
-62-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:19:13-44
-63            android:theme="@style/TransparentCompat" >
-63-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:20:13-53
-64            <intent-filter>
-64-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:48:13-56:29
-65                <action android:name="android.intent.action.VIEW" />
-65-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:49:17-69
-65-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:49:25-66
-66
-67                <category android:name="android.intent.category.DEFAULT" />
-67-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:50:17-76
-67-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:50:27-73
-68                <category android:name="android.intent.category.BROWSABLE" />
-68-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:51:17-78
-68-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:51:27-75
-69
-70                <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth" -->
-71                <data
-71-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:54:17-55:78
-72                    android:host="oauth"
-72-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:54:23-43
-73                    android:scheme="kakao6eabc0a0e63f2f66fd7dbfce1a493809" />
-73-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:55:21-75
-74            </intent-filter>
-75        </activity>
-76        <activity
-76-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:12:9-16:56
-77            android:name="com.kakao.sdk.auth.TalkAuthCodeActivity"
-77-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:13:13-67
-78            android:exported="false"
-78-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:14:13-37
-79            android:launchMode="singleTask"
-79-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:15:13-44
-80            android:theme="@style/TransparentCompat" />
-80-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:16:13-53
-81
-82        <provider
-82-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
-83            android:name="androidx.startup.InitializationProvider"
-83-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:27:13-67
-84            android:authorities="com.example.roomate.androidx-startup"
-84-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:28:13-68
-85            android:exported="false" >
-85-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:29:13-37
-86            <meta-data
-86-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-87                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-87-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:32:17-75
-88                android:value="androidx.startup" />
-88-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:33:17-49
-89            <meta-data
-89-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/heohyeonjun/.gradle/caches/transforms-3/8eef53d9995d138e5396bc0361630197/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-90                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-90-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/heohyeonjun/.gradle/caches/transforms-3/8eef53d9995d138e5396bc0361630197/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-91                android:value="androidx.startup" />
-91-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/heohyeonjun/.gradle/caches/transforms-3/8eef53d9995d138e5396bc0361630197/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-92        </provider>
-93    </application>
-94
-95</manifest>
+34        android:testOnly="true"
+35        android:theme="@style/Theme.Roomate" >
+35-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:17:9-45
+36        <activity
+36-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:19:9-21:40
+37            android:name="com.example.roomate.Domitory_9"
+37-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:20:13-39
+38            android:exported="false" />
+38-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:21:13-37
+39        <activity
+39-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:22:9-24:40
+40            android:name="com.example.roomate.Domitory_8"
+40-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:23:13-39
+41            android:exported="false" />
+41-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:24:13-37
+42        <activity
+42-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:25:9-27:40
+43            android:name="com.example.roomate.Domitory_3to5"
+43-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:26:13-42
+44            android:exported="false" />
+44-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:27:13-37
+45        <activity
+45-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:28:9-30:40
+46            android:name="com.example.roomate.HomeActivity"
+46-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:29:13-41
+47            android:exported="false" />
+47-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:30:13-37
+48        <activity
+48-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:31:9-33:38
+49            android:name="com.example.roomate.MainActivity"
+49-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:32:13-41
+50            android:exported="true" />
+50-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:33:13-36
+51        <activity
+51-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:35:9-43:20
+52            android:name="com.example.roomate.IntroActivity"
+52-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:36:13-42
+53            android:exported="true" >
+53-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:37:13-36
+54            <intent-filter>
+54-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:38:13-42:29
+55                <action android:name="android.intent.action.MAIN" />
+55-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:39:17-69
+55-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:39:25-66
+56
+57                <category android:name="android.intent.category.LAUNCHER" />
+57-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:41:17-77
+57-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:41:27-74
+58            </intent-filter>
+59        </activity>
+60        <activity
+60-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:45:9-57:20
+61            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+61-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:46:13-70
+62            android:exported="true"
+62-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:47:13-36
+63            android:launchMode="singleTask"
+63-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:19:13-44
+64            android:theme="@style/TransparentCompat" >
+64-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:20:13-53
+65            <intent-filter>
+65-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:48:13-56:29
+66                <action android:name="android.intent.action.VIEW" />
+66-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:49:17-69
+66-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:49:25-66
+67
+68                <category android:name="android.intent.category.DEFAULT" />
+68-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:50:17-76
+68-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:50:27-73
+69                <category android:name="android.intent.category.BROWSABLE" />
+69-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:51:17-78
+69-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:51:27-75
+70
+71                <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth" -->
+72                <data
+72-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:54:17-55:78
+73                    android:host="oauth"
+73-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:54:23-43
+74                    android:scheme="kakao6eabc0a0e63f2f66fd7dbfce1a493809" />
+74-->/Users/heohyeonjun/Documents/GitHub/roomate/app/src/main/AndroidManifest.xml:55:21-75
+75            </intent-filter>
+76        </activity>
+77        <activity
+77-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:12:9-16:56
+78            android:name="com.kakao.sdk.auth.TalkAuthCodeActivity"
+78-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:13:13-67
+79            android:exported="false"
+79-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:14:13-37
+80            android:launchMode="singleTask"
+80-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:15:13-44
+81            android:theme="@style/TransparentCompat" />
+81-->[com.kakao.sdk:v2-auth:2.8.3] /Users/heohyeonjun/.gradle/caches/transforms-3/2c924154f35b32f96797ef51ef213630/transformed/v2-auth-2.8.3/AndroidManifest.xml:16:13-53
+82
+83        <provider
+83-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+84            android:name="androidx.startup.InitializationProvider"
+84-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:27:13-67
+85            android:authorities="com.example.roomate.androidx-startup"
+85-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:28:13-68
+86            android:exported="false" >
+86-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:29:13-37
+87            <meta-data
+87-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+88                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+88-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:32:17-75
+89                android:value="androidx.startup" />
+89-->[androidx.emoji2:emoji2:1.0.0] /Users/heohyeonjun/.gradle/caches/transforms-3/9cb5d0b2fd275b8005e0d8fda37c4df6/transformed/emoji2-1.0.0/AndroidManifest.xml:33:17-49
+90            <meta-data
+90-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/heohyeonjun/.gradle/caches/transforms-3/8eef53d9995d138e5396bc0361630197/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+91                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+91-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/heohyeonjun/.gradle/caches/transforms-3/8eef53d9995d138e5396bc0361630197/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+92                android:value="androidx.startup" />
+92-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/heohyeonjun/.gradle/caches/transforms-3/8eef53d9995d138e5396bc0361630197/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+93        </provider>
+94    </application>
+95
+96</manifest>
