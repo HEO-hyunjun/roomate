@@ -52,6 +52,7 @@ id action_bookmark
 id action_chat
 id action_home
 id action_setting
+id bookmarkRecycler
 id bookmark_RecyclerView
 id bottom_navigationview
 id btn_backtohome

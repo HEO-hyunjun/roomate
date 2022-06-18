@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <dimen name="fragment_horizontal_margin">16dp</dimen>
     <dimen name="fragment_vertical_margin">16dp</dimen>
+    <item name="bookmarkRecycler" type="id"/>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="app_name">roomate</string>

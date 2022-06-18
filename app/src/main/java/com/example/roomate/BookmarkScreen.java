@@ -35,7 +35,7 @@ public class BookmarkScreen extends Fragment {
         adapter = new RecyclerAdapter();
         recyclerView.setAdapter(adapter);
         // init();//Recyclerview의 adapter 불러오기
-        getData();//Data 입력
+        getData();//Data 입력정
 
         return rootView;
     }
