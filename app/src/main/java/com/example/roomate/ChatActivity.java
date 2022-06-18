@@ -86,7 +86,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private void instantiateWebSocket() {
         OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder().url("ws://192.168.4.32:8080").build();
+        Request request = new Request.Builder().url("ws://52.79.234.253:8080").build();
         SocketListener socketListener = new SocketListener(this);
         webSocket = client.newWebSocket(request, socketListener);
         webSocket = client.newWebSocket(request, socketListener);
