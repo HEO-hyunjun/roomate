@@ -13,6 +13,8 @@ Fragment는 홈 화면부터 나타나는 하단 네비게이터를 사용할때
 package com.example.roomate;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +28,8 @@ import android.util.Log;
 import com.kakao.sdk.user.UserApiClient;
 import com.kakao.sdk.user.model.Account;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -50,10 +54,11 @@ public class MainActivity extends AppCompatActivity {
                     login();
                 }
                 else{
-                    accountLogin();
-                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                    startActivityForResult(intent, REQUEST_CODE_MENU);
+                    accountLogin();               
                 }
+                
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivityForResult(intent, REQUEST_CODE_MENU);
             }
         });
     }
@@ -99,6 +104,26 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Account user1 = user.getKakaoAccount();
                 System.out.println("사용자 계정" + user1);
+                if(! new File("/data/data/com.example.roomate/files/Userinfo.json").exists()){
+                    JsonString jsonString = new JsonString();
+                    jsonString.setKakaoid(user.getId());
+                    jsonString.setNickname(user.getKakaoAccount().getProfile().getNickname());
+
+
+                    String filename = "Userinfo.json";
+                    FileOutputStream outputStream;
+
+                    try {
+
+                        outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+                        outputStream.write(JsonUtil.toJSon(jsonString).getBytes());
+                        outputStream.close();
+
+                    } catch (Exception e) {
+
+                        e.printStackTrace();
+                    }
+                }
             }
             return null;
         });

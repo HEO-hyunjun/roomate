@@ -15,7 +15,7 @@ public class IntroActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(getApplicationContext(), HomeActivity.class); // 넘겨줄 액티비티
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class); // 넘겨줄 액티비티
                 /*
                 if (isLogin == true)
                     intent = new Intent(getApplicationContext(), HomeActivity.class);
