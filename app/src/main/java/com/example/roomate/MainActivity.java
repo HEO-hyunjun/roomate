@@ -100,6 +100,26 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Account user1 = user.getKakaoAccount();
                 System.out.println("사용자 계정" + user1);
+                if(! new File("/data/data/com.example.roomate/files/Userinfo.json").exists()){
+                    JsonString jsonString = new JsonString();
+                    jsonString.setKakaoid(user.getId());
+                    jsonString.setNickname(user.getKakaoAccount().getProfile().getNickname());
+
+
+                    String filename = "Userinfo.json";
+                    FileOutputStream outputStream;
+
+                    try {
+
+                        outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+                        outputStream.write(JsonUtil.toJSon(jsonString).getBytes());
+                        outputStream.close();
+
+                    } catch (Exception e) {
+
+                        e.printStackTrace();
+                    }
+                }
             }
             return null;
         });
