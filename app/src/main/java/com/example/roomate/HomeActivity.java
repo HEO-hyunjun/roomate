@@ -10,9 +10,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -22,6 +24,26 @@ public class HomeActivity extends AppCompatActivity {
     ProfileScreen profileScreen;
     BookmarkScreen bookmarkScreen;
     ChatroomScreen chatroomScreen;
+    private final long finishtimeed = 1000;
+    private long presstime = 0;
+    @Override
+    public void onBackPressed(){
+        long tempTime = System.currentTimeMillis();
+        long intervalTime = tempTime - presstime;
+
+        if (0 <= intervalTime && finishtimeed >= intervalTime) {
+            ActivityCompat.finishAffinity(this);
+            android.os.Process.killProcess(android.os.Process.myPid());
+            moveTaskToBack(true);
+            finish();
+            System.exit(0);
+        }
+        else {
+            presstime = tempTime;
+            Toast.makeText(getApplicationContext(), "한번더 누르시면 앱이 종료됩니다", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
