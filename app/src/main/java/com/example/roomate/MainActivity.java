@@ -35,7 +35,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final int REQUEST_CODE_MENU = 101;
+    //public static final int REQUEST_CODE_MENU = 101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
                     accountLogin();               
                 }
                 
-                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                startActivityForResult(intent, REQUEST_CODE_MENU);
+
+                //startActivityForResult(intent, REQUEST_CODE_MENU);
             }
         });
     }
@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
             } else if (oAuthToken != null) {
                 Log.i(TAG, "로그인 성공(토큰) : " + oAuthToken.getAccessToken());
                 getUserInfo();
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
             }
             return null;
         });
@@ -84,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
             } else if (oAuthToken != null) {
                 Log.i(TAG, "로그인 성공(토큰) : " + oAuthToken.getAccessToken());
                 getUserInfo();
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
             }
             return null;
         });
