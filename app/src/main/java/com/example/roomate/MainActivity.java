@@ -50,10 +50,11 @@ public class MainActivity extends AppCompatActivity {
                     login();
                 }
                 else{
-                    accountLogin();
-                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                    startActivityForResult(intent, REQUEST_CODE_MENU);
+                    accountLogin()                    
                 }
+                
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivityForResult(intent, REQUEST_CODE_MENU);
             }
         });
     }
