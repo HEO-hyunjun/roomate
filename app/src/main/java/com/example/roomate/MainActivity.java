@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     login();
                 }
                 else{
-                    accountLogin()                    
+                    accountLogin();               
                 }
                 
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
