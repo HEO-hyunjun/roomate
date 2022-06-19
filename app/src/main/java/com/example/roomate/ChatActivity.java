@@ -1,10 +1,15 @@
 package com.example.roomate;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +32,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private WebSocket webSocket;
     private MessageAdapter adapter;
+    TextView receiveView;
 
     //보낼사람 받는사람?? 받아와야함
     private String Me = "He";
@@ -41,6 +47,21 @@ public class ChatActivity extends AppCompatActivity {
 
         //레이아웃 전달(layout에 있는 activity_main.xml로 화면 정의)
         setContentView(R.layout.activity_chat);
+
+
+        //어댑터 클릭 이벤트시 받는 데이터
+        Intent intent = getIntent();
+        String receiveStr = intent.getExtras().getString("name");// 전달한 값을 받을 때
+        receiveView = (TextView)findViewById(R.id.chat_title);
+        receiveView.setText(receiveStr);
+
+        ImageView imageview = (ImageView)findViewById(R.id.chat_pr);
+        byte[] byteArray = getIntent().getByteArrayExtra("image");
+        Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+
+        imageview.setImageBitmap(bitmap);
+
+
 
         //listview -> 리스트 형태의 데이터를 보여주기 위한 위젯
         //list 형태의 원본 데이터가 있어야 하며 adapter를 통해 각각의 아이템에 지정해준다
@@ -82,6 +103,19 @@ public class ChatActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        //뒤로가기: 상단 스택을 지우는 방식, 다른 방식으로 액티비티->플래그먼트 이동하면 오류가 자주 발생함
+        ImageButton button_backchatroom = findViewById(R.id.btn_chatroom);
+        button_backchatroom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChatActivity.this,HomeActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); finish();
+            }
+        });
+
+
     }
 
     private void instantiateWebSocket() {

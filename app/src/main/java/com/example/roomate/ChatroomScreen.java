@@ -1,7 +1,5 @@
 package com.example.roomate;
 
-import android.app.Dialog;
-import android.content.Context;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -18,9 +16,8 @@ import java.util.List;
 public class ChatroomScreen extends Fragment {
 
     private RecyclerView recyclerView;
-    RecyclerAdapter adapter;
-    Context context;
-    Dialog filterDialog;
+    ChatroomAdapter adapter;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,7 +29,7 @@ public class ChatroomScreen extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        adapter = new RecyclerAdapter();
+        adapter = new ChatroomAdapter();
         recyclerView.setAdapter(adapter);
         // init();//Recyclerview의 adapter 불러오기
         getData();//Data 입력

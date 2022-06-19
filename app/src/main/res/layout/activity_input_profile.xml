@@ -59,7 +59,7 @@
                 android:textColor="#191919"
                 android:textSize="26sp"
                 android:textStyle="bold"
-                tools:text="평소 성격과 습관을 알려주세요" />
+                android:text="평소 성격과 습관을 알려주세요" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                 android:textColor="#767676"
                 android:textSize="12sp"
                 android:textStyle="normal"
-                tools:text="다른 룸메이트가 이 선택을 보고 결정합니다" />
+                android:text="다른 룸메이트가 이 선택을 보고 결정합니다" />
 
             <LinearLayout
                 android:layout_width="350dp"

@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@mipmap/ic_launcher"/>
 
         <LinearLayout
@@ -26,28 +26,44 @@
             android:layout_weight="1"
             android:layout_marginLeft="10dp"
             android:orientation="vertical"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical|top">
 
             <TextView
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:layout_marginBottom="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="1dp"
                 android:text="이름/닉네임"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="280dp"
+                android:layout_height="0.1px"
+                android:src="#3E999999"/>
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:layout_marginBottom="5dp"
-                android:text="자기소개"
-                android:textSize="10sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="2dp"
+                android:text="자기소개\n2줄까지"
+                android:textSize="9sp"
                 android:textColor="@android:color/darker_gray"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="나의 유형\n2줄까지"
+                android:textSize="9sp"
+                android:textColor="#191919"/>
 
 
 

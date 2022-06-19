@@ -45,7 +45,7 @@ public class HomeScreen extends Fragment {
         button_Domitory_3to5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), ChatActivity.class);
+                Intent intent = new Intent(getActivity().getApplicationContext(), Domitory_3to5.class);
                 getActivity().startActivity(intent);
             }
         });

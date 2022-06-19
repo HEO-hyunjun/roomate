@@ -1,7 +1,5 @@
 package com.example.roomate;
 
-import android.app.Dialog;
-import android.content.Context;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -18,23 +16,23 @@ import java.util.List;
 public class BookmarkScreen extends Fragment {
 
     private RecyclerView recyclerView;
-    RecyclerAdapter adapter;
-    Context context;
-    Dialog filterDialog;
+    BookmarkAdapter adapter;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_bookmark_screen, container, false);
 
-        recyclerView =(RecyclerView) rootView.findViewById(R.id.bookmark_RecyclerView );
+        recyclerView =(RecyclerView) rootView.findViewById(R.id.recycler_bookmark );
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        adapter = new RecyclerAdapter();
+        adapter = new BookmarkAdapter();
         recyclerView.setAdapter(adapter);
-        // init();//Recyclerview의 adapter 불러오기
+        // init();
+        // Recyclerview의 adapter 불러오기
         getData();//Data 입력정
 
         return rootView;
@@ -54,6 +52,8 @@ public class BookmarkScreen extends Fragment {
                 "컴공 20학번",
                 "고학번 취준생",
                 "홍길동",
+                "고학번 취준생",
+                "컴공 20학번",
                 "홍길동",
                 "컴공 20학번",
                 "고학번 취준생");
@@ -65,6 +65,8 @@ public class BookmarkScreen extends Fragment {
                 "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
                 "함께 놀면서 친해질 룸메를 원합니다",
                 "코골이 안하는 비흡연자 룸메 구합니다.",
+                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
+                "함께 놀면서 친해질 룸메를 원합니다",
                 "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
                 "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
                 "함께 놀면서 친해질 룸메를 원합니다",
@@ -78,6 +80,12 @@ public class BookmarkScreen extends Fragment {
                 R.drawable.a,
                 R.drawable.b,
                 R.drawable.c,
+                R.drawable.a,
+                R.drawable.b,
+                R.drawable.a,
+                R.drawable.c,
+                R.drawable.a,
+                R.drawable.b,
                 R.drawable.a,
                 R.drawable.b,
                 R.drawable.c,

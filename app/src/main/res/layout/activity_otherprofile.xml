@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileScreen"
-    android:orientation="vertical">
-
-    <!--이름과 자기소개는 editview로 저장시키고, 학년 나이 등은 spinner를 사용하면 될 듯
-        나의 유형은 input_profile에서 받은 값을 chip으로 출력하면 좋겠는데 아직은 어려움
-        또 나의 유형에 연필 버튼(아직 버튼아님)을 누르면 input_profile을 재설정할 수 있게 만들면 좋겠음
-        일단 이름 ~ 자기소개까지를 입력받아 저장받는 것까지 해야할 듯-->
+    tools:context=".OtherProfile">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:gravity="center"
-            android:letterSpacing="-0.02"
-            android:text="나의 프로필"
-            android:textColor="#191919"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:elevation="2dp"
-            android:background="#FFFFFF"/>
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="2dp">
+            <ImageButton
+                android:id="@+id/btn_book"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="28dp"
+                android:background="@color/white"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_back"/>
+            <TextView
+                android:id="@+id/other_title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:letterSpacing="-0.02"
+                android:text="프로필"
+                android:textColor="#191919"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:elevation="2dp"/>
+        </FrameLayout>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -39,15 +49,16 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/other_pic"
                     android:layout_marginTop="60dp"
                     android:layout_marginBottom="10dp"
-                    android:id="@+id/profile_myprofile"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:layout_gravity="center"
                     android:src="@mipmap/ic_launcher"/>
 
-                <EditText
+                <TextView
+                    android:id="@+id/other_name"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="18dp"
@@ -58,7 +69,6 @@
                     android:layout_marginBottom="5dp"
                     android:layout_gravity="center"/>
 
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -67,7 +77,6 @@
                     android:layout_marginBottom="5dp">
 
                     <ImageView
-                        android:id="@+id/profile_grade"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_marginRight="5dp"
@@ -82,7 +91,6 @@
                         android:textSize="15sp"/>
 
                     <ImageView
-                        android:id="@+id/profile_age"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_marginRight="5dp"
@@ -98,7 +106,6 @@
                         android:textSize="15sp"/>
 
                     <ImageView
-                        android:id="@+id/profile_lang"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_marginRight="5dp"
@@ -158,7 +165,8 @@
                         android:textSize="17sp"
                         android:text="자기소개" />
 
-                    <EditText
+                    <TextView
+                        android:id="@+id/other_intro"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:gravity="top"
@@ -186,15 +194,6 @@
                             android:layout_height="match_parent"
                             android:textSize="17sp"
                             android:text="나의 유형"/>
-                        <ImageButton
-                            android:id="@+id/btn_my_input_profile"
-                            android:background="#FFFFFF"
-                            android:layout_marginLeft="7dp"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:scaleType="centerCrop"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/pr_edit"/>
 
                     </LinearLayout>
 
@@ -206,13 +205,4 @@
 
     </LinearLayout>
 
-    <Button
-        android:layout_marginTop="150dp"
-        android:id="@+id/confirm"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:text="저장하기"
-        android:layout_marginBottom="50dp"
-        android:layout_gravity="center_horizontal|bottom"/>
-
-</FrameLayout>
+</RelativeLayout>
