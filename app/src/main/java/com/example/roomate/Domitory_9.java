@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -91,7 +90,7 @@ public class Domitory_9 extends AppCompatActivity {
                         filterDialog.dismiss();
                     }
                 });
-                filterDialog.findViewById(R.id.btn_filerClose).setOnClickListener(new View.OnClickListener(){
+                filterDialog.findViewById(R.id.btn_filerClose ).setOnClickListener( new View.OnClickListener(){
                     @Override
                     public void onClick(View view) {
                         filterDialog.dismiss();

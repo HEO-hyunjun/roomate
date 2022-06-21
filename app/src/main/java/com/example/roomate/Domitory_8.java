@@ -15,9 +15,6 @@ import android.widget.TextView;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -95,6 +92,14 @@ public class Domitory_8 extends AppCompatActivity {
                         ChipGroup smokingChgrp = (ChipGroup)filterDialog.findViewById((R.id.smokingChipGroup));
                         Chip smokingCh = (Chip)filterDialog.findViewById(smokingChgrp.getCheckedChipId());
 
+                        ImageButton EndDialog = (ImageButton)filterDialog.findViewById( (R.id.btn_filerClose) );
+
+                        EndDialog.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                filterDialog.cancel();
+                            }
+                        });
 
                         tags.add(forChipToTag.parseTagToInt(personalityCh.getText().toString(), 0));
                         tags.add(forChipToTag.parseTagToInt(wakeuptimeCh.getText().toString(), 3));
@@ -110,7 +115,7 @@ public class Domitory_8 extends AppCompatActivity {
                         filterDialog.dismiss();
                     }
                 });
-                filterDialog.findViewById(R.id.btn_filerClose).setOnClickListener(new View.OnClickListener(){
+                filterDialog.findViewById(R.id.btn_filerClose ).setOnClickListener( new View.OnClickListener(){
                     @Override
                     public void onClick(View view) {
                         filterDialog.dismiss();

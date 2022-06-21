@@ -85,7 +85,9 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.Bookma
 
                 }
             });
+
         }
+
         void onBind(Data data) {
             textView1.setText(data.getName());
             textView2.setText(data.getContent());

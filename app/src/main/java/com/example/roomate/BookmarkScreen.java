@@ -13,7 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import java.util.List;
 
+
 public class BookmarkScreen extends Fragment {
+
+    private static final int CODE_GET_REQUEST = 1024;
+    private static final int CODE_POST_REQUEST = 1025;
 
     private RecyclerView recyclerView;
     BookmarkAdapter adapter;
@@ -33,6 +37,15 @@ public class BookmarkScreen extends Fragment {
         recyclerView.setAdapter(adapter);
         // init();
         getData();//Data 입력정
+
+//        adapter.setOnItemLongClickListener( new BookmarkAdapter.OnItemLongClickListener() {
+//            @Override
+//            public void onItemLongClick(View view, int pos) {
+//
+//
+//
+//            }
+//        } );
 
         return rootView;
     }

@@ -50,78 +50,75 @@
 
                 <ImageView
                     android:id="@+id/other_pic"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="60dp"
-                    android:layout_marginBottom="10dp"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@mipmap/ic_launcher"/>
 
                 <TextView
                     android:id="@+id/other_name"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:background="#FFFFFF"
-                    android:hint="이름/닉네임"
+                    android:textSize="18dp"
                     android:textColor="#767676"
                     android:textColorHint="#767676"
-                    android:textSize="18dp" />
+                    android:hint="이름/닉네임"
+                    android:background="#FFFFFF"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center"
-                    android:layout_marginBottom="5dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="5dp">
 
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:layout_gravity="center_vertical"
                         android:layout_marginRight="5dp"
-                        android:src="@drawable/pr_cap" />
-
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/pr_cap"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="학년"
                         android:textColor="#767676"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"/>
 
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="10dp"
                         android:layout_marginRight="5dp"
-                        android:src="@drawable/pr_cake" />
-
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/pr_cake"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:textColor="#767676"
                         android:text="나이"
-                        android:textColor="#767676"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"/>
 
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="10dp"
                         android:layout_marginRight="5dp"
-                        android:src="@drawable/pr_gender" />
-
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/pr_gender"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:text="성별"
                         android:textColor="#767676"
-                        android:textSize="15sp" />
+                        android:text="성별"
+                        android:textSize="15sp"/>
 
                 </LinearLayout>
 
@@ -129,25 +126,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
 
                     <ImageView
                         android:id="@+id/profile_domitory"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="10dp"
                         android:layout_marginRight="5dp"
-                        android:src="@drawable/pr_home" />
-
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/pr_home"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:text="기숙사 동"
                         android:textColor="#767676"
-                        android:textSize="15sp" />
+                        android:text="기숙사 동"
+                        android:textSize="15sp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -161,20 +157,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="1px"
                         android:layout_marginBottom="20dp"
-                        android:src="#999999" />
+                        android:src="#999999"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="자기소개"
-                        android:textSize="17sp" />
+                        android:textSize="17sp"
+                        android:text="자기소개" />
 
                     <TextView
                         android:id="@+id/other_intro"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
-                        android:background="@color/white"
                         android:gravity="top"
+                        android:background="@color/white"
                         android:padding="10dp"
                         android:text="자기소개를 작성해 주세요"
                         android:textColor="#767676"
@@ -185,7 +181,7 @@
                         android:layout_height="1px"
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="20dp"
-                        android:src="#999999" />
+                        android:src="#999999"/>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -196,19 +192,11 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="나의 유형"
-                            android:textSize="17sp" />
+                            android:textSize="17sp"
+                            android:text="나의 유형"/>
 
                     </LinearLayout>
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"/>
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/addORdeleteBookmark">
 
-                    </Button>
                 </LinearLayout>
 
             </LinearLayout>
