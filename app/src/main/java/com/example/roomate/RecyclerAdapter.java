@@ -5,6 +5,9 @@ Recyclerview는 Adapter를 통해서 Data의 자료를 불러와 연결해줍니
 
 package com.example.roomate;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemViewHolder> {
@@ -61,6 +65,30 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
             textView1 = itemView.findViewById(R.id.textView1);
             textView2 = itemView.findViewById(R.id.textView2);
             imageView = itemView.findViewById(R.id.imageView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    //이미지 불러오기
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
+                    float scale = (float) (1024/(float)bitmap.getWidth());
+                    int image_w = (int) (bitmap.getWidth() * scale);
+                    int image_h = (int) (bitmap.getHeight() * scale);
+                    Bitmap resize = Bitmap.createScaledBitmap(bitmap, image_w, image_h, true);
+                    resize.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byte[] byteArray = stream.toByteArray();
+
+                    //이름, 이미지 전송
+                    Intent intent = new Intent(view.getContext(), OtherProfile.class);
+                    intent.putExtra("name", textView1.getText().toString());
+                    intent.putExtra("image", byteArray);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    view.getContext().startActivity(intent);
+
+                }
+            });
         }
 
         void onBind(Data data) {
