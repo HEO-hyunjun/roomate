@@ -11,9 +11,15 @@ package com.example.roomate;
 import android.content.res.AssetManager;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 
@@ -34,10 +40,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Data extends AppCompatActivity {
-
+    private final String URL = "http://52.79.234.253/Roommating/v1/Api.php?apicall=sort";
     private String ID;
     private String name; //이름
     private String introduce; //자기소개
@@ -46,40 +54,8 @@ public class Data extends AppCompatActivity {
     //InputStream inputStream = null;
     //AssetManager assetManager =getResources().getAssets();
 
-    /*
 
-    public String getJsonString(String path, String parameter){
-        String ret = "Error!!!";
-        try{
-            inputStream = assetManager.open(path, AssetManager.ACCESS_BUFFER);
-            InputStreamReader isr = new InputStreamReader(inputStream);
-            BufferedReader reader = new BufferedReader(isr);
-
-            StringBuffer buffer = new StringBuffer();
-            String line = reader.readLine();
-            while(line != null){
-                buffer.append(line+"\n");
-                line = reader.readLine();
-            }
-            //json 파일 불러들여 string jsonData에 넣음
-            String jsonData = buffer.toString();
-
-            JSONObject jsonObject = null;
-
-            //array에서 불러올때
-            try {
-                jsonObject = new JSONObject(jsonData);
-                JSONArray jsonArray = jsonObject.getJSONArray("items");
-                JSONObject jo = jsonArray.getJSONObject(0);
-
-                ret = jo.getString(parameter);
-            } catch (JSONException e) {e.printStackTrace();}
-
-        } catch(IOException e){e.printStackTrace();}
-
-        return ret;
-    }
-
+/*
     public int[] getTag(String path, int index){
         ArrayList<Integer> tags = new ArrayList<>();
         try{

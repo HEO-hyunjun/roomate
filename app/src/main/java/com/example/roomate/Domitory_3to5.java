@@ -17,6 +17,11 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.gson.JsonParser;
@@ -27,6 +32,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import android.os.Bundle;
 
@@ -37,6 +43,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Map;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,7 +66,7 @@ public class Domitory_3to5 extends AppCompatActivity {
 
     Dialog filterDialog;
     ArrayList<Integer> tags = new ArrayList<>();
-    ArrayList<Integer> myTags = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +82,7 @@ public class Domitory_3to5 extends AppCompatActivity {
 
         init();//Recyclerview의 adapter 불러오기
         getData();//Data 불러오기
-        //getData(reqestProfiles(myTags));
+        //getData(myTags);
         //뒤로가기
         button_backHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,21 +125,7 @@ public class Domitory_3to5 extends AppCompatActivity {
                         tags.add(forChipToTag.parseTagToInt(smokingCh.getText().toString(), 6));
                         //testView.setText(tags.toString());
                         //post tags
-                        JSONObject jsonObject = new JSONObject();
-                        try{
-                            jsonObject.put("Personality",tags.get(0));
-                            jsonObject.put("Hygiene",tags.get(1));
-                            jsonObject.put("Noise",tags.get(2));
-                            jsonObject.put("WakeupTime",tags.get(3));
-                            jsonObject.put("SleepTime",tags.get(4));
-                            jsonObject.put("Snoring",tags.get(5));
-                            jsonObject.put("Smoking",tags.get(6));
-                        }catch(JSONException e){
-                            e.printStackTrace();
-                        }
-                        JsonParser jsonParser = new JsonParser();
-                        //String recieve = Data.POST("ws://52.79.234.253",jsonObject);
-                        //getData(new JSONArray(jsonParser.parse(recieve)));
+                        getData(tags);
                         filterDialog.dismiss();
 
                         filterDialog.dismiss();
@@ -203,16 +196,16 @@ public class Domitory_3to5 extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
     // 임의의 데이터 -> 최종적으로 DB에서 받을 수 있게 수정해야 함
-    private void getData(JSONArray jsonArray) {
-
+    private void getData(ArrayList<Integer> input) {
+        getProfiles(input);
         List<String> listName = new ArrayList<>();
         List<String> listIntroduce = new ArrayList<>();
         List<Integer> listProfileImage = new ArrayList<>();
 
-        for(int i = 0; i < jsonArray.length();i++)
+        for(int i = 0; i < receiveJSONarray.length();i++)
         {
             try {
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                JSONObject jsonObject = receiveJSONarray.getJSONObject(i);
                 listName.add(jsonObject.get("Name").toString());
                 listIntroduce.add(jsonObject.get("Introduce").toString());
                 listProfileImage.add(Integer.getInteger(jsonObject.get("ProfileImage").toString()));
@@ -221,41 +214,6 @@ public class Domitory_3to5 extends AppCompatActivity {
                 continue;
             }
         }
-        //이름
-        listName = Arrays.asList(
-                "홍길동",
-                "컴공 20학번",
-                "고학번 취준생",
-                "홍길동",
-                "컴공 20학번",
-                "고학번 취준생",
-                "컴공 20학번",
-                "고학번 취준생",
-                "홍길동");
-
-        //자기소개
-        listIntroduce = Arrays.asList(
-                "함께 놀면서 친해질 룸메를 원합니다",
-                "코골이 안하는 비흡연자 룸메 구합니다.",
-                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
-                "함께 놀면서 친해질 룸메를 원합니다",
-                "코골이 안하는 비흡연자 룸메 구합니다.",
-                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
-                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
-                "함께 놀면서 친해질 룸메를 원합니다",
-                "코골이 안하는 비흡연자 룸메 구합니다.");
-
-        //프로필 사진
-        listProfileImage = Arrays.asList(
-                R.drawable.a,
-                R.drawable.b,
-                R.drawable.c,
-                R.drawable.a,
-                R.drawable.b,
-                R.drawable.c,
-                R.drawable.a,
-                R.drawable.b,
-                R.drawable.c);
 
         //리스트 목록만큼 출력합니다
         for (int i = 0; i < listName.size(); i++) {
@@ -268,12 +226,122 @@ public class Domitory_3to5 extends AppCompatActivity {
 
         adapter.notifyDataSetChanged();
     }
-
-    private JSONArray reqestProfiles(ArrayList<Integer> tags){
-        // tags를 기반으로 프로필 요청을합니다.
-        return null;
-    }
     static String strJson = "";
 
+    JSONArray receiveJSONarray;
+    public void getProfiles(ArrayList<Integer> input){
+        RequestQueue queue = Volley.newRequestQueue(getApplication().getApplicationContext());
+        receiveJSONarray = new JSONArray();
 
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/Api.php?apicall=filterp",
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            // on below line passing our response to json object.
+                            JSONObject jsonObject = new JSONObject(response);
+                            // on below line we are checking if the response is null or not.
+                            receiveJSONarray.put(jsonObject);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // method to handle errors.
+                Toast.makeText(getApplication().getApplicationContext(), "Fail to get profiles" + error, Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                // as we are passing data in the form of url encoded
+                // so we are passing the content type below
+                return "application/x-www-form-urlencoded; charset=UTF-8";
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                // below line we are creating a map for storing our values in key and value pair.
+                Map<String, String> params = new HashMap<String, String>();
+
+                // on below line we are passing our key and value pair to our parameters.
+                params.put("KakaoID", "2292209646");
+                params.put("Gender", "0");
+                params.put("Domitory", "qwe");
+                params.put("Personality",input.get(0).toString());
+                params.put("Hygiene",input.get(1).toString());
+                params.put("Noise",input.get(2).toString());
+                params.put("WakeupTime",input.get(3).toString());
+                params.put("SleepTime",input.get(4).toString());
+                params.put("Snoring",input.get(5).toString());
+                params.put("Smoking",input.get(6).toString());
+                // at last we are returning our params.
+                return params;
+            }
+        };
+        // below line is to make
+        // a json object request.
+        queue.add(request);
+    }
+    public void getSimilar(ArrayList<Integer> input){
+        RequestQueue queue = Volley.newRequestQueue(getApplication().getApplicationContext());
+        receiveJSONarray = new JSONArray();
+
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/Api.php?apicall=filterp",
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            // on below line passing our response to json object.
+                            JSONObject jsonObject = new JSONObject(response);
+                            // on below line we are checking if the response is null or not.
+                            receiveJSONarray.put(jsonObject);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // method to handle errors.
+                Toast.makeText(getApplication().getApplicationContext(), "Fail to get profiles" + error, Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                // as we are passing data in the form of url encoded
+                // so we are passing the content type below
+                return "application/x-www-form-urlencoded; charset=UTF-8";
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                // below line we are creating a map for storing our values in key and value pair.
+                Map<String, String> params = new HashMap<String, String>();
+                String kakaoID, domitory;
+                int gender;
+                // on below line we are passing our key and value pair to our parameters.
+                try {
+                    kakaoID = Data.readMyInfo().getString("KakaoID");
+                    gender = Data.readMyInfo().getInt("gender");
+                    domitory = Data.readMyInfo().getString("Domitory");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                params.put("KakaoID", "2292209646");
+                params.put("Gender", "0");
+                params.put("Domitory", "qwe");
+                // at last we are returning our params.
+                return params;
+            }
+        };
+        // below line is to make
+        // a json object request.
+        queue.add(request);
+    }
 }

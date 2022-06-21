@@ -66,16 +66,6 @@ public class ProfileScreen extends Fragment {
             e.printStackTrace();
         }
 
-        btnConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String strMyIntroduce = myIntroduce.getText().toString();
-                String strMyName = myName.getText().toString();
-                int profileId = myProfileImage.getId();
-                //서버에 post
-            }
-        });
-
         //스피너
         spinner1= (Spinner)v.findViewById(R.id.sp_grade);
         spinner2= (Spinner)v.findViewById(R.id.sp_age);
@@ -165,6 +155,24 @@ public class ProfileScreen extends Fragment {
                 });
             }
         });
+
+
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String strMyIntroduce = myIntroduce.getText().toString();
+                String strMyName = myName.getText().toString();
+                int profileId = myProfileImage.getId();
+                String domitory = spinner4.getSelectedItem().toString();
+                String age = spinner2.getSelectedItem().toString();
+                int gender = 1;
+                if(spinner3.getSelectedItem().toString() == "남자")
+                    gender = 0;
+                String grade = spinner1.getSelectedItem().toString();
+                //서버에 post + info에 추가저장
+            }
+        });
+
         return v;
     }
 
