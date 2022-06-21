@@ -38,26 +38,28 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:layout_marginTop="60dp"
-                    android:layout_marginBottom="10dp"
+                <ImageButton
                     android:id="@+id/profile_myprofile"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:layout_gravity="center"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:layout_marginTop="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#FFFFFF"
+                    android:src="@mipmap/ic_launcher" />
 
                 <EditText
-                    android:id = "@+id/myName"
+                    android:id="@+id/myName"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:textSize="18dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:background="#FFFFFF"
+                    android:hint="이름/닉네임"
+                    android:textAlignment="center"
                     android:textColor="#767676"
                     android:textColorHint="#767676"
-                    android:hint="이름/닉네임"
-                    android:background="#FFFFFF"
-                    android:layout_marginBottom="5dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="18dp" />
 
 
                 <LinearLayout
