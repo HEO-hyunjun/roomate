@@ -155,60 +155,62 @@ public class Domitory_3to5 extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
     private void getData() {
-
-        //이름
-        List<String> listTitle = Arrays.asList(
-                "홍길동",
-                "컴공 20학번",
-                "고학번 취준생",
-                "홍길동",
-                "컴공 20학번",
-                "고학번 취준생");
-
-        //자기소개
-        List<String> listContent = Arrays.asList(
-                "함께 놀면서 친해질 룸메를 원합니다",
-                "코골이 안하는 비흡연자 룸메 구합니다.",
-                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
-                "함께 놀면서 친해질 룸메를 원합니다",
-                "코골이 안하는 비흡연자 룸메 구합니다.",
-                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다"
-        );
-
-        //프로필 사진
-        List<Integer> listResId = Arrays.asList(
-                R.drawable.a,
-                R.drawable.b,
-                R.drawable.c,
-                R.drawable.a,
-                R.drawable.b,
-                R.drawable.c);
-
-        //리스트 목록만큼 출력합니다
-        for (int i = 0; i < listTitle.size(); i++) {
-            Data data = new Data();
-            data.setName(listTitle.get(i));
-            data.setContent(listContent.get(i));
-            data.setResId(listResId.get(i));
-            adapter.addItem(data);
-        }
-
-        adapter.notifyDataSetChanged();
+//
+//        //이름
+//        List<String> listTitle = Arrays.asList(
+//                "홍길동",
+//                "컴공 20학번",
+//                "고학번 취준생",
+//                "홍길동",
+//                "컴공 20학번",
+//                "고학번 취준생");
+//
+//        //자기소개
+//        List<String> listContent = Arrays.asList(
+//                "함께 놀면서 친해질 룸메를 원합니다",
+//                "코골이 안하는 비흡연자 룸메 구합니다.",
+//                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
+//                "함께 놀면서 친해질 룸메를 원합니다",
+//                "코골이 안하는 비흡연자 룸메 구합니다.",
+//                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다"
+//        );
+//
+//        //프로필 사진
+//        List<Integer> listResId = Arrays.asList(
+//                R.drawable.a,
+//                R.drawable.b,
+//                R.drawable.c,
+//                R.drawable.a,
+//                R.drawable.b,
+//                R.drawable.c);
+//
+//        //리스트 목록만큼 출력합니다
+//        for (int i = 0; i < listTitle.size(); i++) {
+//            Data data = new Data();
+//            data.setName(listTitle.get(i));
+//            data.setContent(listContent.get(i));
+//            data.setResId(listResId.get(i));
+//            adapter.addItem(data);
+//        }
+//
+//        adapter.notifyDataSetChanged();
     }
     // 임의의 데이터 -> 최종적으로 DB에서 받을 수 있게 수정해야 함
+    ArrayList<JSONObject> receiveJSONarray = new ArrayList<>();
     private void getData(ArrayList<Integer> input) {
+
         getProfiles(input);
         List<String> listName = new ArrayList<>();
         List<String> listIntroduce = new ArrayList<>();
         List<Integer> listProfileImage = new ArrayList<>();
-
-        for(int i = 0; i < receiveJSONarray.length();i++)
+        Log.e("evet",Integer.toString(receiveJSONarray.size()));
+        for(int i = 0; i < receiveJSONarray.size();i++)
         {
             try {
-                JSONObject jsonObject = receiveJSONarray.getJSONObject(i);
-                listName.add(jsonObject.get("Name").toString());
-                listIntroduce.add(jsonObject.get("Introduce").toString());
-                listProfileImage.add(Integer.getInteger(jsonObject.get("ProfileImage").toString()));
+                JSONObject jsonObject = receiveJSONarray.get(i);
+                listName.add(jsonObject.getString("Name"));
+                listIntroduce.add(jsonObject.getString("Introduce"));
+                listProfileImage.add(Integer.getInteger(jsonObject.getString("ProfileImage")));
             } catch (JSONException e) {
                 e.printStackTrace();
                 continue;
@@ -228,20 +230,24 @@ public class Domitory_3to5 extends AppCompatActivity {
     }
     static String strJson = "";
 
-    JSONArray receiveJSONarray;
+
     public void getProfiles(ArrayList<Integer> input){
         RequestQueue queue = Volley.newRequestQueue(getApplication().getApplicationContext());
-        receiveJSONarray = new JSONArray();
 
-        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/Api.php?apicall=filterp",
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/filterp.php",
                 new com.android.volley.Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            // on below line passing our response to json object.
                             JSONObject jsonObject = new JSONObject(response);
+                            Log.e("eefsdfee",jsonObject.getString("Name"));
                             // on below line we are checking if the response is null or not.
-                            receiveJSONarray.put(jsonObject);
+                            Data data = new Data();
+                            data.setName(jsonObject.getString("Name"));
+                            data.setContent(jsonObject.getString("Introduce"));
+                            data.setResId(R.drawable.a);
+                            adapter.addItem(data);
+                            adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -267,9 +273,9 @@ public class Domitory_3to5 extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
 
                 // on below line we are passing our key and value pair to our parameters.
-                params.put("KakaoID", "2292209646");
+                params.put("KakaoID", "10");
                 params.put("Gender", "0");
-                params.put("Domitory", "qwe");
+                params.put("Dormitory", "asd");
                 params.put("Personality",input.get(0).toString());
                 params.put("Hygiene",input.get(1).toString());
                 params.put("Noise",input.get(2).toString());
@@ -287,17 +293,22 @@ public class Domitory_3to5 extends AppCompatActivity {
     }
     public void getSimilar(ArrayList<Integer> input){
         RequestQueue queue = Volley.newRequestQueue(getApplication().getApplicationContext());
-        receiveJSONarray = new JSONArray();
 
-        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/Api.php?apicall=filterp",
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/filterp.php",
                 new com.android.volley.Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             // on below line passing our response to json object.
                             JSONObject jsonObject = new JSONObject(response);
+                            Log.e("eefsdfee",jsonObject.getString("Name"));
                             // on below line we are checking if the response is null or not.
-                            receiveJSONarray.put(jsonObject);
+                            Data data = new Data();
+                            data.setName(jsonObject.getString("Name"));
+                            data.setContent(jsonObject.getString("Introduce"));
+                            data.setResId(700012);
+                            adapter.addItem(data);
+                            adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
