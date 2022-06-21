@@ -16,7 +16,7 @@ import java.util.List;
 public class BookmarkScreen extends Fragment {
 
     private RecyclerView recyclerView;
-    //BookmarkAdapter adapter;
+    BookmarkAdapter adapter;
 
 
     @Override
@@ -29,10 +29,9 @@ public class BookmarkScreen extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        //adapter = new BookmarkAdapter();
-        //recyclerView.setAdapter(adapter);
+        adapter = new BookmarkAdapter();
+        recyclerView.setAdapter(adapter);
         // init();
-        // Recyclerview의 adapter 불러오기
         getData();//Data 입력정
 
         return rootView;
@@ -102,10 +101,10 @@ public class BookmarkScreen extends Fragment {
             data.setName(listTitle.get(i));
             data.setContent(listContent.get(i));
             data.setResId(listResId.get(i));
-            //adapter.addItem(data);
+            adapter.addItem(data);
         }
 
-        //adapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged();
     }
 
 }
