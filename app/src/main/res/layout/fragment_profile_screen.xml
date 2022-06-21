@@ -48,6 +48,7 @@
                     android:src="@mipmap/ic_launcher"/>
 
                 <EditText
+                    android:id = "@+id/myName"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="18dp"
@@ -149,6 +150,7 @@
                         android:text="자기소개" />
 
                     <EditText
+                        android:id = "@+id/myIntroduce"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:gravity="top"

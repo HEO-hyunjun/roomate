@@ -9,19 +9,29 @@ package com.example.roomate;
 
 
 import android.content.res.AssetManager;
+import android.os.Environment;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonParser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -227,10 +237,78 @@ public class Data extends AppCompatActivity {
         }
         return ret;
     }
+    /*
+ private static String convertInputStreamToString(InputStream inputStream) throws IOException{
+     BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
+     String line = "";
+     String result = "";
+     while((line = bufferedReader.readLine()) != null)
+         result += line;
 
+     inputStream.close();
+     return result;
+
+ }
+
+ public static String POST(String url, JSONObject jsonObject){
+     InputStream is = null;
+     String result = "";
+     try {
+         URL urlCon = new URL(url);
+         HttpURLConnection httpCon = (HttpURLConnection)urlCon.openConnection();
+
+         String json = "";
+
+         // build jsonObject
+
+         // convert JSONObject to JSON to String
+         json = jsonObject.toString();
+
+         // ** Alternative way to convert Person object to JSON string usin Jackson Lib
+         // ObjectMapper mapper = new ObjectMapper();
+         // json = mapper.writeValueAsString(person);
+
+         // Set some headers to inform server about the type of the content
+         httpCon.setRequestProperty("Accept", "application/json");
+         httpCon.setRequestProperty("Content-type", "application/json");
+
+         // OutputStream으로 POST 데이터를 넘겨주겠다는 옵션.
+         httpCon.setDoOutput(true);
+         // InputStream으로 서버로 부터 응답을 받겠다는 옵션.
+         httpCon.setDoInput(true);
+
+         OutputStream os = httpCon.getOutputStream();
+         os.write(json.getBytes("euc-kr"));
+         os.flush();
+         // receive response as inputStream
+         try {
+             is = httpCon.getInputStream();
+             // convert inputstream to string
+             if(is != null)
+                 result = Data.convertInputStreamToString(is);
+             else
+                 result = "Did not work!";
+         }
+         catch (IOException e) {
+             e.printStackTrace();
+         }
+         finally {
+             httpCon.disconnect();
+         }
+     }
+     catch (IOException e) {
+         e.printStackTrace();
+     }
+     catch (Exception e) {
+         Log.d("InputStream", e.getLocalizedMessage());
+     }
+
+     return result;
+ }
+ */
     public int parseTagToInt(String tagInput, int index) {
         //tag의 정보를 string -> int로 바꿔줌
-        int ret = -1;
+        int ret = 10;
         if (tagInput=="default")
             return ret;
         switch(index)
@@ -350,6 +428,34 @@ public class Data extends AppCompatActivity {
     public String getName() {
         //String ret = getJsonString(path, "name");
         return name;
+    }
+
+    public static JSONObject readMyInfo() throws IOException {
+        String fileTitle = "/data/data/com.example.roomate/files/Userinfo.json";
+        File file = new File(fileTitle);
+        JsonParser jsonParser = new JsonParser();
+        JSONObject ret = new JSONObject();
+
+        if(file.exists()) {
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                String result = "";
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    result += line;
+                }
+                JSONTokener token = new JSONTokener(result);
+                ret = new JSONObject(token);
+                reader.close();
+            } catch (FileNotFoundException e1) {
+
+            } catch (IOException e2) {
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return ret;
     }
 
     public void setName(String name) {
