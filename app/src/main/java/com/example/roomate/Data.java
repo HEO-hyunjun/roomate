@@ -53,7 +53,21 @@ public class Data extends AppCompatActivity {
     private int[] tag = new int[8];
     //InputStream inputStream = null;
     //AssetManager assetManager =getResources().getAssets();
-
+    public static int parseIntToIconID(int num){
+        int ret = R.drawable.a;
+        switch(num){
+            case 700012:
+                ret = R.drawable.a;
+                break;
+            case 700015:
+                ret = R.drawable.b;
+                break;
+            case 700017:
+                ret = R.drawable.c;
+                break;
+        }
+        return ret;
+    }
 
 /*
     public int[] getTag(String path, int index){

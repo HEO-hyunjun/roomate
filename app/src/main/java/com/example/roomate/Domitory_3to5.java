@@ -245,7 +245,7 @@ public class Domitory_3to5 extends AppCompatActivity {
                             Data data = new Data();
                             data.setName(jsonObject.getString("Name"));
                             data.setContent(jsonObject.getString("Introduce"));
-                            data.setResId(R.drawable.a);
+                            data.setResId(Data.parseIntToIconID(jsonObject.getInt("ProfileImage")));
                             adapter.addItem(data);
                             adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
@@ -306,7 +306,7 @@ public class Domitory_3to5 extends AppCompatActivity {
                             Data data = new Data();
                             data.setName(jsonObject.getString("Name"));
                             data.setContent(jsonObject.getString("Introduce"));
-                            data.setResId(700012);
+                            data.setResId(Data.parseIntToIconID(jsonObject.getInt("ProfileImage")));
                             adapter.addItem(data);
                             adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
