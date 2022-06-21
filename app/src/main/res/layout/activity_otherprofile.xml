@@ -82,13 +82,15 @@
                         android:layout_marginRight="5dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/pr_cap"/>
+
                     <TextView
+                        android:id="@+id/other_grade"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="학년"
                         android:textColor="#767676"
-                        android:textSize="15sp"/>
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:layout_width="15dp"
