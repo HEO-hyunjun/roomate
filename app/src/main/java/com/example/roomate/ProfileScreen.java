@@ -47,6 +47,12 @@ public class ProfileScreen extends Fragment {
     EditText myIntroduce;
     EditText myName;
     ImageButton myProfileImage;
+    String strMyName ;
+    String strMyIntroduce;
+    String strMyGrade;
+    String strMyDormitory;
+    String strMyKakaoID;
+    Integer intMyProfileImage;
 
     ProfileScreen(){
 
