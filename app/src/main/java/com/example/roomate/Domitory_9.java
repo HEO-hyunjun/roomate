@@ -213,14 +213,16 @@ public class Domitory_9 extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             // on below line passing our response to json object.
-                            JSONObject jsonObject = new JSONObject(response);
+                            JSONObject jsonObjects = new JSONObject(response);
 
-                            // on below line we are checking if the response is null or not.
-                            Data data = new Data();
-                            data.setName(jsonObject.getString("Name"));
-                            data.setContent(jsonObject.getString("Introduce"));
-                            data.setResId(Data.parseIntToIconID(jsonObject.getInt("Profileimage")));
-                            adapter.addItem(data);
+                            for(int i = 0 ;i <jsonObjects.length()-2;i++) {
+                                JSONObject jsonObject = new JSONObject(jsonObjects.getJSONObject(Integer.toString(i)).toString());
+                                Data data = new Data();
+                                data.setName(jsonObject.getString("Name"));
+                                data.setContent(jsonObject.getString("Introduce"));
+                                data.setResId(Data.parseIntToIconID(jsonObject.getInt("Profileimage")));
+                                adapter.addItem(data);
+                            }
                             adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();

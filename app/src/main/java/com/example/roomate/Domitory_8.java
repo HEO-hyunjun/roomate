@@ -52,10 +52,8 @@ public class Domitory_8 extends AppCompatActivity {
         //activity간 자료공유코드
 
         Intent secondIntent = getIntent();
-        String test = secondIntent.getStringExtra("test");
         setContentView(R.layout.activity_domitory8);
 
-        TextView testView = findViewById(R.id.forTesttext);
 
 
 
@@ -121,7 +119,6 @@ public class Domitory_8 extends AppCompatActivity {
                         tags.add(forChipToTag.parseTagToInt(noiseCh.getText().toString(), 2));
                         tags.add(forChipToTag.parseTagToInt(hygieneCh.getText().toString(), 1));
                         tags.add(forChipToTag.parseTagToInt(smokingCh.getText().toString(), 6));
-                        testView.setText(tags.toString());
                         //post tags
                         getData(tags);
                         filterDialog.dismiss();
@@ -238,18 +235,21 @@ public class Domitory_8 extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             // on below line passing our response to json object.
-                            JSONObject jsonObject = new JSONObject(response);
-
-                            // on below line we are checking if the response is null or not.
-                            Data data = new Data();
-                            data.setName(jsonObject.getString("Name"));
-                            data.setContent(jsonObject.getString("Introduce"));
-                            data.setResId(Data.parseIntToIconID(jsonObject.getInt("Profileimage")));
-                            adapter.addItem(data);
+                            JSONObject jsonObjects = new JSONObject(response);
+                            for(int i = 0 ;i <jsonObjects.length()-2;i++) {
+                                JSONObject jsonObject = new JSONObject(jsonObjects.getJSONObject(Integer.toString(i)).toString());
+                                Data data = new Data();
+                                data.setName(jsonObject.getString("Name"));
+                                data.setContent(jsonObject.getString("Introduce"));
+                                data.setResId(Data.parseIntToIconID(jsonObject.getInt("Profileimage")));
+                                adapter.addItem(data);
+                            }
                             adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
+
                     }
                 }, new com.android.volley.Response.ErrorListener() {
             @Override
