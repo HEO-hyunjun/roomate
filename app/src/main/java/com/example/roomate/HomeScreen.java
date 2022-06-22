@@ -54,10 +54,6 @@ public class HomeScreen extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity().getApplicationContext(), Domitory_8.class);
-                // activity간 자료공유 key, value 넣고 이동한 activity에서
-                //get intent, get String Extra로 값을 주고받을 수 있음
-                intent.putExtra("test","test해보겠읍니다");
-
                 getActivity().startActivity(intent);
             }
         });

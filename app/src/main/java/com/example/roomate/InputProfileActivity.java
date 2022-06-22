@@ -6,16 +6,29 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class InputProfileActivity extends AppCompatActivity {
 
@@ -29,7 +42,6 @@ public class InputProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_input_profile);
         backButton = (ImageButton) findViewById(R.id.btn_backtohome);
         saveButton = (Button) findViewById(R.id.btn_save_my_input_profile);
-        tesss = (TextView) findViewById(R.id.teeee);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +104,7 @@ public class InputProfileActivity extends AppCompatActivity {
                     tags.clear();
                 }
                 else {
+                    pushMyProfile(tags);
                     finish();
                 }
             }
@@ -110,5 +123,66 @@ public class InputProfileActivity extends AppCompatActivity {
         });
 
         ad.show();
+    }
+    public void pushMyProfile(ArrayList<Integer> input){
+        RequestQueue queue = Volley.newRequestQueue(getApplication().getApplicationContext());
+
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/mydata.php",
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            //서버에서 요청한 자료가 응답으로 들어왔을때 코드입니다.
+                            JSONObject jsonObjects = new JSONObject(response);
+                            Log.e("eefsdfee",Integer.toString(jsonObjects.length()));
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // 오류발생시 코드입니다.
+                Toast.makeText(getApplication().getApplicationContext(), "Fail to get profiles" + error, Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                // as we are passing data in the form of url encoded
+                // so we are passing the content type below
+                return "application/x-www-form-urlencoded; charset=UTF-8";
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                Map<String, String> params = new HashMap<String, String>();
+                String kakaoID = "10";
+                int gender = 0;
+                try {
+                    kakaoID = Data.readMyInfo().getString("KakaoID");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                // 서버에 요청할때 입력값을 넣어줍니다.
+                params.put("KakaoID", kakaoID);
+                params.put("Personality",input.get(0).toString());
+                params.put("Hygiene",input.get(1).toString());
+                params.put("Noise",input.get(2).toString());
+                params.put("WakeupTime",input.get(3).toString());
+                params.put("SleepTime",input.get(4).toString());
+                params.put("Snoring",input.get(5).toString());
+                params.put("Smoking",input.get(6).toString());
+                // at last we are returning our params.
+                return params;
+            }
+        };
+        // below line is to make
+        // a json object request.
+        queue.add(request);
     }
 }

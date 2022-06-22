@@ -36,8 +36,8 @@ public class ChatActivity extends AppCompatActivity {
     TextView receiveView;
 
     //보낼사람 받는사람?? 받아와야함
-    private String Me = "He";
-    private String You = "She";
+    private String Me = "1";
+    private String You;
 
     @Override
     // 콜백 메소드, 생명주기에서 생성 단계에 한번 실행되는 메소드
@@ -55,6 +55,7 @@ public class ChatActivity extends AppCompatActivity {
         String receiveStr = intent.getExtras().getString("name");// 전달한 값을 받을 때
         String othersKakaoID = intent.getExtras().getString("KakaoID"); // 상대방 카카오아이디
         String myKakaoID = "10";
+        You = othersKakaoID;
         try {
             myKakaoID = Data.readMyInfo().getString("KakaoID");
         } catch (JSONException e) {
@@ -130,7 +131,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private void instantiateWebSocket() {
         OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder().url("ws://52.79.234.253:8080").build();
+        Request request = new Request.Builder().url("ws://52.79.234.253:8081").build();
         SocketListener socketListener = new SocketListener(this);
         webSocket = client.newWebSocket(request, socketListener);
         webSocket = client.newWebSocket(request, socketListener);

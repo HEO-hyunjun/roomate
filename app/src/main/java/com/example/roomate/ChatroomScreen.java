@@ -114,7 +114,7 @@ public class ChatroomScreen extends Fragment {
     public void getProfiles(){
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
 
-        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/filterp.php",
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/chatRoom.php",
                 new com.android.volley.Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -124,6 +124,7 @@ public class ChatroomScreen extends Fragment {
                             //adapter에 바로추가합니다.
                             for(int i = 0 ;i <jsonObjects.length()-2;i++) {
                                 JSONObject jsonObject = new JSONObject(jsonObjects.getJSONObject(Integer.toString(i)).toString());
+                                Log.e("chatcat", jsonObject.toString());
                                 Data data = new Data();
                                 data.setName(jsonObject.getString("Name"));
                                 data.setContent(jsonObject.getString("Introduce"));
@@ -154,14 +155,14 @@ public class ChatroomScreen extends Fragment {
             protected Map<String, String> getParams() {
 
                 Map<String, String> params = new HashMap<String, String>();
-                String kakaoID = "10";
-                try {
+                String kakaoID = "1";
+                /*try {
                     kakaoID = Data.readMyInfo().getString("KakaoID");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
-                }
+                }*/
 
                 // 서버에 요청할때 입력값을 넣어줍니다.
                 //본인 카카오아이디

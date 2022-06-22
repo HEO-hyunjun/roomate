@@ -7,17 +7,30 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.WebSocket;
 
@@ -177,5 +190,142 @@ public class Domitory_8 extends AppCompatActivity {
 //
 //        adapter.notifyDataSetChanged();
     }
+    public void getProfiles(ArrayList<Integer> input){
+        RequestQueue queue = Volley.newRequestQueue(getApplication().getApplicationContext());
 
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/filterp.php",
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            //서버에서 요청한 자료가 응답으로 들어왔을때 코드입니다.
+                            JSONObject jsonObjects = new JSONObject(response);
+                            Log.e("eefsdfee",Integer.toString(jsonObjects.length()));
+                            //adapter에 바로추가합니다.
+                            for(int i = 0 ;i <jsonObjects.length()-2;i++) {
+                                JSONObject jsonObject = new JSONObject(jsonObjects.getJSONObject(Integer.toString(i)).toString());
+                                Data data = new Data();
+                                data.setName(jsonObject.getString("Name"));
+                                data.setContent(jsonObject.getString("Introduce"));
+                                data.setResId(Data.parseIntToIconID(jsonObject.getInt("Profileimage")));
+                                adapter.addItem(data);
+                            }
+                            adapter.notifyDataSetChanged();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // 오류발생시 코드입니다.
+                Toast.makeText(getApplication().getApplicationContext(), "Fail to get profiles" + error, Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                // as we are passing data in the form of url encoded
+                // so we are passing the content type below
+                return "application/x-www-form-urlencoded; charset=UTF-8";
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                Map<String, String> params = new HashMap<String, String>();
+                String kakaoID = "10";
+                String dormitory = "asd";
+                int gender = 0;
+                /*try {
+                    kakaoID = Data.readMyInfo().getString("KakaoID");
+                    gender = Data.readMyInfo().getInt("gender");
+                    dormitory = Data.readMyInfo().getString("Dormitory");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }*/
+
+                // 서버에 요청할때 입력값을 넣어줍니다.
+                params.put("KakaoID", kakaoID);
+                params.put("Gender", Integer.toString(gender));
+                params.put("Dormitory", dormitory);
+                params.put("Personality",input.get(0).toString());
+                params.put("Hygiene",input.get(1).toString());
+                params.put("Noise",input.get(2).toString());
+                params.put("WakeupTime",input.get(3).toString());
+                params.put("SleepTime",input.get(4).toString());
+                params.put("Snoring",input.get(5).toString());
+                params.put("Smoking",input.get(6).toString());
+                // at last we are returning our params.
+                return params;
+            }
+        };
+        // below line is to make
+        // a json object request.
+        queue.add(request);
+    }
+    public void getSimilar(ArrayList<Integer> input){
+        RequestQueue queue = Volley.newRequestQueue(getApplication().getApplicationContext());
+
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/sort.php ",
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            // on below line passing our response to json object.
+                            JSONObject jsonObject = new JSONObject(response);
+
+                            Log.e("eefsdfee",jsonObject.getString("Name"));
+                            // on below line we are checking if the response is null or not.
+                            Data data = new Data();
+                            data.setName(jsonObject.getString("Name"));
+                            data.setContent(jsonObject.getString("Introduce"));
+                            data.setResId(Data.parseIntToIconID(jsonObject.getInt("Profileimage")));
+                            adapter.addItem(data);
+                            adapter.notifyDataSetChanged();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // method to handle errors.
+                Toast.makeText(getApplication().getApplicationContext(), "Fail to get profiles" + error, Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                // as we are passing data in the form of url encoded
+                // so we are passing the content type below
+                return "application/x-www-form-urlencoded; charset=UTF-8";
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                // below line we are creating a map for storing our values in key and value pair.
+                Map<String, String> params = new HashMap<String, String>();
+                String kakaoID = "1";
+                String dormitory = "8동";
+                int gender = 0;
+                // on below line we are passing our key and value pair to our parameters.
+                try {
+                    kakaoID = Data.readMyInfo().getString("KakaoID");
+                    gender = Data.readMyInfo().getInt("gender");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                params.put("KakaoID", kakaoID);
+                params.put("Gender", Integer.toString(gender));
+                params.put("Dormitory", dormitory);
+                return params;
+            }
+        };
+
+        queue.add(request);
+    }
 }

@@ -201,8 +201,6 @@ public class Domitory_3to5 extends AppCompatActivity {
         getProfiles(input);
 
     }
-    static String strJson = "";
-
 
     public void getProfiles(ArrayList<Integer> input){
         RequestQueue queue = Volley.newRequestQueue(getApplication().getApplicationContext());
@@ -261,7 +259,7 @@ public class Domitory_3to5 extends AppCompatActivity {
                 }*/
 
                 // 서버에 요청할때 입력값을 넣어줍니다.
-                params.put("KakaoID", "10");
+                params.put("KakaoID", kakaoID);
                 params.put("Gender", Integer.toString(gender));
                 params.put("Dormitory", dormitory);
                 params.put("Personality",input.get(0).toString());
