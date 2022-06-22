@@ -54,7 +54,15 @@ public class ChatActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String receiveStr = intent.getExtras().getString("name");// 전달한 값을 받을 때
         String othersKakaoID = intent.getExtras().getString("KakaoID"); // 상대방 카카오아이디
-        String myKakaoID = "10";
+        String myKakaoID = null;
+        try {
+            myKakaoID = Data.readMyInfo().getString("KakaoID");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Me = myKakaoID;
         You = othersKakaoID;
         try {
             myKakaoID = Data.readMyInfo().getString("KakaoID");

@@ -69,7 +69,7 @@ public class Domitory_8 extends AppCompatActivity {
 
 
         init();//Recyclerview의 adapter 불러오기
-        getData();//Data 입력
+        getSimilar();//Data 입력
 
         //뒤로가기
         button_backHome.setOnClickListener(new View.OnClickListener() {
@@ -123,8 +123,10 @@ public class Domitory_8 extends AppCompatActivity {
                         tags.add(forChipToTag.parseTagToInt(smokingCh.getText().toString(), 6));
                         testView.setText(tags.toString());
                         //post tags
-                        //String message = tags.toString();
+                        getData(tags);
+                        filterDialog.dismiss();
                         tags.clear();
+
                         filterDialog.dismiss();
                     }
                 });
@@ -147,49 +149,12 @@ public class Domitory_8 extends AppCompatActivity {
         adapter = new RecyclerAdapter();
         recyclerView.setAdapter(adapter);
     }
-
     // 임의의 데이터 -> 최종적으로 DB에서 받을 수 있게 수정해야 함
-    private void getData() {
-//
-//        //이름
-//        List<String> listTitle = Arrays.asList(
-//                "홍길동",
-//                "컴공 20학번",
-//                "고학번 취준생",
-//                "홍길동",
-//                "컴공 20학번",
-//                "고학번 취준생");
-//
-//        //자기소개
-//        List<String> listContent = Arrays.asList(
-//                "함께 놀면서 친해질 룸메를 원합니다",
-//                "코골이 안하는 비흡연자 룸메 구합니다.",
-//                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다",
-//                "함께 놀면서 친해질 룸메를 원합니다",
-//                "코골이 안하는 비흡연자 룸메 구합니다.",
-//                "서로 공부에만 집중할 수 있게 공부하는 룸메이트 구합니다"
-//                );
-//
-//        //프로필 사진
-//        List<Integer> listResId = Arrays.asList(
-//                R.drawable.a,
-//                R.drawable.b,
-//                R.drawable.c,
-//                R.drawable.a,
-//                R.drawable.b,
-//                R.drawable.c);
-//
-//        //리스트 목록만큼 출력합니다
-//        for (int i = 0; i < listTitle.size(); i++) {
-//            Data data = new Data();
-//            data.setName(listTitle.get(i));
-//            data.setContent(listContent.get(i));
-//            data.setResId(listResId.get(i));
-//            adapter.addItem(data);
-//        }
-//
-//        adapter.notifyDataSetChanged();
+    private void getData(ArrayList<Integer> input) {
+        adapter.notifyDataSetChanged();
+        getProfiles(input);
     }
+
     public void getProfiles(ArrayList<Integer> input){
         RequestQueue queue = Volley.newRequestQueue(getApplication().getApplicationContext());
 
@@ -200,7 +165,6 @@ public class Domitory_8 extends AppCompatActivity {
                         try {
                             //서버에서 요청한 자료가 응답으로 들어왔을때 코드입니다.
                             JSONObject jsonObjects = new JSONObject(response);
-                            Log.e("eefsdfee",Integer.toString(jsonObjects.length()));
                             //adapter에 바로추가합니다.
                             for(int i = 0 ;i <jsonObjects.length()-2;i++) {
                                 JSONObject jsonObject = new JSONObject(jsonObjects.getJSONObject(Integer.toString(i)).toString());
@@ -233,18 +197,18 @@ public class Domitory_8 extends AppCompatActivity {
             protected Map<String, String> getParams() {
 
                 Map<String, String> params = new HashMap<String, String>();
-                String kakaoID = "10";
-                String dormitory = "asd";
+                String kakaoID = "1";
+                String dormitory = "35동";
                 int gender = 0;
-                /*try {
+                try {
                     kakaoID = Data.readMyInfo().getString("KakaoID");
-                    gender = Data.readMyInfo().getInt("gender");
+                    gender = Data.readMyInfo().getInt("Gender");
                     dormitory = Data.readMyInfo().getString("Dormitory");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
-                }*/
+                }
 
                 // 서버에 요청할때 입력값을 넣어줍니다.
                 params.put("KakaoID", kakaoID);
@@ -265,7 +229,7 @@ public class Domitory_8 extends AppCompatActivity {
         // a json object request.
         queue.add(request);
     }
-    public void getSimilar(ArrayList<Integer> input){
+    public void getSimilar(){
         RequestQueue queue = Volley.newRequestQueue(getApplication().getApplicationContext());
 
         StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/sort.php ",
@@ -276,7 +240,6 @@ public class Domitory_8 extends AppCompatActivity {
                             // on below line passing our response to json object.
                             JSONObject jsonObject = new JSONObject(response);
 
-                            Log.e("eefsdfee",jsonObject.getString("Name"));
                             // on below line we are checking if the response is null or not.
                             Data data = new Data();
                             data.setName(jsonObject.getString("Name"));
@@ -313,7 +276,7 @@ public class Domitory_8 extends AppCompatActivity {
                 // on below line we are passing our key and value pair to our parameters.
                 try {
                     kakaoID = Data.readMyInfo().getString("KakaoID");
-                    gender = Data.readMyInfo().getInt("gender");
+                    gender = Data.readMyInfo().getInt("Gender");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 } catch (IOException e) {

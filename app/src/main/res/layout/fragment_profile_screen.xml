@@ -158,7 +158,9 @@
                         android:gravity="top"
                         android:background="@color/white"
                         android:padding="10dp"
-                        android:text="자기소개를 작성해 주세요"
+                        android:hint="자기소개를 작성해 주세요"
+                        android:textColorHint="#918888"
+                        android:text=""
                         android:textColor="#767676"
                         android:textSize="10sp" />
 
