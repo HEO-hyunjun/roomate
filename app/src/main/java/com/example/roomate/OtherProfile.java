@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,7 +25,9 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,36 +37,59 @@ import java.util.Map;
 
 public class OtherProfile extends AppCompatActivity {
 
-    TextView receive_name;
     TextView recieve_nickname ;
     TextView recieve_grade;
     TextView receive_profile;
+    Button addOrdelete;
 
+    String strMyKakaoID;
+    String strKakaoID;
     String movieName1, movieName2;
     String rank1, rank2;
 
     static RequestQueue requestQueue;
 
     Gson gson = new Gson();
-
+    boolean isAdded = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_otherprofile);
+        strMyKakaoID = "1";
+        try {
+            JSONObject jsonObject = Data.readMyInfo();
+            strMyKakaoID = jsonObject.getString("KakaoID");
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
 
-        //어댑터 클릭 이벤트시 받는 데이터
-        Intent intent = getIntent();
-        String receiveStr = intent.getExtras().getString("name");// 전달한 값을 받을 때
-        String KakaoID = intent.getExtras().getString("KakaoID");
-        receive_name = (TextView)findViewById(R.id.other_title);
-        receive_name.setText(receiveStr);
+        Button btnAddORDelete = (Button) findViewById(R.id.addORdeleteBookmark);
+        Intent intent = new Intent(this, OtherProfile.class);
+        recieve_nickname = (TextView)findViewById(R.id.other_name);
+        recieve_grade = (TextView)findViewById(R.id.other_grade);
+        receive_profile = (TextView)findViewById(R.id.other_intro);
+        strKakaoID = intent.getStringExtra("KakaoID");
 
-        ImageView imageview = (ImageView)findViewById(R.id.other_pic);
-        byte[] byteArray = getIntent().getByteArrayExtra("image");
-        Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+        btnAddORDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                isAdded = isMatched();
+                if(isAdded){
+                    isAdded = false;
+                    btnAddORDelete.setText("관심목록에 추가하기");
+                    deleteThisprofile();
+                }
+                else{
+                    //post 관심목록에 추가
+                    isAdded = true;
+                    btnAddORDelete.setText("관심목록에서 삭제하기");
+                    addThisprofile();
+                }
+            }
+        });
+        //get isAdded 관심목록에 추가가 돼어있는지
 
-        imageview.setImageBitmap(bitmap);
 
         //뒤로가기: 상단 스택을 지우는 방식, 다른 방식으로 액티비티->플래그먼트 이동하면 오류가 자주 발생함
         ImageButton button_backbook = findViewById(R.id.btn_book);
@@ -77,10 +104,6 @@ public class OtherProfile extends AppCompatActivity {
         if(requestQueue == null){
             requestQueue = Volley.newRequestQueue(getApplicationContext());
         }
-
-        recieve_nickname = (TextView)findViewById(R.id.other_name);
-        recieve_grade = (TextView)findViewById(R.id.other_grade);
-        receive_profile = (TextView)findViewById(R.id.other_intro);
 
 
 
@@ -164,5 +187,138 @@ public class OtherProfile extends AppCompatActivity {
     public void action(){
         recieve_nickname.setText(movieName1);
         recieve_grade.setText(rank1);
+    }
+
+    public void addThisprofile(){
+        RequestQueue queue = Volley.newRequestQueue(OtherProfile.this);
+
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/myprofile.php",
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            // on below line passing our response to json object.
+                            JSONObject jsonObject = new JSONObject(response);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // method to handle errors.
+                Toast.makeText(OtherProfile.this, "Fail to get profiles" + error, Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                // as we are passing data in the form of url encoded
+                // so we are passing the content type below
+                return "application/x-www-form-urlencoded; charset=UTF-8-sig";
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                // below line we are creating a map for storing our values in key and value pair.
+                Map<String, String> params = new HashMap<String, String>();
+                // on below line we are passing our key and value pair to our parameters.
+                params.put("KakaoID1", strMyKakaoID);
+                params.put("KakaoID2", strKakaoID);
+                return params;
+            }
+        };
+        // below line is to make
+        // a json object request.
+        queue.add(request);
+    }
+    public void deleteThisprofile(){
+        RequestQueue queue = Volley.newRequestQueue(OtherProfile.this);
+
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/myprofile.php",
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            // on below line passing our response to json object.
+                            JSONObject jsonObject = new JSONObject(response);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // method to handle errors.
+                Toast.makeText(OtherProfile.this, "Fail to get profiles" + error, Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                // as we are passing data in the form of url encoded
+                // so we are passing the content type below
+                return "application/x-www-form-urlencoded; charset=UTF-8-sig";
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                // below line we are creating a map for storing our values in key and value pair.
+                Map<String, String> params = new HashMap<String, String>();
+                // on below line we are passing our key and value pair to our parameters.
+                params.put("KakaoID1", strMyKakaoID);
+                params.put("KakaoID2", strKakaoID);
+                return params;
+            }
+        };
+        // below line is to make
+        // a json object request.
+        queue.add(request);
+    }
+    public boolean isMatched(){
+        RequestQueue queue = Volley.newRequestQueue(OtherProfile.this);
+        final boolean[] flag = {false};
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/myprofile.php",
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            // on below line passing our response to json object.
+                            JSONObject jsonObject = new JSONObject(response);
+                            flag[0] = jsonObject.getBoolean("Matched");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // method to handle errors.
+                Toast.makeText(OtherProfile.this, "Fail to get profiles" + error, Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                // as we are passing data in the form of url encoded
+                // so we are passing the content type below
+                return "application/x-www-form-urlencoded; charset=UTF-8-sig";
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                // below line we are creating a map for storing our values in key and value pair.
+                Map<String, String> params = new HashMap<String, String>();
+                // on below line we are passing our key and value pair to our parameters.
+                params.put("KakaoID1", strMyKakaoID);
+                params.put("KakaoID2", strKakaoID);
+                return params;
+            }
+        };
+        // below line is to make
+        // a json object request.
+        queue.add(request);
+        return flag[0];
     }
 }

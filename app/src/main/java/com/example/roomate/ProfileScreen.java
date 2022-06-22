@@ -3,6 +3,7 @@ package com.example.roomate;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -29,7 +30,14 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,6 +70,7 @@ public class ProfileScreen extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View v = inflater.inflate(R.layout.fragment_profile_screen, container, false);
         Dialog profileSelect = new Dialog(getActivity());
         profileSelect.setContentView(R.layout.profileimageselect_dialog);
@@ -75,6 +84,8 @@ public class ProfileScreen extends Fragment {
         Spinner sp_dom = (Spinner) v.findViewById(R.id.sp_dom);
         Spinner sp_gender = (Spinner) v.findViewById(R.id.sp_gender);
 
+        myProfileImage.setImageResource(R.drawable.a);
+        myProfileImage.setTag(R.drawable.a);
         strMyName = "이름";
         strMyIntroduce = "자기소개를 작성해주세요";
         strMyGrade = "1학년";
@@ -84,9 +95,10 @@ public class ProfileScreen extends Fragment {
         JSONObject myInfoRet = getMyprofile(strMyKakaoID);
         //grade, dom, gender, profileimage 가져오기
         try {
+            Log.e("myInfoRet",myInfoRet.toString());
             myName.setText(myInfoRet.getString("Name"));
             myIntroduce.setText(myInfoRet.getString("Introduce"));
-            myProfileImage.setImageResource(Data.parseIntToIconID(myInfoRet.getInt("Profileimage")));
+            myProfileImage.setImageResource(Data.parseIconIDTOInt(myInfoRet.getInt("Profileimage")));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -111,7 +123,7 @@ public class ProfileScreen extends Fragment {
 
         myName.setText(strMyName);
         myIntroduce.setText(strMyIntroduce);
-        myProfileImage.setImageResource(Data.parseIntToIconID(intMyProfileImage));
+        myProfileImage.setImageResource(intMyProfileImage);
 
         //스피너
         spinner1= (Spinner)v.findViewById(R.id.sp_grade);
@@ -245,6 +257,7 @@ public class ProfileScreen extends Fragment {
                     gender = 0;
                 String grade = spinner1.getSelectedItem().toString();
                 //서버에 post + info에 추가저장
+                //postDB(strMyKakaoID,strMyIntroduce,strMyName,Integer.toString(profileId),strDormitory,Integer.toString(gender),grade);
                 postMyprofile(new String[]{strMyIntroduce, strMyName, Integer.toString(profileId), strDormitory, Integer.toString(gender),grade}); // server에서 나의 정보를 갱신함.
                 JSONObject input = new JSONObject();
                 try {
@@ -277,7 +290,6 @@ public class ProfileScreen extends Fragment {
                         try {
                             // on below line passing our response to json object.
                             JSONObject jsonObject = new JSONObject(response);
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -293,7 +305,7 @@ public class ProfileScreen extends Fragment {
             public String getBodyContentType() {
                 // as we are passing data in the form of url encoded
                 // so we are passing the content type below
-                return "application/x-www-form-urlencoded; charset=UTF-8";
+                return "application/x-www-form-urlencoded; charset=UTF-8-sig";
             }
 
             @Override
@@ -301,22 +313,15 @@ public class ProfileScreen extends Fragment {
 
                 // below line we are creating a map for storing our values in key and value pair.
                 Map<String, String> params = new HashMap<String, String>();
-                String kakaoID = "1";
                 // on below line we are passing our key and value pair to our parameters.
-                try {
-                    kakaoID = Data.readMyInfo().getString("KakaoID");
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                params.put("KakaoID", kakaoID);
+                params.put("KakaoID", strMyKakaoID);
                 params.put("Introduce", input[0]);
                 params.put("Name",input[1]);
                 params.put("Profileimage",input[2]);
                 params.put("Dormitory",input[3]);
                 params.put("Gender",input[4]);
                 params.put("Grade",input[5]);
+                //strMyIntroduce, strMyName, Integer.toString(profileId), strDormitory, Integer.toString(gender),grade
                 Log.e("tags",params.toString());
                 return params;
             }
@@ -338,7 +343,7 @@ public class ProfileScreen extends Fragment {
                             //age, grade, dom, gender, profileimage 가져오기
                             ret.put("Grade",jsonObject.getString("Grade"));
                             ret.put("Profileimage",Data.parseIconIDTOInt(jsonObject.getInt("Profileimage")));
-
+                            ret.put("Name",jsonObject.getString("Name"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -354,7 +359,7 @@ public class ProfileScreen extends Fragment {
             public String getBodyContentType() {
                 // as we are passing data in the form of url encoded
                 // so we are passing the content type below
-                return "application/x-www-form-urlencoded; charset=UTF-8";
+                return "application/x-www-form-urlencoded; charset=UTF-8-sig";
             }
 
             @Override
@@ -373,4 +378,107 @@ public class ProfileScreen extends Fragment {
         return ret;
     }
 
+    public void postDB(String strMyKakaoID, String strIntroduce, String strName, String strProfileimage, String strDormitory,String strGender,String strGrade){
+
+        class joinHTTPt extends AsyncTask<Void, Void, Void> {
+
+            String strMyKakaoID;
+            String strIntroduce;
+            String strProfileimage;
+            String strDormitory;
+            String strGender;
+            String strGrade;
+            String strName;
+
+            public joinHTTPt(String strMyKakaoID, String strIntroduce,String strName, String strProfileimage, String strDormitory,String strGender,String strGrade){
+                this.strMyKakaoID = strMyKakaoID;
+                this.strIntroduce = strIntroduce;
+                this.strProfileimage = strProfileimage;
+                this.strDormitory = strDormitory;
+                this.strGender = strGender;
+                this.strGrade = strGrade;
+                this.strName = strName;
+            }
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                try {
+
+                    //--------------------------
+                    //   URL 설정하고 접속하기
+                    //--------------------------
+
+
+                    URL url = new URL("http://52.79.234.253/Roommating/v1/myprofile.php");
+                    HttpURLConnection huc = (HttpURLConnection) url.openConnection();
+
+
+                    //--------------------------
+                    //   전송 모드 설정 - 기본적인 설정이다
+                    //--------------------------
+
+
+                    huc.setDefaultUseCaches(false);
+                    huc.setDoInput(true);                         // 서버에서 읽기 모드 지정
+                    huc.setDoOutput(true);                       // 서버로 쓰기 모드 지정
+                    huc.setRequestMethod("POST");         // 전송 방식은 POST
+
+                    huc.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+
+
+
+                    // 서버로 값 전달.
+                    //--------------------------
+                    //   서버로 값 전송
+                    //--------------------------
+
+
+
+                    StringBuffer buffer = new StringBuffer();
+                    buffer.append("KakaoID").append("=").append(strMyKakaoID).append("&");                 // php 변수에 값 대입
+                    buffer.append("Introduce").append("=").append(strIntroduce).append("&");
+                    buffer.append("Name").append("=").append(strName).append("&");   // php 변수 앞에 '$' 붙이지 않는다
+                    buffer.append("Profileimage").append("=").append(strProfileimage).append("&");           // 변수 구분은 '&' 사용
+                    buffer.append("Dormitory").append("=").append(strDormitory).append("&");
+                    buffer.append("Grade").append("=").append(strGrade).append("&");
+                    buffer.append("Gender").append("=").append(strGender);
+
+
+                    OutputStreamWriter outStream = new OutputStreamWriter(huc.getOutputStream(), "UTF-8");  // 안드에서 php로 보낼때 UTF8로 해야지 한글이 안깨진다.
+//                    OutputStreamWriter outStream = new OutputStreamWriter(huc.getOutputStream(), "EUC-KR");
+                    PrintWriter writer = new PrintWriter(outStream);
+                    writer.write(buffer.toString());
+                    writer.flush();
+
+
+                    //--------------------------
+                    //   서버에서 전송받기
+                    //--------------------------
+                    InputStreamReader tmp = new InputStreamReader(huc.getInputStream(), "EUC-KR");
+                    BufferedReader reader = new BufferedReader(tmp);
+                    StringBuilder builder = new StringBuilder();
+                    String str;
+                    while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
+                        builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
+                    }
+                    String myResult = builder.toString();                       // 전송결과를 전역 변수에 저장
+
+
+
+
+
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                return null;
+            }
+        }
+
+        joinHTTPt gotoDBUerId = new joinHTTPt( strMyKakaoID,  strIntroduce, strName,  strProfileimage,  strDormitory, strGender, strGrade);
+        gotoDBUerId.execute();
+
+    }
 }

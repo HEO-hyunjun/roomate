@@ -9,6 +9,7 @@ package com.example.roomate;
 
 
 import android.content.res.AssetManager;
+import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
@@ -361,6 +362,7 @@ public class Data extends AppCompatActivity {
         Log.e("readmyData!!",ret.toString());
         return ret;
     }
+
     public static void writeMyInfo(JSONObject input) throws IOException {
         String fileTitle = "/data/data/com.example.roomate/files/Userinfo.json";
         File file = new File(fileTitle);
