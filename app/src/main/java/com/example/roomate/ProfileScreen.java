@@ -240,15 +240,12 @@ public class ProfileScreen extends Fragment {
                 String strDormitory = spinner4.getSelectedItem().toString();
                 if(strDormitory =="3~5동")
                     strDormitory="35동";
-                String strAge = spinner2.getSelectedItem().toString();
-                if(strAge == "30+")
-                    strAge = "31";
                 int gender = 1;
                 if(spinner3.getSelectedItem().toString() == "남자")
                     gender = 0;
                 String grade = spinner1.getSelectedItem().toString();
                 //서버에 post + info에 추가저장
-                postMyprofile(new String[]{strMyIntroduce, strMyName, Integer.toString(profileId), strDormitory, strAge, Integer.toString(gender),grade}); // server에서 나의 정보를 갱신함.
+                postMyprofile(new String[]{strMyIntroduce, strMyName, Integer.toString(profileId), strDormitory, Integer.toString(gender),grade}); // server에서 나의 정보를 갱신함.
                 JSONObject input = new JSONObject();
                 try {
                     input.put("Grade", grade);
@@ -316,11 +313,10 @@ public class ProfileScreen extends Fragment {
                 params.put("KakaoID", kakaoID);
                 params.put("Introduce", input[0]);
                 params.put("Name",input[1]);
-                params.put("ProfileImage",input[2]);
+                params.put("Profileimage",input[2]);
                 params.put("Dormitory",input[3]);
-                params.put("Age",input[4]);
-                params.put("Gender",input[5]);
-                params.put("Grade",input[6]);
+                params.put("Gender",input[4]);
+                params.put("Grade",input[5]);
                 Log.e("tags",params.toString());
                 return params;
             }
