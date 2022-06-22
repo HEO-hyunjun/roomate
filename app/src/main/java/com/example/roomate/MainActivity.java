@@ -54,14 +54,15 @@ public class MainActivity extends AppCompatActivity {
                     login();
                 }
                 else{
-                    accountLogin();               
+                    accountLogin();
                 }
-                
+
 
                 //startActivityForResult(intent, REQUEST_CODE_MENU);
             }
         });
     }
+
 
     public void login(){
         String TAG = "login()";
@@ -71,8 +72,11 @@ public class MainActivity extends AppCompatActivity {
             } else if (oAuthToken != null) {
                 Log.i(TAG, "로그인 성공(토큰) : " + oAuthToken.getAccessToken());
                 getUserInfo();
-                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                startActivity(intent);
+                //신규 가입자는 프로필 스크린을 띄움
+                //Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                //startActivity(intent);
+                getSupportFragmentManager().beginTransaction()
+                        .add(android.R.id.content, new ProfileScreen()).commit();
             }
             return null;
         });
@@ -86,8 +90,11 @@ public class MainActivity extends AppCompatActivity {
             } else if (oAuthToken != null) {
                 Log.i(TAG, "로그인 성공(토큰) : " + oAuthToken.getAccessToken());
                 getUserInfo();
-                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                startActivity(intent);
+                //신규 가입자는 프로필 스크린을 띄움
+                //Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                //startActivity(intent);
+                getSupportFragmentManager().beginTransaction()
+                        .add(android.R.id.content, new ProfileScreen()).commit();
             }
             return null;
         });
