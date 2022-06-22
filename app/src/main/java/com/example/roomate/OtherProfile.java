@@ -54,6 +54,7 @@ public class OtherProfile extends AppCompatActivity {
         //어댑터 클릭 이벤트시 받는 데이터
         Intent intent = getIntent();
         String receiveStr = intent.getExtras().getString("name");// 전달한 값을 받을 때
+        String KakaoID = intent.getExtras().getString("KakaoID");
         receive_name = (TextView)findViewById(R.id.other_title);
         receive_name.setText(receiveStr);
 

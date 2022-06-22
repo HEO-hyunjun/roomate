@@ -69,43 +69,6 @@ public class Data extends AppCompatActivity {
         return ret;
     }
 
-/*
-    public int[] getTag(String path, int index){
-        ArrayList<Integer> tags = new ArrayList<>();
-        try{
-            inputStream = assetManager.open(path, AssetManager.ACCESS_BUFFER);
-            InputStreamReader isr = new InputStreamReader(inputStream);
-            BufferedReader reader = new BufferedReader(isr);
-
-            StringBuffer buffer = new StringBuffer();
-            String line = reader.readLine();
-            while(line != null){
-                buffer.append(line+"\n");
-                line = reader.readLine();
-            }
-            //json 파일 불러들여 string jsonData에 넣음
-            String jsonData = buffer.toString();
-
-            JSONObject jsonObject = null;
-
-            //object 하나만 불러올때
-            try {
-                //json파일 분석후
-                jsonObject = new JSONObject(jsonData);
-                tags.add(jsonObject.getInt("Personality"));
-                tags.add(jsonObject.getInt("Hygiene"));
-                tags.add(jsonObject.getInt("Noise"));
-                tags.add(jsonObject.getInt("WakeupTime"));
-                tags.add(jsonObject.getInt("SleepTime"));
-                tags.add(jsonObject.getInt("Snoring"));
-                tags.add(jsonObject.getInt("Smoking"));
-            } catch (JSONException e) {e.printStackTrace();}
-
-        } catch(IOException e){e.printStackTrace();}
-        return tag;
-    }
-    */
-
     public String parseTagToString(ArrayList<Integer> tagInput, int index) {
         // tagInput 태그 배열 그대로 들어옴
         // index 몇번째 태그정보인지
@@ -227,75 +190,7 @@ public class Data extends AppCompatActivity {
         }
         return ret;
     }
-    /*
- private static String convertInputStreamToString(InputStream inputStream) throws IOException{
-     BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
-     String line = "";
-     String result = "";
-     while((line = bufferedReader.readLine()) != null)
-         result += line;
 
-     inputStream.close();
-     return result;
-
- }
-
- public static String POST(String url, JSONObject jsonObject){
-     InputStream is = null;
-     String result = "";
-     try {
-         URL urlCon = new URL(url);
-         HttpURLConnection httpCon = (HttpURLConnection)urlCon.openConnection();
-
-         String json = "";
-
-         // build jsonObject
-
-         // convert JSONObject to JSON to String
-         json = jsonObject.toString();
-
-         // ** Alternative way to convert Person object to JSON string usin Jackson Lib
-         // ObjectMapper mapper = new ObjectMapper();
-         // json = mapper.writeValueAsString(person);
-
-         // Set some headers to inform server about the type of the content
-         httpCon.setRequestProperty("Accept", "application/json");
-         httpCon.setRequestProperty("Content-type", "application/json");
-
-         // OutputStream으로 POST 데이터를 넘겨주겠다는 옵션.
-         httpCon.setDoOutput(true);
-         // InputStream으로 서버로 부터 응답을 받겠다는 옵션.
-         httpCon.setDoInput(true);
-
-         OutputStream os = httpCon.getOutputStream();
-         os.write(json.getBytes("euc-kr"));
-         os.flush();
-         // receive response as inputStream
-         try {
-             is = httpCon.getInputStream();
-             // convert inputstream to string
-             if(is != null)
-                 result = Data.convertInputStreamToString(is);
-             else
-                 result = "Did not work!";
-         }
-         catch (IOException e) {
-             e.printStackTrace();
-         }
-         finally {
-             httpCon.disconnect();
-         }
-     }
-     catch (IOException e) {
-         e.printStackTrace();
-     }
-     catch (Exception e) {
-         Log.d("InputStream", e.getLocalizedMessage());
-     }
-
-     return result;
- }
- */
     public int parseTagToInt(String tagInput, int index) {
         //tag의 정보를 string -> int로 바꿔줌
         int ret = 10;
@@ -451,6 +346,7 @@ public class Data extends AppCompatActivity {
     public void setName(String name) {
         this.name = name;
     }
+    public void setID(String ID) { this.ID=ID;}
 
     public String getContent() {
         return introduce;

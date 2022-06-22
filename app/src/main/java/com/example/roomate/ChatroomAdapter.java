@@ -52,6 +52,7 @@ public class ChatroomAdapter extends RecyclerView.Adapter<ChatroomAdapter.ItemVi
         private TextView textView1; // 이름
         private TextView textView2; // 자기소개
         private ImageView imageView; // 프로필사진
+        private TextView KakaoID;
 
         ItemViewHolder(View itemView) {
             super(itemView);
@@ -59,6 +60,7 @@ public class ChatroomAdapter extends RecyclerView.Adapter<ChatroomAdapter.ItemVi
             textView1 = itemView.findViewById(R.id.textView1);
             textView2 = itemView.findViewById(R.id.textView2);
             imageView = itemView.findViewById(R.id.imageView);
+            KakaoID = itemView.findViewById(R.id.KakaoID);
 
             //리스트 클릭 이벤트
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +81,7 @@ public class ChatroomAdapter extends RecyclerView.Adapter<ChatroomAdapter.ItemVi
                     Intent intent = new Intent(view.getContext(), ChatActivity.class);
                     intent.putExtra("name", textView1.getText().toString());
                     intent.putExtra("image", byteArray);
+                    intent.putExtra("KakaoID",KakaoID.getText().toString());
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     view.getContext().startActivity(intent);
                 }
@@ -88,6 +91,7 @@ public class ChatroomAdapter extends RecyclerView.Adapter<ChatroomAdapter.ItemVi
             textView1.setText(data.getName());
             textView2.setText(data.getContent());
             imageView.setImageResource(data.getResId());
+            KakaoID.setText(data.getID());
         }
     }
 }

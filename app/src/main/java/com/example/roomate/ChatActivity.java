@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,6 +53,15 @@ public class ChatActivity extends AppCompatActivity {
         //어댑터 클릭 이벤트시 받는 데이터
         Intent intent = getIntent();
         String receiveStr = intent.getExtras().getString("name");// 전달한 값을 받을 때
+        String othersKakaoID = intent.getExtras().getString("KakaoID"); // 상대방 카카오아이디
+        String myKakaoID = "10";
+        try {
+            myKakaoID = Data.readMyInfo().getString("KakaoID");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         receiveView = (TextView)findViewById(R.id.chat_title);
         receiveView.setText(receiveStr);
 

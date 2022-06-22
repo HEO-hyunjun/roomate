@@ -196,37 +196,10 @@ public class Domitory_3to5 extends AppCompatActivity {
 //        adapter.notifyDataSetChanged();
     }
     // 임의의 데이터 -> 최종적으로 DB에서 받을 수 있게 수정해야 함
-    ArrayList<JSONObject> receiveJSONarray = new ArrayList<>();
     private void getData(ArrayList<Integer> input) {
-
-        getProfiles(input);
-        List<String> listName = new ArrayList<>();
-        List<String> listIntroduce = new ArrayList<>();
-        List<Integer> listProfileImage = new ArrayList<>();
-        Log.e("evet",Integer.toString(receiveJSONarray.size()));
-        for(int i = 0; i < receiveJSONarray.size();i++)
-        {
-            try {
-                JSONObject jsonObject = receiveJSONarray.get(i);
-                listName.add(jsonObject.getString("Name"));
-                listIntroduce.add(jsonObject.getString("Introduce"));
-                listProfileImage.add(Integer.getInteger(jsonObject.getString("ProfileImage")));
-            } catch (JSONException e) {
-                e.printStackTrace();
-                continue;
-            }
-        }
-
-        //리스트 목록만큼 출력합니다
-        for (int i = 0; i < listName.size(); i++) {
-            Data data = new Data();
-            data.setName(listName.get(i));
-            data.setContent(listIntroduce.get(i));
-            data.setResId(listProfileImage.get(i));
-            adapter.addItem(data);
-        }
-
         adapter.notifyDataSetChanged();
+        getProfiles(input);
+
     }
     static String strJson = "";
 
@@ -240,14 +213,17 @@ public class Domitory_3to5 extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             //서버에서 요청한 자료가 응답으로 들어왔을때 코드입니다.
-                            JSONObject jsonObject = new JSONObject(response);
-                            Log.e("eefsdfee",jsonObject.getString("Name"));
+                            JSONObject jsonObjects = new JSONObject(response);
+                            Log.e("eefsdfee",Integer.toString(jsonObjects.length()));
                             //adapter에 바로추가합니다.
-                            Data data = new Data();
-                            data.setName(jsonObject.getString("Name"));
-                            data.setContent(jsonObject.getString("Introduce"));
-                            data.setResId(Data.parseIntToIconID(jsonObject.getInt("ProfileImage")));
-                            adapter.addItem(data);
+                            for(int i = 0 ;i <jsonObjects.length()-2;i++) {
+                                JSONObject jsonObject = new JSONObject(jsonObjects.getJSONObject(Integer.toString(i)).toString());
+                                Data data = new Data();
+                                data.setName(jsonObject.getString("Name"));
+                                data.setContent(jsonObject.getString("Introduce"));
+                                data.setResId(Data.parseIntToIconID(jsonObject.getInt("Profileimage")));
+                                adapter.addItem(data);
+                            }
                             adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -271,21 +247,21 @@ public class Domitory_3to5 extends AppCompatActivity {
             protected Map<String, String> getParams() {
 
                 Map<String, String> params = new HashMap<String, String>();
-                String kakaoID = "1";
-                String dormitory = "3to5";
+                String kakaoID = "10";
+                String dormitory = "asd";
                 int gender = 0;
-                try {
+                /*try {
                     kakaoID = Data.readMyInfo().getString("KakaoID");
                     gender = Data.readMyInfo().getInt("gender");
-                    dormitory = Data.readMyInfo().getString("Domitory");
+                    dormitory = Data.readMyInfo().getString("Dormitory");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
-                }
+                }*/
 
                 // 서버에 요청할때 입력값을 넣어줍니다.
-                params.put("KakaoID", kakaoID);
+                params.put("KakaoID", "10");
                 params.put("Gender", Integer.toString(gender));
                 params.put("Dormitory", dormitory);
                 params.put("Personality",input.get(0).toString());
@@ -319,7 +295,7 @@ public class Domitory_3to5 extends AppCompatActivity {
                             Data data = new Data();
                             data.setName(jsonObject.getString("Name"));
                             data.setContent(jsonObject.getString("Introduce"));
-                            data.setResId(Data.parseIntToIconID(jsonObject.getInt("ProfileImage")));
+                            data.setResId(Data.parseIntToIconID(jsonObject.getInt("Profileimage")));
                             adapter.addItem(data);
                             adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
@@ -346,13 +322,12 @@ public class Domitory_3to5 extends AppCompatActivity {
                 // below line we are creating a map for storing our values in key and value pair.
                 Map<String, String> params = new HashMap<String, String>();
                 String kakaoID = "1";
-                String dormitory = "3to5";
+                String dormitory = "3~5동";
                 int gender = 0;
                 // on below line we are passing our key and value pair to our parameters.
                 try {
                     kakaoID = Data.readMyInfo().getString("KakaoID");
                     gender = Data.readMyInfo().getInt("gender");
-                    dormitory = Data.readMyInfo().getString("Dormitory");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
