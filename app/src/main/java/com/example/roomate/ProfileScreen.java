@@ -2,7 +2,9 @@ package com.example.roomate;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -38,20 +41,13 @@ public class ProfileScreen extends Fragment {
     private Spinner spinner3;
     private Spinner spinner4;
     private static final String[] grade = new String[]{"1학년","2학년","3학년","4학년"};
-    private static final String[] age = new String[]{"18","19","20","21","22","23","24","25","26","27","28","29","30+"};
     private static final String[] gender = new String[]{"남자","여자"};
     private static final String[] domitory_number = new String[]{"3~5동","8동","9동"};
 
     EditText myIntroduce;
     EditText myName;
     ImageButton myProfileImage;
-    String strMyName;
-    String strMyIntroduce;
-    String strMyGrade;
-    String strMyDormitory;
-    String strMyKakaoID;
-    int intMyProfileImage;
-    //grade, dom, gender, profileimage 가져오기
+
     ProfileScreen(){
 
     }
@@ -70,7 +66,6 @@ public class ProfileScreen extends Fragment {
         myName = (EditText) v.findViewById(R.id.myName);
         myProfileImage = (ImageButton) v.findViewById(R.id.profile_myprofile);
         Spinner sp_grade = (Spinner) v.findViewById(R.id.sp_grade);
-        Spinner sp_age = (Spinner) v.findViewById(R.id.sp_age);
         Spinner sp_dom = (Spinner) v.findViewById(R.id.sp_dom);
         Spinner sp_gender = (Spinner) v.findViewById(R.id.sp_gender);
 
@@ -114,7 +109,6 @@ public class ProfileScreen extends Fragment {
 
         //스피너
         spinner1= (Spinner)v.findViewById(R.id.sp_grade);
-        spinner2= (Spinner)v.findViewById(R.id.sp_age);
         spinner3= (Spinner)v.findViewById(R.id.sp_gender);
         spinner4= (Spinner)v.findViewById(R.id.sp_dom);
 
@@ -123,18 +117,6 @@ public class ProfileScreen extends Fragment {
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(adapter1);
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {@Override
-        public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id)
-        {
-            Toast.makeText(getActivity(),Integer.toString(position),Toast.LENGTH_SHORT);
-        }@Override
-        public void onNothingSelected(AdapterView<?> adapterView) {}});
-
-        //나이 18~30+
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item,age);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter2);
-        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {@Override
         public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id)
         {
@@ -165,6 +147,43 @@ public class ProfileScreen extends Fragment {
             Toast.makeText(getActivity(),Integer.toString(position),Toast.LENGTH_SHORT);
         }@Override
         public void onNothingSelected(AdapterView<?> adapterView) {}});
+
+
+
+
+        ////spinner 고정
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                Object obj = parent.getItemAtPosition(pos);
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+                SharedPreferences.Editor prefsEditor = prefs.edit();
+                prefsEditor.putString("object", obj.toString());
+                prefsEditor.commit();
+            }
+            public void onNothingSelected(AdapterView<?> parent) { }
+        });
+
+        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                Object obj = parent.getItemAtPosition(pos);
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+                SharedPreferences.Editor prefsEditor = prefs.edit();
+                prefsEditor.putString("object", obj.toString());
+                prefsEditor.commit();
+            }
+            public void onNothingSelected(AdapterView<?> parent) { }
+        });
+
+        spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                Object obj = parent.getItemAtPosition(pos);
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+                SharedPreferences.Editor prefsEditor = prefs.edit();
+                prefsEditor.putString("object", obj.toString());
+                prefsEditor.commit();
+            }
+            public void onNothingSelected(AdapterView<?> parent) { }
+        });
 
         //성격유형 검사로 들어가는 버튼
         btnInputMyProfile.setOnClickListener(new View.OnClickListener() {
@@ -351,4 +370,5 @@ public class ProfileScreen extends Fragment {
         queue.add(request);
         return ret;
     }
+
 }
