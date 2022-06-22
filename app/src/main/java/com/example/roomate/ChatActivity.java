@@ -136,7 +136,7 @@ public class ChatActivity extends AppCompatActivity {
         webSocket = client.newWebSocket(request, socketListener);
         webSocket = client.newWebSocket(request, socketListener);
         //처음 웹소켓 통신시 "1", 자신, 상대 정보 전송 => 전에 보냈던 메세지들 모두 출력위함
-        webSocket.send("1," + Me +","+ You);
+        webSocket.send("load," + Me +","+ You);
     }
 
     public class SocketListener extends WebSocketListener {

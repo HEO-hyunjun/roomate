@@ -154,6 +154,7 @@ public class ProfileScreen extends Fragment {
                     public void onClick(View view) {
                         myProfileImage.setImageResource(R.drawable.a);
                         myProfileImage.setTag(R.drawable.a);
+                        Log.e("tag check",myProfileImage.getTag().toString());
                         profileSelect.dismiss();
                     }
                 });
@@ -182,7 +183,7 @@ public class ProfileScreen extends Fragment {
             public void onClick(View v) {
                 String strMyIntroduce = myIntroduce.getText().toString();
                 String strMyName = myName.getText().toString();
-                int profileId = Data.parseIntToIconID(Integer.getInteger(myProfileImage.getTag().toString()));
+                int profileId = new Integer(myProfileImage.getTag().toString());
                 String strDormitory = spinner4.getSelectedItem().toString();
                 String strAge = spinner2.getSelectedItem().toString();
                 int gender = 1;
@@ -269,7 +270,7 @@ public class ProfileScreen extends Fragment {
                             jsonObject.getString("Grade");
                             jsonObject.getString("Dormitory");
                             Integer.toString(jsonObject.getInt("Gender"));
-                            Integer.toString(jsonObject.getInt("ProfileImage"));
+                            Integer.toString(Data.parseIconIDTOInt(jsonObject.getInt("ProfileImage")));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

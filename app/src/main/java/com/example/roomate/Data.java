@@ -54,16 +54,31 @@ public class Data extends AppCompatActivity {
     //InputStream inputStream = null;
     //AssetManager assetManager =getResources().getAssets();
     public static int parseIntToIconID(int num){
-        int ret = R.drawable.a;
+        int ret = 0;
         switch(num){
-            case 700012:
+            case 0:
                 ret = R.drawable.a;
                 break;
-            case 700015:
+            case 1:
                 ret = R.drawable.b;
                 break;
-            case 700017:
+            case 2:
                 ret = R.drawable.c;
+                break;
+        }
+        return ret;
+    }
+    public static int parseIconIDTOInt(int num){
+        int ret = R.drawable.a;
+        switch(num){
+            case R.drawable.a:
+                ret = 0;
+                break;
+            case R.drawable.b:
+                ret = 1;
+                break;
+            case R.drawable.c:
+                ret = 2;
                 break;
         }
         return ret;
