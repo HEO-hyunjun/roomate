@@ -239,9 +239,10 @@ public class Domitory_3to5 extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
+                            //서버에서 요청한 자료가 응답으로 들어왔을때 코드입니다.
                             JSONObject jsonObject = new JSONObject(response);
                             Log.e("eefsdfee",jsonObject.getString("Name"));
-                            // on below line we are checking if the response is null or not.
+                            //adapter에 바로추가합니다.
                             Data data = new Data();
                             data.setName(jsonObject.getString("Name"));
                             data.setContent(jsonObject.getString("Introduce"));
@@ -255,7 +256,7 @@ public class Domitory_3to5 extends AppCompatActivity {
                 }, new com.android.volley.Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // method to handle errors.
+                // 오류발생시 코드입니다.
                 Toast.makeText(getApplication().getApplicationContext(), "Fail to get profiles" + error, Toast.LENGTH_SHORT).show();
             }
         }) {
@@ -269,13 +270,24 @@ public class Domitory_3to5 extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
 
-                // below line we are creating a map for storing our values in key and value pair.
                 Map<String, String> params = new HashMap<String, String>();
+                String kakaoID = "1";
+                String dormitory = "3to5";
+                int gender = 0;
+                try {
+                    kakaoID = Data.readMyInfo().getString("KakaoID");
+                    gender = Data.readMyInfo().getInt("gender");
+                    dormitory = Data.readMyInfo().getString("Domitory");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
-                // on below line we are passing our key and value pair to our parameters.
-                params.put("KakaoID", "10");
-                params.put("Gender", "0");
-                params.put("Dormitory", "asd");
+                // 서버에 요청할때 입력값을 넣어줍니다.
+                params.put("KakaoID", kakaoID);
+                params.put("Gender", Integer.toString(gender));
+                params.put("Dormitory", dormitory);
                 params.put("Personality",input.get(0).toString());
                 params.put("Hygiene",input.get(1).toString());
                 params.put("Noise",input.get(2).toString());
@@ -294,13 +306,14 @@ public class Domitory_3to5 extends AppCompatActivity {
     public void getSimilar(ArrayList<Integer> input){
         RequestQueue queue = Volley.newRequestQueue(getApplication().getApplicationContext());
 
-        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/filterp.php",
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/sort.php ",
                 new com.android.volley.Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             // on below line passing our response to json object.
                             JSONObject jsonObject = new JSONObject(response);
+
                             Log.e("eefsdfee",jsonObject.getString("Name"));
                             // on below line we are checking if the response is null or not.
                             Data data = new Data();
@@ -332,27 +345,26 @@ public class Domitory_3to5 extends AppCompatActivity {
 
                 // below line we are creating a map for storing our values in key and value pair.
                 Map<String, String> params = new HashMap<String, String>();
-                String kakaoID, domitory;
-                int gender;
+                String kakaoID = "1";
+                String dormitory = "3to5";
+                int gender = 0;
                 // on below line we are passing our key and value pair to our parameters.
                 try {
                     kakaoID = Data.readMyInfo().getString("KakaoID");
                     gender = Data.readMyInfo().getInt("gender");
-                    domitory = Data.readMyInfo().getString("Domitory");
+                    dormitory = Data.readMyInfo().getString("Dormitory");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                params.put("KakaoID", "2292209646");
-                params.put("Gender", "0");
-                params.put("Domitory", "qwe");
-                // at last we are returning our params.
+                params.put("KakaoID", kakaoID);
+                params.put("Gender", Integer.toString(gender));
+                params.put("Dormitory", dormitory);
                 return params;
             }
         };
-        // below line is to make
-        // a json object request.
+
         queue.add(request);
     }
 }
