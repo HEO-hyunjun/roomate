@@ -87,7 +87,7 @@ public class Domitory_8 extends AppCompatActivity {
                 filterDialog.findViewById(R.id.yesBtn).setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View view){
-
+                        tags.clear();
                         Data forChipToTag = new Data();
 
                         ChipGroup personalityChgrp = (ChipGroup)filterDialog.findViewById((R.id.personalityChipGroup));
@@ -125,7 +125,7 @@ public class Domitory_8 extends AppCompatActivity {
                         //post tags
                         getData(tags);
                         filterDialog.dismiss();
-                        tags.clear();
+
 
                         filterDialog.dismiss();
                     }

@@ -74,7 +74,7 @@ public class Domitory_9 extends AppCompatActivity {
                     @Override
                     public void onClick(View view){
                         Data forChipToTag = new Data();
-
+                        tags.clear();
                         ChipGroup personalityChgrp = (ChipGroup)filterDialog.findViewById((R.id.personalityChipGroup));
                         Chip personalityCh = (Chip)filterDialog.findViewById(personalityChgrp.getCheckedChipId());
                         ChipGroup wakeuptimeChgrp = (ChipGroup)filterDialog.findViewById((R.id.wakeuptimeChipGroup));
@@ -101,7 +101,7 @@ public class Domitory_9 extends AppCompatActivity {
                         //post tags
                         getData(tags);
                         filterDialog.dismiss();
-                        tags.clear();
+
 
                         filterDialog.dismiss();
                     }

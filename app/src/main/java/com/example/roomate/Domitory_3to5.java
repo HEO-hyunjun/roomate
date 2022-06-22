@@ -100,7 +100,7 @@ public class Domitory_3to5 extends AppCompatActivity {
                     @Override
                     public void onClick(View view){
                         Data forChipToTag = new Data();
-
+                        tags.clear();
                         ChipGroup personalityChgrp = (ChipGroup)filterDialog.findViewById((R.id.personalityChipGroup));
                         Chip personalityCh = (Chip)filterDialog.findViewById(personalityChgrp.getCheckedChipId());
                         ChipGroup wakeuptimeChgrp = (ChipGroup)filterDialog.findViewById((R.id.wakeuptimeChipGroup));
@@ -127,7 +127,7 @@ public class Domitory_3to5 extends AppCompatActivity {
                         //post tags
                         getData(tags);
                         filterDialog.dismiss();
-                        tags.clear();
+
 
                         filterDialog.dismiss();
                     }
@@ -216,7 +216,7 @@ public class Domitory_3to5 extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
+                Log.e("filter",input.toString());
                 // 서버에 요청할때 입력값을 넣어줍니다.
                 params.put("KakaoID", kakaoID);
                 params.put("Gender", Integer.toString(gender));

@@ -236,7 +236,7 @@ public class OtherProfile extends AppCompatActivity {
     public void deleteThisprofile(){
         RequestQueue queue = Volley.newRequestQueue(OtherProfile.this);
 
-        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/myprofile.php",
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/chatRoomDel.php",
                 new com.android.volley.Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -276,49 +276,7 @@ public class OtherProfile extends AppCompatActivity {
         // a json object request.
         queue.add(request);
     }
-    public boolean isMatched(){
-        RequestQueue queue = Volley.newRequestQueue(OtherProfile.this);
-        final boolean[] flag = {false};
-        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/myprofile.php",
-                new com.android.volley.Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            // on below line passing our response to json object.
-                            JSONObject jsonObject = new JSONObject(response);
-                            flag[0] = jsonObject.getBoolean("Matched");
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new com.android.volley.Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                // method to handle errors.
-                Toast.makeText(OtherProfile.this, "Fail to get profiles" + error, Toast.LENGTH_SHORT).show();
-            }
-        }) {
-            @Override
-            public String getBodyContentType() {
-                // as we are passing data in the form of url encoded
-                // so we are passing the content type below
-                return "application/x-www-form-urlencoded; charset=UTF-8-sig";
-            }
-
-            @Override
-            protected Map<String, String> getParams() {
-
-                // below line we are creating a map for storing our values in key and value pair.
-                Map<String, String> params = new HashMap<String, String>();
-                // on below line we are passing our key and value pair to our parameters.
-                params.put("KakaoID1", strMyKakaoID);
-                params.put("KakaoID2", strKakaoID);
-                return params;
-            }
-        };
-        // below line is to make
-        // a json object request.
-        queue.add(request);
-        return flag[0];
+    public boolean isMatched() {
+        return true;
     }
 }
