@@ -11,11 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,9 +30,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -52,8 +47,16 @@ public class ProfileScreen extends Fragment {
     EditText myIntroduce;
     EditText myName;
     ImageButton myProfileImage;
+    String strMyName ;
+    String strMyIntroduce;
+    String strMyGrade;
+    String strMyDormitory;
+    String strMyKakaoID;
+    Integer intMyProfileImage;
 
-    ProfileScreen(){}
+    ProfileScreen(){
+
+    }
 
 
     @Override
@@ -72,15 +75,43 @@ public class ProfileScreen extends Fragment {
         Spinner sp_dom = (Spinner) v.findViewById(R.id.sp_dom);
         Spinner sp_gender = (Spinner) v.findViewById(R.id.sp_gender);
 
+        strMyName = "이름";
+        strMyIntroduce = "자기소개를 작성해주세요";
+        strMyGrade = "1학년";
+        strMyDormitory ="3~5동";
+        intMyProfileImage = 0;
+
+        JSONObject myInfoRet = getMyprofile(strMyKakaoID);
+        //grade, dom, gender, profileimage 가져오기
+        try {
+            myName.setText(myInfoRet.getString("Name"));
+            myIntroduce.setText(myInfoRet.getString("Introduce"));
+            myProfileImage.setImageResource(Data.parseIntToIconID(myInfoRet.getInt("Profileimage")));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         try {
             JSONObject myInfo = Data.readMyInfo();
-            myName.setText(myInfo.getString("Nickname"));
-            myIntroduce.setText(myInfo.getString("Introduce"));
-            getMyprofile(myInfo.getString("KakaoID"));
-            //age, grade, dom, gender, profileimage 가져오기
+            strMyName=myInfo.getString("Nickname");
+            strMyIntroduce = myInfo.getString("Introduce");
+            intMyProfileImage=Data.parseIntToIconID(myInfo.getInt("Profileimage"));
+            strMyKakaoID = myInfo.getString("KakaoID");
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
+        try {
+            JSONObject myInfo = Data.readMyInfo();
+            strMyKakaoID = myInfo.getString("KakaoID");
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+
+
+
+        myName.setText(strMyName);
+        myIntroduce.setText(strMyIntroduce);
+        myProfileImage.setImageResource(Data.parseIntToIconID(intMyProfileImage));
 
         //스피너
         spinner1= (Spinner)v.findViewById(R.id.sp_grade);
@@ -177,7 +208,6 @@ public class ProfileScreen extends Fragment {
                     public void onClick(View view) {
                         myProfileImage.setImageResource(R.drawable.a);
                         myProfileImage.setTag(R.drawable.a);
-                        Log.e("tag check",myProfileImage.getTag().toString());
                         profileSelect.dismiss();
                     }
                 });
@@ -206,16 +236,32 @@ public class ProfileScreen extends Fragment {
             public void onClick(View v) {
                 String strMyIntroduce = myIntroduce.getText().toString();
                 String strMyName = myName.getText().toString();
-                int profileId = new Integer(myProfileImage.getTag().toString());
+                int profileId = Data.parseIconIDTOInt(new Integer(myProfileImage.getTag().toString()));
                 String strDormitory = spinner4.getSelectedItem().toString();
-                String strAge = spinner2.getSelectedItem().toString();
+                if(strDormitory =="3~5동")
+                    strDormitory="35동";
                 int gender = 1;
                 if(spinner3.getSelectedItem().toString() == "남자")
                     gender = 0;
                 String grade = spinner1.getSelectedItem().toString();
                 //서버에 post + info에 추가저장
-                postMyprofile(new String[]{strMyIntroduce, strMyName, Integer.toString(profileId), strDormitory, strAge, Integer.toString(gender),grade}); // server에서 나의 정보를 갱신함.
+                postMyprofile(new String[]{strMyIntroduce, strMyName, Integer.toString(profileId), strDormitory, Integer.toString(gender),grade}); // server에서 나의 정보를 갱신함.
+                JSONObject input = new JSONObject();
+                try {
+                    input.put("Grade", grade);
+                    input.put("Gender",gender);
+                    input.put("Dormitory",strDormitory);
+                    input.put("Introduce",strMyIntroduce);
+                    input.put("Profileimage",profileId);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
+                try {
+                    Data.writeMyInfo(input);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -267,11 +313,11 @@ public class ProfileScreen extends Fragment {
                 params.put("KakaoID", kakaoID);
                 params.put("Introduce", input[0]);
                 params.put("Name",input[1]);
-                params.put("ProfileImage",input[2]);
+                params.put("Profileimage",input[2]);
                 params.put("Dormitory",input[3]);
-                params.put("Age",input[4]);
-                params.put("Gender",input[5]);
-                params.put("Grade",input[6]);
+                params.put("Gender",input[4]);
+                params.put("Grade",input[5]);
+                Log.e("tags",params.toString());
                 return params;
             }
         };
@@ -279,21 +325,20 @@ public class ProfileScreen extends Fragment {
         // a json object request.
         queue.add(request);
     }
-    public void getMyprofile(String kakaoID){
+    public JSONObject getMyprofile(String kakaoID){
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-
+        JSONObject ret = new JSONObject();
         StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/readprofile.php",
                 new com.android.volley.Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
+                            Log.e("teet",jsonObject.toString());
                             //age, grade, dom, gender, profileimage 가져오기
-                            jsonObject.getString("Age");
-                            jsonObject.getString("Grade");
-                            jsonObject.getString("Dormitory");
-                            Integer.toString(jsonObject.getInt("Gender"));
-                            Integer.toString(Data.parseIconIDTOInt(jsonObject.getInt("ProfileImage")));
+                            ret.put("Grade",jsonObject.getString("Grade"));
+                            ret.put("Profileimage",Data.parseIconIDTOInt(jsonObject.getInt("Profileimage")));
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -318,13 +363,14 @@ public class ProfileScreen extends Fragment {
                 // below line we are creating a map for storing our values in key and value pair.
                 Map<String, String> params = new HashMap<String, String>();
 
-                params.put("KakaoID", kakaoID);
+                params.put("KakaoID", strMyKakaoID);
                 return params;
             }
         };
         // below line is to make
         // a json object request.
         queue.add(request);
+        return ret;
     }
 
 }

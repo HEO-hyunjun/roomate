@@ -2,6 +2,7 @@ package com.example.roomate;
 
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -135,16 +136,18 @@ public class BookmarkScreen extends Fragment {
     public void getProfiles(){
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
 
-        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/filterp.php",
+        StringRequest request = new StringRequest(Request.Method.POST,"http://52.79.234.253/Roommating/v1/chatRoom.php",
                 new com.android.volley.Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             //서버에서 요청한 자료가 응답으로 들어왔을때 코드입니다.
                             JSONObject jsonObjects = new JSONObject(response);
+                            Log.e("Booktest22", jsonObjects.toString());
                             //adapter에 바로추가합니다.
                             for(int i = 0 ;i <jsonObjects.length()-2;i++) {
                                 JSONObject jsonObject = new JSONObject(jsonObjects.getJSONObject(Integer.toString(i)).toString());
+                                Log.e("Booktest", jsonObject.toString());
                                 Data data = new Data();
                                 data.setName(jsonObject.getString("Name"));
                                 data.setContent(jsonObject.getString("Introduce"));
@@ -175,7 +178,7 @@ public class BookmarkScreen extends Fragment {
             protected Map<String, String> getParams() {
 
                 Map<String, String> params = new HashMap<String, String>();
-                String kakaoID = "10";
+                String kakaoID = "1";
                 try {
                     kakaoID = Data.readMyInfo().getString("KakaoID");
                 } catch (JSONException e) {

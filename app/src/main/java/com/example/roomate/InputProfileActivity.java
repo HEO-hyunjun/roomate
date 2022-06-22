@@ -34,7 +34,6 @@ public class InputProfileActivity extends AppCompatActivity {
 
     ImageButton backButton;
     Button saveButton;
-    TextView tesss;
     ArrayList<Integer> tags = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,18 +92,34 @@ public class InputProfileActivity extends AppCompatActivity {
                 tags.add(forStringToTag.parseTagToInt(str, 6));
 
                 for(int i = 0 ; i < 7; i++) {
-                    if (tags.get(i) == -1) {
+                    if (tags.get(i)  == 10) {
                         flag = 0;
                     }
                 }
 
                 if(flag == 0) {
-                    tesss.setText(tags.toString());
                     popup("주의", "모든 항목을 전부 채워주시기 바랍니다.");
                     tags.clear();
                 }
                 else {
                     pushMyProfile(tags);
+                    JSONObject input = new JSONObject();
+                    try {
+                        input.put("Personality", tags.get(0));
+                        input.put("Hygiene", tags.get(1));
+                        input.put("Noise", tags.get(2));
+                        input.put("WakeupTime",tags.get(3));
+                        input.put("SleepTime",tags.get(4));
+                        input.put("Snoring",tags.get(5));
+                        input.put("Smoking",tags.get(6));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        Data.writeMyInfo(input);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     finish();
                 }
             }
@@ -134,7 +149,6 @@ public class InputProfileActivity extends AppCompatActivity {
                         try {
                             //서버에서 요청한 자료가 응답으로 들어왔을때 코드입니다.
                             JSONObject jsonObjects = new JSONObject(response);
-                            Log.e("eefsdfee",Integer.toString(jsonObjects.length()));
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -159,7 +173,6 @@ public class InputProfileActivity extends AppCompatActivity {
 
                 Map<String, String> params = new HashMap<String, String>();
                 String kakaoID = "10";
-                int gender = 0;
                 try {
                     kakaoID = Data.readMyInfo().getString("KakaoID");
                 } catch (JSONException e) {

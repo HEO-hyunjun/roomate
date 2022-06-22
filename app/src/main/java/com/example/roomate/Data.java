@@ -29,9 +29,11 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -41,6 +43,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -355,7 +358,46 @@ public class Data extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+        Log.e("readmyData!!",ret.toString());
         return ret;
+    }
+    public static void writeMyInfo(JSONObject input) throws IOException {
+        String fileTitle = "/data/data/com.example.roomate/files/Userinfo.json";
+        File file = new File(fileTitle);
+
+        if(file.exists()) {
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                String result = "";
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    result += line;
+                }
+                Log.e("myResult",result);
+                BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+                JSONObject jsonRes = new JSONObject();
+                try {
+                    JSONObject[] objs = new JSONObject[]{new JSONObject(result), input};
+                    for (JSONObject obj : objs) {
+                        Iterator it = obj.keys();
+                        while (it.hasNext()) {
+                            String key = (String)it.next();
+                            jsonRes.put(key, obj.get(key));
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                writer.write(jsonRes.toString());
+                writer.flush();
+                writer.close();
+            } catch (FileNotFoundException e1) {
+
+            } catch (IOException e2) {
+
+            }
+        }
     }
 
     public void setName(String name) {
