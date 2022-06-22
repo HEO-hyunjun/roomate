@@ -152,14 +152,14 @@
                         android:text="자기소개" />
 
                     <EditText
-                        android:id = "@+id/myIntroduce"
+                        android:id="@+id/myIntroduce"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
-                        android:gravity="top"
                         android:background="@color/white"
+                        android:gravity="top"
+                        android:hint="자기소개를 작성해 주세요"
                         android:padding="10dp"
-                        android:text="자기소개를 작성해 주세요"
-                        android:textColor="#767676"
+                        android:textColorHint="#918888"
                         android:textSize="10sp" />
 
                     <ImageView
